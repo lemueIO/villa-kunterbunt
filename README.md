@@ -67,7 +67,7 @@ Laden Sie hier die vollständige Korrespondenz herunter und erleben Sie, wie man
 
 [**📄 Ebook als PDF herunterladen**](assets/Die%20Villa%20Kunterbunt%20-%20Korrespondez%20Epos.pdf)
 <br>
-[**📂 Begleitschreiben als PDF herunterladen**](assets/E.ON-Report_%20Datenübergabe.pdf)
+[**📄 Begleitschreiben als PDF herunterladen**](assets/E.ON-Report_%20Datenübergabe.pdf)
 
 ---
 <div align="center">
