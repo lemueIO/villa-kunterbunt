@@ -40,7 +40,7 @@ Die logische Konsequenz: Wenn man das System nicht besiegen kann, muss man Teil 
 ---
 
 > [!NOTE] 
-> **💡 Warum? Wie kommts?**
+> **💡 Warum? Wie kommt es zu diesem Repository?**
 >
 > Nachdem tagelange Geduld, Höflichkeit, Sachlichkeit und am Ende sogar die Androhung rechtlicher Konsequenzen ohne jeden Effekt verpufften, erfolgte ein radikaler Strategiewechsel: Weg vom Bittsteller, hin zur **Planung des Reportings für das Qualitäts- und Beschwerdemanagement**.
 >
