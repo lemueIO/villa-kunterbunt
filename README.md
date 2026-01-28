@@ -37,6 +37,15 @@ In dem physikalische Messungen vor Ort durch telepathische Ferndiagnosen von "Ma
 ### Das Finale: Die Initiativbewerbung
 Die logische Konsequenz: Wenn man das System nicht besiegen kann, muss man Teil davon werden. Eine förmliche Bewerbung für eine Karriere in der "Villa Kunterbunt", einem Ort, geschützt durch Monopole und Quetschsiegel, wo Effizienz ein "Nice-to-have" ist.
 
+### 🔄 Warum?
+Nachdem tagelange Geduld, Höflichkeit, Sachlichkeit und am Ende sogar die Androhung rechtlicher Konsequenzen ohne jeden Effekt verpufften, erfolgte ein radikaler Strategiewechsel: Weg vom Bittsteller, hin zur **Planung des Reportings für das Qualitäts- und Beschwerdemanagement**.
+
+Um sicherzustellen, dass die Informationen nicht nur flüchtig überflogen werden, bot es sich an, alle Details bewusst in einem **umfangreichen Fließtext und als eBook** zu übergeben. Damit wurde die Hürde gegenüber einem kleinteilig gegliederten Reporting wirksam erhöht – wer den Inhalt verstehen will, muss lesen.
+
+Der wertvolle Datensatz wurde dem Unternehmen schließlich zusammen mit einem förmlichen Begleitschreiben für das Beschwerde- und Qualitätsmanagement zur Verfügung gestellt.
+
+[![Begleitschreiben Download](https://img.shields.io/badge/Download-Begleitschreiben_Report-blue?style=for-the-badge&logo=adobeacrobatreader)](assets/E.ON-Report_%20Datenübergabe.pdf)
+
 ---
 
 ## ⚡ Technische Details (Der "Beweis")
