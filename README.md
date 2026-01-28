@@ -37,6 +37,8 @@ In dem physikalische Messungen vor Ort durch telepathische Ferndiagnosen von "Ma
 ### Das Finale: Die Initiativbewerbung
 Die logische Konsequenz: Wenn man das System nicht besiegen kann, muss man Teil davon werden. Eine förmliche Bewerbung für eine Karriere in der "Villa Kunterbunt", einem Ort, geschützt durch Monopole und Quetschsiegel, wo Effizienz ein "Nice-to-have" ist.
 
+---
+
 > [!NOTE] 
 > **💡 Warum?**
 >
@@ -48,8 +50,6 @@ Die logische Konsequenz: Wenn man das System nicht besiegen kann, muss man Teil 
 >
 >[![Begleitschreiben Download](https://img.shields.io/badge/Download-Begleitschreiben_Report-blue?style=for-the-badge&logo=adobeacrobatreader)](assets/E.ON-Report_%20Datenübergabe.pdf)
 >
-
----
 
 ## ⚡ Technische Details (Der "Beweis")
 
