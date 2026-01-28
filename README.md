@@ -40,7 +40,7 @@ Die logische Konsequenz: Wenn man das System nicht besiegen kann, muss man Teil 
 ---
 
 > [!NOTE] 
-> **💡 Warum?**
+> **💡 Warum eigentlich??**
 >
 > Nachdem tagelange Geduld, Höflichkeit, Sachlichkeit und am Ende sogar die Androhung rechtlicher Konsequenzen ohne jeden Effekt verpufften, erfolgte ein radikaler Strategiewechsel: Weg vom Bittsteller, hin zur **Planung des Reportings für das Qualitäts- und Beschwerdemanagement**.
 >
@@ -50,6 +50,8 @@ Die logische Konsequenz: Wenn man das System nicht besiegen kann, muss man Teil 
 >
 >[![Begleitschreiben Download](https://img.shields.io/badge/Download-Begleitschreiben_Report-blue?style=for-the-badge&logo=adobeacrobatreader)](assets/E.ON-Report_%20Datenübergabe.pdf)
 >
+
+---
 
 ## ⚡ Technische Details (Der "Beweis")
 
