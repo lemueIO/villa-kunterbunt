@@ -22,7 +22,7 @@
 
 > *"Für alle, die schon einmal vergeblich auf die dritte Phase gewartet haben."*
 
-Dieses Dokument ist mehr als nur ein Beschwerdebrief. Es ist das Protokoll einer **administrativen Tragikomödie**. Was als simpler technischer Defekt – ein fehlender Anschluss der Phase L3 nach einem Zählertausch – begann, entwickelte sich schnell zu einer philosophischen Reise in das Herz der deutschen Bürokratie.
+Dieses Dokument ist mehr als nur ein Beschwerdebrief. Es ist das Protokoll einer **administrativen Tragikomödie**. Was als simpler technischer Defekt – ein fehlender Anschluss der Phase L3 nach einer Zähleraktivierung – begann, entwickelte sich schnell zu einer philosophischen Reise in das Herz der deutschen Bürokratie.
 
 Es dokumentiert den verzweifelten Kampf eines Kunden, der mit Logik, Messgeräten und physikalischen Fakten gegen ein "Service-Universum" antritt, in dem andere Naturgesetze zu gelten scheinen.
 
