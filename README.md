@@ -3,7 +3,7 @@
 
 > **Eine Korrespondenz über Phasenausfälle, Remote-Voodoo und die Suche nach der dritten Phase**
 
-Dieses Ebook dokumentiert die tragikomische Saga eines Stromausfalls, bei dem Phase L3 beschloss, unangekündigten Urlaub zu machen - und nie wirklich zurückkehrte.
+Dieses Ebook dokumentiert die tragikomische Saga eines Phasenausfalls, bei dem Phase L3 beschloss, unangekündigten Urlaub zu machen - und nie wirklich zurückkehrte.
 
 Eine Sammlung authentischer (und leicht verzweifelter) Korrespondenzen über:
 *   Die Kunst der 66-prozentigen Arbeitsleistung
