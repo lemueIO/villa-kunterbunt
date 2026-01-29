@@ -12,8 +12,8 @@
 
 [![PDF Download](https://img.shields.io/badge/Download-PDF_Ebook-red?style=for-the-badge&logo=adobeacrobatreader)](assets/Die%20Villa%20Kunterbunt%20-%20Korrespondez%20Epos%20-%20derlemue.pdf)
 [![ePub Download](https://img.shields.io/badge/Download-ePub_Ebook-blue?style=for-the-badge&logo=adobeacrobatreader)](assets/Die%20Villa%20Kunterbunt%20-%20Korrespondez%20Epos%20-%20derlemue.epub)
-[![Status](https://img.shields.io/badge/Status-66%25_Operational-orange?style=for-the-badge)](#💡-warum-wie-kommt-es-zu-diesem-repository)
-[![Phase L3](https://img.shields.io/badge/Phase_L3-MISSING-critical?style=for-the-badge)](#💡-warum-wie-kommt-es-zu-diesem-repository)
+[![Status](https://img.shields.io/badge/Status-66%25_Operational-orange?style=for-the-badge)](#-warum-wie-kommt-es-zu-diesem-repository)
+[![Phase L3](https://img.shields.io/badge/Phase_L3-MISSING-critical?style=for-the-badge)](#-warum-wie-kommt-es-zu-diesem-repository)
 
 </div>
 
