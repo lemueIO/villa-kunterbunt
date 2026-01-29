@@ -68,7 +68,9 @@ Für die technisch Interessierten (und die Zweifler im Callcenter):
 Eine visuelle Reise durch den Wahnsinn. Hier finden Sie alle Memes und Illustrationen gesammelt in einer Galerie.
 
 <div align="center">
-  <img src="assets/illustrations/Die Villa Kunterbunt_024.PNG" width="50%" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);">
+  <a href="assets/illustrations/README.md">
+    <img src="assets/illustrations/Die Villa Kunterbunt_024.PNG" width="50%" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);">
+  </a>
 </div>
 
 <br>
