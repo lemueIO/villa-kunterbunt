@@ -10,10 +10,10 @@
   <img src="assets/Die Villa Kunterbunt - Korrespondez Epos Cover Back.png" width="45%" alt="Cover Back" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);">
 </p>
 
-[![PDF Download](https://img.shields.io/badge/Download-PDF_Ebook-red?style=for-the-badge&logo=adobeacrobatreader)](assets/Die%20Villa%20Kunterbunt%20-%20Korrespondez%20Epos.pdf)
-[![ePub Download](https://img.shields.io/badge/Download-ePub_Ebook-blue?style=for-the-badge&logo=adobeacrobatreader)](assets/Die%20Villa%20Kunterbunt%20-%20Korrespondez%20Epos.epub)
-[![Status](https://img.shields.io/badge/Status-66%25_Operational-orange?style=for-the-badge)](assets/Die%20Villa%20Kunterbunt%20-%20Korrespondez%20Epos.pdf)
-[![Phase L3](https://img.shields.io/badge/Phase_L3-MISSING-critical?style=for-the-badge)](assets/Die%20Villa%20Kunterbunt%20-%20Korrespondez%20Epos.pdf)
+[![PDF Download](https://img.shields.io/badge/Download-PDF_Ebook-red?style=for-the-badge&logo=adobeacrobatreader)](assets/Die%20Villa%20Kunterbunt%20-%20Korrespondez%20Epos%20-%20derlemue.pdf)
+[![ePub Download](https://img.shields.io/badge/Download-ePub_Ebook-blue?style=for-the-badge&logo=adobeacrobatreader)](assets/Die%20Villa%20Kunterbunt%20-%20Korrespondez%20Epos%20-%20derlemue.epub)
+[![Status](https://img.shields.io/badge/Status-66%25_Operational-orange?style=for-the-badge)](assets/Die%20Villa%20Kunterbunt%20-%20Korrespondez%20Epos%20-%20derlemue.pdf)
+[![Phase L3](https://img.shields.io/badge/Phase_L3-MISSING-critical?style=for-the-badge)](assets/Die%20Villa%20Kunterbunt%20-%20Korrespondez%20Epos%20-%20derlemue.pdf)
 
 </div>
 
