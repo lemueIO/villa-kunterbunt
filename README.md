@@ -27,17 +27,6 @@ Dieses Dokument ist mehr als nur ein Beschwerdebrief. Es ist das Protokoll einer
 
 Es dokumentiert den verzweifelten Kampf eines Kunden, der mit Logik, Messgeräten und physikalischen Fakten gegen ein "Service-Universum" antritt, in dem andere Naturgesetze zu gelten scheinen.
 
-## 🎭 Die Akte der Tragödie
-
-### Akt I-III: Die Kunst der 66-prozentigen Arbeitsleistung
-Wenn man 170,87 EUR pro 15 Minuten berechnet, darf man dann erwarten, dass alle drei Kabel angeschlossen werden? Oder ist "2 aus 3" (66%) ein akzeptabler neuer Industriestandard?
-
-### Akt IV: Remote-Voodoo
-In dem physikalische Messungen vor Ort durch telepathische Ferndiagnosen von "Manager-Technikern" ersetzt werden. Warum messen, wenn man *fühlen* kann, dass der Strom fließt?
-
-### Das Finale: Die Initiativbewerbung
-Die logische Konsequenz: Wenn man das System nicht besiegen kann, muss man Teil davon werden. Eine förmliche Bewerbung für eine Karriere in der "Villa Kunterbunt", einem Ort, geschützt durch Monopole und Quetschsiegel, wo Effizienz ein "Nice-to-have" ist.
-
 ---
 
 ## 💡 Warum? Wie kommt es zu diesem Repository?
@@ -54,6 +43,17 @@ Die logische Konsequenz: Wenn man das System nicht besiegen kann, muss man Teil 
 >
 
 ---
+
+## 🎭 Die Akte der Tragödie
+
+### Akt I-III: Die Kunst der 66-prozentigen Arbeitsleistung
+Wenn man 170,87 EUR pro 15 Minuten berechnet, darf man dann erwarten, dass alle drei Kabel angeschlossen werden? Oder ist "2 aus 3" (66%) ein akzeptabler neuer Industriestandard?
+
+### Akt IV: Remote-Voodoo
+In dem physikalische Messungen vor Ort durch telepathische Ferndiagnosen von "Manager-Technikern" ersetzt werden. Warum messen, wenn man *fühlen* kann, dass der Strom fließt?
+
+### Das Finale: Die Initiativbewerbung
+Die logische Konsequenz: Wenn man das System nicht besiegen kann, muss man Teil davon werden. Eine förmliche Bewerbung für eine Karriere in der "Villa Kunterbunt", einem Ort, geschützt durch Monopole und Quetschsiegel, wo Effizienz ein "Nice-to-have" ist.
 
 ## ⚡ Technische Details (Der "Beweis")
 
