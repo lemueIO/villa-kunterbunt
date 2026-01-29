@@ -41,7 +41,7 @@ Es dokumentiert den verzweifelten Kampf eines Kunden, der mit Logik, Messgeräte
 >
 > Der wertvolle Datensatz wurde dem Unternehmen schließlich zusammen mit einem förmlichen Begleitschreiben für das Beschwerde- und Qualitätsmanagement zur Verfügung gestellt.
 >
->[![Begleitschreiben Download](https://img.shields.io/badge/Download-Begleitschreiben_Report-blue?style=for-the-badge&logo=adobeacrobatreader)](assets/S) [![Systemanalytische Studie und Bewertung](https://img.shields.io/badge/Download-Systemanalytische_Studie_und_Bewertung-blue?style=for-the-badge&logo=adobeacrobatreader)](assets/Die%20Villa%20Kunterbunt%20-%20Systemanalytische%20Studie%20und%20Bewertung.pdf)
+>[![Begleitschreiben Download](https://img.shields.io/badge/Download-Begleitschreiben_Report-blue?style=for-the-badge&logo=adobeacrobatreader)](assets/S) [![Systemanalytische Studie und Bewertung Download](https://img.shields.io/badge/Download-Systemanalytische_Studie_und_Bewertung-blue?style=for-the-badge&logo=adobeacrobatreader)](assets/Die%20Villa%20Kunterbunt%20-%20Systemanalytische%20Studie%20und%20Bewertung.pdf) [![Epilog Download](https://img.shields.io/badge/Download-Epilog-blue?style=for-the-badge&logo=adobeacrobatreader)](assets/Die%20Villa%20Kunterbunt%20-%20Epilog.pdf)
 >
 
 ---
