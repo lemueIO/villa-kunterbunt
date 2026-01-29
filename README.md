@@ -67,12 +67,12 @@ Für die technisch Interessierten (und die Zweifler im Callcenter):
 
 Eine visuelle Reise durch den Wahnsinn. Hier finden Sie alle Memes und Impressionen gesammelt in einer Galerie.
 
-[![Galerie](https://img.shields.io/badge/Galerie-Memes_%26_Illustrationen-purple?style=for-the-badge&logo=github)](assets/illustrations/README.md)
-
-<br>
-
 <div align="center">
   <img src="assets/illustrations/Die Villa Kunterbunt_024.PNG" width="50%" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);">
+  
+  <br><br>
+
+  [![Galerie](https://img.shields.io/badge/Galerie-Memes_%26_Illustrationen-purple?style=for-the-badge&logo=github)](assets/illustrations/README.md)
 </div>
 
 ## 📥 Download
