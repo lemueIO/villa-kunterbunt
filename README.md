@@ -46,7 +46,7 @@ Es dokumentiert den verzweifelten Kampf eines Kunden, der mit Logik, Messgeräte
 
 ---
 
-### 🏢 Hinweis für Unternehmen
+### 🏢 Hinweis für die teilnehmenden Unternehmen
 
 Es besteht die Möglichkeit, dass Dokumente, die eine **Verbesserung von Prozessen** oder ähnlichem protokollieren, über den normalen Prozess zur Aufnahme in das Repository angefragt werden können. Diese werden nach erfolgreicher Prüfung prominent in der README platziert.
 
