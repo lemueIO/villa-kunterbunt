@@ -16,6 +16,7 @@
 [![ePub Download](https://img.shields.io/badge/Download-ePub_Ebook-blue?style=for-the-badge&logo=adobeacrobatreader)](assets/Die%20Villa%20Kunterbunt%20-%20Korrespondez%20Epos%20-%20derlemue.epub)
 [![Status](https://img.shields.io/badge/Status-66%25_Operational-orange?style=for-the-badge)](#-warum-wie-kommt-es-zu-diesem-repository)
 [![Phase L3](https://img.shields.io/badge/Phase_L3-MISSING-critical?style=for-the-badge)](#-warum-wie-kommt-es-zu-diesem-repository)
+[![Request Submission](https://img.shields.io/badge/Request-Submission-success?style=for-the-badge&logo=github)](https://github.com/derlemue/villa-kunterbunt/issues/new?title=Submission%20Request)
 
 </div>
 
@@ -107,6 +108,10 @@ Laden Sie hier die vollständige Korrespondenz herunter und erleben Sie, wie man
 [**📄 Ebook als ePub herunterladen**](https://raw.githubusercontent.com/derlemue/villa-kunterbunt/refs/heads/main/assets/Die%20Villa%20Kunterbunt%20-%20Korrespondez%20Epos%20-%20derlemue.epub?raw=true)
 <br>
 [**📄 Begleitschreiben als PDF herunterladen**](https://raw.githubusercontent.com/derlemue/villa-kunterbunt/refs/heads/main/assets/E.ON-Report_%20Datenübergabe.pdf?raw=true)
+<br>
+[**📄 Systemanalytische Studie und Bewertung als PDF herunterladen**](https://raw.githubusercontent.com/derlemue/villa-kunterbunt/refs/heads/main/assets/Die%20Villa%20Kunterbunt%20-%20Systemanalytische%20Studie%20und%20Bewertung.pdf?raw=true)
+<br>
+[**🗂️ vollständigen Datensatz als ZIP herunterladen**](https://github.com/derlemue/villa-kunterbunt/archive/refs/heads/main.zip)
 
 ---
 <div align="center">
