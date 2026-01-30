@@ -1,3 +1,5 @@
+---
+
 <div align="center">
 
 # 🎪 Die Villa Kunterbunt
@@ -76,6 +78,8 @@ Für die technisch Interessierten (und die Zweifler im Callcenter):
 *   **Ausschlussverfahren:** Zähler zeigt L1, L2, L3 eingangsseitig an.
 *   **Fazit:** Der Fehler liegt *zwingend* an der Abgangsklemme. Ein klassischer "Kabel-nicht-drin"-Fehler.
 
+---
+
 ## 🤡 Memes & Illustrationen
 
 Eine visuelle Reise durch den Wahnsinn. Hier finden Sie alle Memes und Illustrationen gesammelt in einer Galerie.
@@ -89,6 +93,8 @@ Eine visuelle Reise durch den Wahnsinn. Hier finden Sie alle Memes und Illustrat
 <br>
 
 [![Galerie](https://img.shields.io/badge/Galerie-Memes_%26_Illustrationen-purple?style=for-the-badge&logo=github)](assets/illustrations/README.md)
+
+---
 
 ## 📥 Download
 
