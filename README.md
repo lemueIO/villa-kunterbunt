@@ -107,9 +107,9 @@ Laden Sie hier die vollständige Korrespondenz herunter und erleben Sie, wie man
 [**📄 Ebook als ePub herunterladen**](https://raw.githubusercontent.com/derlemue/villa-kunterbunt/refs/heads/main/assets/Die%20Villa%20Kunterbunt%20-%20Korrespondez%20Epos%20-%20derlemue.epub?raw=true)
 <br>
 [**📄 Begleitschreiben als PDF herunterladen**](https://raw.githubusercontent.com/derlemue/villa-kunterbunt/refs/heads/main/assets/E.ON-Report_%20Datenübergabe.pdf?raw=true)
-
+<br>
 [**📄 Systemanalytische Studie und Bewertung als PDF herunterladen**](https://raw.githubusercontent.com/derlemue/villa-kunterbunt/refs/heads/main/assets/Die%20Villa%20Kunterbunt%20-%20Systemanalytische%20Studie%20und%20Bewertung.pdf?raw=true)
-
+<br>
 [**🗂️ vollständigen Datensatz als ZIP herunterladen**](https://github.com/derlemue/villa-kunterbunt/archive/refs/heads/main.zip)
 
 ---
