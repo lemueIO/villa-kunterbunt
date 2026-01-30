@@ -71,7 +71,7 @@
   <tr>
     <td width="25%" align="center"><img src="Die Villa Kunterbunt_038.PNG" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);"></td>
     <td width="25%" align="center"><img src="Die Villa Kunterbunt_039.PNG" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);"></td>
-    <td width="25%"></td>
+    <td width="25%" align="center"><img src="Die Villa Kunterbunt_040.PNG" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);"></td>
     <td width="25%"></td>
   </tr>
 </table>
