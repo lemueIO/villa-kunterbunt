@@ -108,6 +108,10 @@ Laden Sie hier die vollständige Korrespondenz herunter und erleben Sie, wie man
 <br>
 [**📄 Begleitschreiben als PDF herunterladen**](https://raw.githubusercontent.com/derlemue/villa-kunterbunt/refs/heads/main/assets/E.ON-Report_%20Datenübergabe.pdf?raw=true)
 
+[**📄 Systemanalytische Studie und Bewertung als PDF herunterladen**](https://raw.githubusercontent.com/derlemue/villa-kunterbunt/refs/heads/main/assets/Die%20Villa%20Kunterbunt%20-%20Systemanalytische%20Studie%20und%20Bewertung.pdf?raw=true)
+
+[**🗂️ vollständigen Datensatz als ZIP herunterladen**](https://github.com/derlemue/villa-kunterbunt/archive/refs/heads/main.zip)
+
 ---
 <div align="center">
 <i>"Man lernt nie aus. Wären Sie nicht in mein Leben getrampelt, ich würde noch heute denken, klassische Erwerbstätigkeit wäre alternativlos."</i>
