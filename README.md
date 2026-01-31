@@ -125,5 +125,5 @@ Laden Sie hier die vollständige Korrespondenz herunter und erleben Sie, wie man
 
 ---
 <div align="center">
-<i>"Man lernt nie aus. Wären Sie nicht in mein Leben getrampelt, ich würde noch heute denken, klassische Erwerbstätigkeit wäre alternativlos."</i>
+<i>"Totaler Kurzschluss im Kundenservice - der Servicekunde übernimmt die Netzführung."</i>
 </div>
