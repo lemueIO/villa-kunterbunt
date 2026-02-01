@@ -2,19 +2,23 @@ name: Scheduled Repo Sync
 
 on:
   schedule:
-    - cron: '*/5 * * * *' # Täglich um Mitternacht
-  workflow_dispatch: # Ermöglicht manuelles Triggern
+    - cron: '0 0 * * *' # Täglich um Mitternacht
+  workflow_dispatch: 
 
 jobs:
   sync_with_upstream:
     runs-on: ubuntu-latest
     name: Sync main with upstream
+    
+    # HIER DIE LÖSUNG: Wir fordern explizit Schreibrechte für diesen Job an
+    permissions:
+      contents: write
 
     steps:
     - name: Checkout target repo
       uses: actions/checkout@v4
       with:
-        ref: main # Oder der entsprechende Name Ihres Default-Branches
+        ref: main
         token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Sync Upstream
