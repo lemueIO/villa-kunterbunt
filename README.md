@@ -1,3 +1,9 @@
+<div align="right">
+  <a href="CHANGELOG.md">
+    <img src="https://img.shields.io/badge/version-1.0--rc-blue?style=for-the-badge&logo=none" alt="Version 1.0-rc">
+  </a>
+</div>
+
 <div align="center">
 
 # 🎪 Die Villa Kunterbunt
