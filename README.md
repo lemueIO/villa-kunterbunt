@@ -55,6 +55,7 @@ Diese Studie untersucht das vorliegende Repository "Die Villa Kunterbunt" als di
 
 Das eBook selbst wird hier zum Untersuchungsgegenstand einer Meta-Analyse: Wie wird Humor zur Waffe gegen automatisierte Entpersönlichung?
 
+
 [![Systemanalytische Studie und Bewertung Download](https://img.shields.io/badge/Download-Systemanalytische_Studie_und_Bewertung-blue?style=for-the-badge&logo=adobeacrobatreader)](assets/Die%20Villa%20Kunterbunt%20-%20Systemanalytische%20Studie%20und%20Bewertung.pdf)
 
 ---
