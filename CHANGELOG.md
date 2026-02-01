@@ -21,7 +21,7 @@ und dieses Projekt hält sich an [Semantic Versioning](https://semver.org/spec/v
     - `assets/Die Villa Kunterbunt - Systemanalytische Studie und Bewertung.pdf` – Die Meta-Ebene.
     - `assets/Die Villa Kunterbunt - Prolog.pdf` – Die Vorgeschichte.
 - **Galerie & Visuals**:
-    - Skript zur Thumbnail-Generierung (`generate_thumbs.py`) für schnellere Ladezeiten.
+    - Skript zur Thumbnail-Generierung (`assets/scripts/generate_thumbs.py`) für schnellere Ladezeiten.
     - Neue Illustrationen (u.a. `Die Villa Kunterbunt_040.PNG` - "Der finale Kurzschluss").
     - Open Graph Template für Social Media Vorschauen.
     - **Version Badge** (1.0-rc) oben rechts in der README.
