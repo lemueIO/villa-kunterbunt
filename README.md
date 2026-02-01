@@ -98,8 +98,8 @@ Für die technisch Interessierten (und die Zweifler im Callcenter):
 Eine visuelle Reise durch den Wahnsinn. Hier finden Sie alle Memes und Illustrationen gesammelt in einer Galerie.
 
 <div align="center">
-  <a href="assets/illustrations/README.md">
-    <img src="assets/illustrations/Die Villa Kunterbunt_040.PNG" width="50%" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);">
+  <a href="assets/illustrations/Die Villa Kunterbunt_040.PNG">
+    <img src="assets/illustrations/Die Villa Kunterbunt_040_thumb.PNG" width="50%" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);">
   </a>
 </div>
 
@@ -120,6 +120,8 @@ Laden Sie hier die vollständige Korrespondenz herunter und erleben Sie, wie man
 [**📄 Begleitschreiben als PDF herunterladen**](https://raw.githubusercontent.com/derlemue/villa-kunterbunt/refs/heads/main/assets/E.ON-Report_%20Datenübergabe.pdf?raw=true)
 <br>
 [**📄 Systemanalytische Studie und Bewertung als PDF herunterladen**](https://raw.githubusercontent.com/derlemue/villa-kunterbunt/refs/heads/main/assets/Die%20Villa%20Kunterbunt%20-%20Systemanalytische%20Studie%20und%20Bewertung.pdf?raw=true)
+<br>
+[**🎧 Podcast-Analyse als MP3 herunterladen**](https://raw.githubusercontent.com/derlemue/villa-kunterbunt/refs/heads/main/assets/Die%20Villa%20Kunterbunt%20-%20Analyse%20Podcast.mp3?raw=true)
 <br>
 [**🗂️ vollständigen Datensatz als ZIP herunterladen**](https://github.com/derlemue/villa-kunterbunt/archive/refs/heads/main.zip)
 
