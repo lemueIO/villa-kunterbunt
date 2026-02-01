@@ -182,24 +182,55 @@
     <div class="player-container">
         <img src="../assets/Die Villa Kunterbunt - Korrespondez Epos Cover Front.png" alt="Cover Art" class="cover-art">
         
-        <h1>Analyse Podcast</h1>
-        <h2>Die Villa Kunterbunt</h2>
+        <h1>Die Villa Kunterbunt</h1>
+        <h2>Das Korrespondenz Epos</h2>
 
-        <audio id="audio-player" src="../assets/Die Villa Kunterbunt - Analyse Podcast.mp3" preload="metadata"></audio>
+        <!-- Player 1 -->
+        <div class="track-info">
+            <h3>Part I: Analyse Podcast</h3>
+        </div>
+        <audio id="audio-player-1" src="../assets/Die Villa Kunterbunt - Analyse Podcast.mp3" preload="metadata"></audio>
 
-        <div class="progress-container" id="progress-container">
+        <div class="progress-container" id="progress-container-1">
             <div class="progress-bar">
-                <div class="progress-fill" id="progress-fill"></div>
+                <div class="progress-fill" id="progress-fill-1"></div>
             </div>
         </div>
         
         <div class="time-display">
-            <span id="current-time">0:00</span>
-            <span id="duration">0:00</span>
+            <span id="current-time-1">0:00</span>
+            <span id="duration-1">0:00</span>
         </div>
 
         <div class="controls">
-            <button class="play-btn" id="play-btn">
+            <button class="play-btn" id="play-btn-1" onclick="togglePlay(1)">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z"/>
+                </svg>
+            </button>
+        </div>
+
+        <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 20px 0;">
+
+        <!-- Player 2 -->
+        <div class="track-info">
+            <h3>Part II: Dossier Podcast</h3>
+        </div>
+        <audio id="audio-player-2" src="../assets/Die Villa Kunterbunt - Dossier Podcast.mp3" preload="metadata"></audio>
+
+        <div class="progress-container" id="progress-container-2">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill-2"></div>
+            </div>
+        </div>
+        
+        <div class="time-display">
+            <span id="current-time-2">0:00</span>
+            <span id="duration-2">0:00</span>
+        </div>
+
+        <div class="controls">
+            <button class="play-btn" id="play-btn-2" onclick="togglePlay(2)">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M8 5v14l11-7z"/>
                 </svg>
@@ -210,25 +241,41 @@
     </div>
 
     <script>
-        const audio = document.getElementById('audio-player');
-        const playBtn = document.getElementById('play-btn');
-        const progressContainer = document.getElementById('progress-container');
-        const progressFill = document.getElementById('progress-fill');
-        const currentTimeEl = document.getElementById('current-time');
-        const durationEl = document.getElementById('duration');
-        
-        // Play/Pause Icon SVG
         const playIcon = '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
         const pauseIcon = '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>';
 
-        function togglePlay() {
-            if (audio.paused) {
-                audio.play();
-                playBtn.innerHTML = pauseIcon;
-            } else {
-                audio.pause();
+        function initPlayer(id) {
+            const audio = document.getElementById(`audio-player-${id}`);
+            const progressContainer = document.getElementById(`progress-container-${id}`);
+            const progressFill = document.getElementById(`progress-fill-${id}`);
+            const currentTimeEl = document.getElementById(`current-time-${id}`);
+            const durationEl = document.getElementById(`duration-${id}`);
+            const playBtn = document.getElementById(`play-btn-${id}`);
+
+            audio.addEventListener('timeupdate', () => {
+                const { duration, currentTime } = audio;
+                if (isNaN(duration)) return;
+                const progressPercent = (currentTime / duration) * 100;
+                progressFill.style.width = `${progressPercent}%`;
+                currentTimeEl.textContent = formatTime(currentTime);
+            });
+
+            progressContainer.addEventListener('click', (e) => {
+                const width = progressContainer.clientWidth;
+                const clickX = e.offsetX;
+                const duration = audio.duration;
+                audio.currentTime = (clickX / width) * duration;
+            });
+
+            audio.addEventListener('loadedmetadata', () => {
+                durationEl.textContent = formatTime(audio.duration);
+            });
+
+            audio.addEventListener('ended', () => {
                 playBtn.innerHTML = playIcon;
-            }
+                progressFill.style.width = '0%';
+                currentTimeEl.textContent = '0:00';
+            });
         }
 
         function formatTime(seconds) {
@@ -237,35 +284,30 @@
             return `${min}:${sec < 10 ? '0' : ''}${sec}`;
         }
 
-        function updateProgress() {
-            const { duration, currentTime } = audio;
-            if (isNaN(duration)) return;
-            const progressPercent = (currentTime / duration) * 100;
-            progressFill.style.width = `${progressPercent}%`;
-            currentTimeEl.textContent = formatTime(currentTime);
+        function togglePlay(id) {
+            const audio = document.getElementById(`audio-player-${id}`);
+            const btn = document.getElementById(`play-btn-${id}`);
+            const otherId = id === 1 ? 2 : 1;
+            const otherAudio = document.getElementById(`audio-player-${otherId}`);
+            const otherBtn = document.getElementById(`play-btn-${otherId}`);
+
+            if (audio.paused) {
+                // Pause other player if playing
+                if (!otherAudio.paused) {
+                    otherAudio.pause();
+                    otherBtn.innerHTML = playIcon;
+                }
+                audio.play();
+                btn.innerHTML = pauseIcon;
+            } else {
+                audio.pause();
+                btn.innerHTML = playIcon;
+            }
         }
 
-        function setProgress(e) {
-            const width = this.clientWidth;
-            const clickX = e.offsetX;
-            const duration = audio.duration;
-            audio.currentTime = (clickX / width) * duration;
-        }
-        
-        // Event Listeners
-        playBtn.addEventListener('click', togglePlay);
-        audio.addEventListener('timeupdate', updateProgress);
-        progressContainer.addEventListener('click', setProgress);
-        
-        audio.addEventListener('loadedmetadata', () => {
-            durationEl.textContent = formatTime(audio.duration);
-        });
-        
-        audio.addEventListener('ended', () => {
-            playBtn.innerHTML = playIcon;
-            progressFill.style.width = '0%';
-            currentTimeEl.textContent = '0:00';
-        });
+        // Initialize players
+        initPlayer(1);
+        initPlayer(2);
     </script>
 </body>
 </html>
