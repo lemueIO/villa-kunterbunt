@@ -1,8 +1,8 @@
 <div align="right">
   <a href="CHANGELOG.md">
     <img src="https://img.shields.io/badge/VERSION-v.1.1.0--RC-orange?style=for-the-badge&logo=none&labelColor=36454F" alt="Version 1.0-rc"><br>
-    <img src="https://img.shields.io/badge/TAG-066%2F100__170__e0nBw-FFB74D?style=flat&logo=none&labelColor=36454F" alt="Build Tag" height="16">
-    <img src="https://github.com/lemueIO/villa-kunterbunt/actions/workflows/sync-fork.yml/badge.svg?branch=main" alt="Fork Sync" height="16"><br>
+    <img src="https://img.shields.io/badge/TAG-066%2F100__170__e0nBw-FFB74D?style=flat&logo=none&labelColor=36454F" alt="Build Tag" height="16"><br>
+    <img src="https://github.com/lemueIO/villa-kunterbunt/actions/workflows/sync-fork.yml/badge.svg?branch=main" alt="Fork Sync" height="16">
   </a>
 </div>
 
