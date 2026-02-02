@@ -27,7 +27,7 @@ jobs:
 
       - name: Configure Git Safe Directory
         run: |
-          # Zwingend erforderlich für den VPS-Runner im Docker-Container
+          # Unverzichtbar für Docker-Runner auf dem VPS
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
 
       - name: Setup Pages
@@ -36,8 +36,9 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # PFAD-FIX: Hier muss 'site' stehen, da dort deine index.html liegt
-          path: 'site/'
+          # Wir laden das Hauptverzeichnis ('.') hoch. 
+          # Dadurch bleibt die Struktur /site/index.html erhalten.
+          path: '.' 
 
       - name: Deploy to GitHub Pages
         id: deployment
