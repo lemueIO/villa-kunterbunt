@@ -1,7 +1,7 @@
 <div align="right">
   <a href="CHANGELOG.md">
     <img src="https://img.shields.io/badge/VERSION-v.1.1.0--RC-orange?style=for-the-badge&logo=none&labelColor=36454F" alt="Version 1.0-rc"><br>
-    <img src="https://img.shields.io/badge/TAG-066%2F100__170__e0nBw-36454F?style=flat&logo=none&labelColor=d4af37" alt="Build Tag" height="18">
+    <img src="https://img.shields.io/badge/TAG-066%2F100__170__e0nBw-orange?style=flat&logo=none&labelColor=36454F" alt="Build Tag" height="18">
   </a>
 </div>
 
