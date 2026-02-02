@@ -11,6 +11,7 @@ permissions:
 jobs:
   sync:
     runs-on: ubuntu-latest
+    if: github.repository != 'derlemue/villa-kunterbunt' # Verhindert Ausführung im Original-Repo (derlemue)
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -26,7 +27,7 @@ jobs:
 
       - name: Sync with Upstream
         run: |
-          # ⚠️ WICHTIG: Ersetze die folgende URL mit dem Repository, von dem du forken möchtest!
+          # URL des Original-Repositories (Quelle für alle Forks)
           UPSTREAM_URL="https://github.com/derlemue/villa-kunterbunt.git"
           
           echo "Füge Upstream hinzu: $UPSTREAM_URL"
