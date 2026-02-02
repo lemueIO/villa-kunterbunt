@@ -3,7 +3,7 @@ name: Sync Fork
 on:
   schedule:
     - cron: '*/15 * * * *' # Alle 15 Minuten
-  workflow_dispatch: # Ermöglicht manuelles Starten
+
 
 permissions:
   contents: write
