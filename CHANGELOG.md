@@ -31,6 +31,10 @@
 *   **Layout:** Optimierung der README für satirischen "Premium-Dokumentations-Stil".
 *   **Navigation:** Verbesserte Verlinkungen zwischen den Dokumenten und Playern.
 
+#### ⚙️ Infrastructure
+*   **Self-Hosted CI/CD:** Fork-Sync und Pages Deployment laufen jetzt auf Self-Hosted Runners.
+
+
 ---
 
 ## v.1.0.0 (Initial Public Release)
