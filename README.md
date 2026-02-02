@@ -1,6 +1,6 @@
 <div align="right">
   <a href="CHANGELOG.md">
-    <img src="https://img.shields.io/badge/version-1.0--rc-blue?style=for-the-badge&logo=none" alt="Version 1.0-rc">
+    <img src="https://img.shields.io/badge/v.1.1.0--RC-066%2F100__170__e0nBw-orange?style=for-the-badge&logo=none" alt="Version 1.0-rc">
   </a>
 </div>
 
