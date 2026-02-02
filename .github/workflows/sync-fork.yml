@@ -5,6 +5,11 @@ on:
     - cron: '*/15 * * * *' # Alle 15 Minuten
   workflow_dispatch: # Erlaubt den manuellen Start zum Testen
 
+# NEU: Verhindert parallele Ausführung dieses Workflows
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
 permissions:
   contents: write
 
