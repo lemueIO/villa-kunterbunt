@@ -1,8 +1,9 @@
-name: Deploy Github Pages
+name: Deploy GitHub Pages
 
 on:
   push:
-    branches: ["main"]
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
@@ -15,33 +16,30 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: [self-hosted, vps-debian]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Fix permissions
+      - name: Configure Git Safe Directory
         run: |
+          # Unverzichtbar für Docker-Runner auf dem VPS
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      # STATT JEKYLL: Wir nutzen die vorhandenen Dateien direkt
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Punkt bedeutet: Das gesamte Repository-Verzeichnis hochladen
-          path: .
+          # Wir laden das Hauptverzeichnis ('.') hoch. 
+          # Dadurch bleibt die Struktur /site/index.html erhalten.
+          path: '.' 
 
-  deploy:
-    needs: build
-    runs-on: [self-hosted, vps-debian]
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
