@@ -10,11 +10,8 @@ permissions:
 
 jobs:
   sync:
-    runs-on: [self-hosted, vps-debian]
-    
-    # Ausführung nur, wenn es NICHT das Original-Repo ist
-    if: github.repository != 'derlemue/villa-kunterbunt'
-    
+    runs-on: ubuntu-latest
+    if: github.repository != 'derlemue/villa-kunterbunt' # Verhindert Ausführung im Original-Repo (derlemue)
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -27,25 +24,21 @@ jobs:
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          # Notwendig für Docker-Umgebungen
-          git config --global --add safe.directory "$GITHUB_WORKSPACE"
 
       - name: Sync with Upstream
         run: |
+          # URL des Original-Repositories (Quelle für alle Forks)
           UPSTREAM_URL="https://github.com/derlemue/villa-kunterbunt.git"
           
-          echo "Adding upstream remote..."
+          echo "Füge Upstream hinzu: $UPSTREAM_URL"
           git remote add upstream "$UPSTREAM_URL" || git remote set-url upstream "$UPSTREAM_URL"
           
-          echo "Fetching upstream..."
-          git fetch upstream main
+          echo "Fetch Upstream..."
+          git fetch upstream
           
-          echo "Merging upstream/main..."
-          # Erzeugt einen Merge-Commit bei neuen Änderungen
-          git merge upstream/main --no-edit || {
-            echo "Error: Merge conflict detected."
-            exit 1
-          }
+          echo "Merge Upstream/main..."
+          # Wir nutzen --allow-unrelated-histories falls nötig, meistens aber nicht
+          git merge upstream/main --no-edit
           
-          echo "Pushing to origin..."
+          echo "Push zu Origin..."
           git push origin main
