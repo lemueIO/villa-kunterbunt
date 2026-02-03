@@ -8,5 +8,5 @@ on:
 
 jobs:
   call-automerge:
-    uses: lemueIO/.github/workflows/automerge.yml@main
+    uses: lemueIO/.github/.github/workflows/automerge.yml@main
     secrets: inherit

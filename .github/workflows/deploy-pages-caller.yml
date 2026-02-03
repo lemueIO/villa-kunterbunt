@@ -17,5 +17,5 @@ concurrency:
 
 jobs:
   call-deploy-pages:
-    uses: lemueIO/.github/workflows/deploy-pages.yml@main
+    uses: lemueIO/.github/.github/workflows/deploy-pages.yml@main
     secrets: inherit
