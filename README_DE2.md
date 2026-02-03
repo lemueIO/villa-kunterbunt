@@ -31,7 +31,7 @@
 
 <div align="center">
 
-[![Deutsch](https://img.shields.io/badge/🇩🇪-Deutsch-36454F?style=for-the-badge)](README.md) [![Einfache Sprache](https://img.shields.io/badge/🇩🇪-Einfache%20Sprache-4DD0E1?style=for-the-badge&labelColor=36454F)](README_DE2.md) [![English](https://img.shields.io/badge/🇬🇧-English-36454F?style=for-the-badge)](README_EN.md)
+[![Deutsch](https://img.shields.io/badge/🇩🇪-Deutsch-36454F?style=for-the-badge)](README.md) [![Einfache Sprache](https://img.shields.io/badge/🇩🇪-Einfache%20Sprache-00838F?style=for-the-badge&labelColor=36454F)](README_DE2.md) [![English](https://img.shields.io/badge/🇬🇧-English-36454F?style=for-the-badge)](README_EN.md)
 
 </div>
 
