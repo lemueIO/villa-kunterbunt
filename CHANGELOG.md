@@ -54,6 +54,7 @@
 *   **Sprachwahl-Design:** Umstellung auf Badge-Buttons (Flagge + Name).
 *   **Site-Navigation:** Links von der Landing-Page (`/site`) führen nun direkt und im gleichen Tab zur Repository-README.
 *   **Guide-Navigation:** "Zurück"-Links in den Upload-Guides springen nun per Anker direkt zum relevanten Abschnitt in der README (Deep-Links).
+*   **Stability:** Implementierung manueller HTML-Anker in allen READMEs zur Sicherstellung robuster Deep-Links (Fix für Browser-Cache/GitHub-Rendering Issues).
 
 #### ⚙️ Infrastructure & Workflows
 *   **Workflow Fixes:** Vollständige Implementierung von `sync-fork`, `deploy-pages` und `automerge` mit korrekten Berechtigungen.
