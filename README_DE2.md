@@ -55,7 +55,7 @@ Es folgt anderen Regeln.
 
 [![PDF Download](https://img.shields.io/badge/Download-PDF_Ebook-red?style=for-the-badge&logo=adobeacrobatreader)](assets/Die%20Villa%20Kunterbunt%20-%20Korrespondez%20Epos%20-%20derlemue.pdf) [![ePub Download](https://img.shields.io/badge/Download-ePub_Ebook-blue?style=for-the-badge&logo=adobeacrobatreader)](assets/Die%20Villa%20Kunterbunt%20-%20Korrespondez%20Epos%20-%20derlemue.epub)
 
-> | Hinweis: Dieses Buch ist in schwerer Sprache.
+
 
 ---
 
@@ -73,8 +73,7 @@ Es folgt anderen Regeln.
 >
 > [![Begleitschreiben Download](https://img.shields.io/badge/Download-Begleitschreiben_Report-blue?style=for-the-badge&logo=adobeacrobatreader)](assets/E.ON-Report_%20Datenübergabe.pdf)
 >
-> | Hinweis: Dieser Brief ist in schwerer Sprache.
->
+
 
 ---
 
@@ -90,7 +89,7 @@ Wenn diese Firmen nur noch automatisch arbeiten?
 
 [![Systemanalytische Studie und Bewertung Download](https://img.shields.io/badge/Download-Systemanalytische_Studie_und_Bewertung-blue?style=for-the-badge&logo=adobeacrobatreader)](assets/Die%20Villa%20Kunterbunt%20-%20Systemanalytische%20Studie%20und%20Bewertung.pdf) <br> [![Podcast Player](https://img.shields.io/badge/Web_Player-Analyse_Podcast-FF4B4B?style=for-the-badge&logo=rss&logoColor=white)](https://derlemue.github.io/villa-kunterbunt/podcast/analyse.html) [![Podcast Player](https://img.shields.io/badge/Web_Player-Dossier_Podcast-FF4B4B?style=for-the-badge&logo=rss&logoColor=white)](https://derlemue.github.io/villa-kunterbunt/podcast/dossier.html)
 
-> | Hinweis: Diese Dokumente sind in schwerer Sprache.
+
 
 ---
 
@@ -181,7 +180,7 @@ Hier können Sie alle Dokumente herunterladen.
 <br>
 [**🗂️ vollständigen Datensatz als ZIP herunterladen**](https://github.com/derlemue/villa-kunterbunt/archive/refs/heads/main.zip)
 
-> | Hinweis: Diese Dateien sind in schwerer Sprache.
+
 
 ---
 <div align="center">
