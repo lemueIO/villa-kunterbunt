@@ -48,6 +48,7 @@
 #### ⚙️ Infrastructure
 *   **Self-Hosted CI/CD:** Fork-Sync und Pages Deployment laufen jetzt auf Self-Hosted Runners.
 *   **Sync Optimization:** Anpassung des Fork-Sync-Zeitplans auf "krumme" Minuten (xx:07) zur Vermeidung von Scheduler-Staus.
+*   **External Trigger:** Implementierung und Test von manuellen Triggern für Workflow-Validierung.
 
 
 ---
