@@ -128,7 +128,7 @@ A visual journey through the madness. Here you shall find all memes and illustra
 
 <br>
 
-[![Gallery](https://img.shields.io/badge/Gallery-Memes_%26_Illustrations-purple?style=for-the-badge&logo=github)](https://derlemue.github.io/villa-kunterbunt/gallery/)
+[![Gallery](https://img.shields.io/badge/Gallery-Memes_%26_Illustrations-purple?style=for-the-badge&logo=github)](https://derlemue.github.io/villa-kunterbunt/gallery/index_en.html)
 
 ---
 

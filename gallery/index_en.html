@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Villa Kunterbunt - Memes & Illustrationen Galerie</title>
+    <title>Villa Kunterbunt - Memes & Illustrations Gallery</title>
     <meta name="description"
-        content="Visuelle Galerie der Memes und Illustrationen aus der Villa Kunterbunt - Das Korrespondenz Epos">
+        content="Visual gallery of memes and illustrations from Villa Kunterbunt - The Correspondence Epic">
     <style>
         * {
             margin: 0;
@@ -319,34 +319,35 @@
 <body>
     <div class="container">
         <header>
-            <h1>🤡 Memes & Illustrationen</h1>
-            <p class="subtitle">Die visuelle Galerie der Villa Kunterbunt</p>
+            <h1>🤡 Memes & Illustrations</h1>
+            <p class="subtitle">The visual gallery of Villa Kunterbunt</p>
         </header>
 
         <div class="status-bar" id="statusBar">
-            Galerie geladen • 40 Illustrationen
+            Gallery loaded • 40 Illustrations
         </div>
 
         <div class="controls">
             <div class="control-group">
                 <button id="playPauseBtn">▶ Autoplay</button>
                 <select id="autoplaySpeed">
-                    <option value="5000" selected>5 Sekunden</option>
-                    <option value="6000">6 Sekunden</option>
-                    <option value="7000">7 Sekunden</option>
-                    <option value="8000">8 Sekunden</option>
-                    <option value="9000">9 Sekunden</option>
-                    <option value="10000">10 Sekunden</option>
+                    <option value="5000" selected>5 Seconds</option>
+                    <option value="6000">6 Seconds</option>
+                    <option value="7000">7 Seconds</option>
+                    <option value="8000">8 Seconds</option>
+                    <option value="9000">9 Seconds</option>
+                    <option value="10000">10 Seconds</option>
                 </select>
             </div>
-            <button id="fullscreenBtn">⛶ Vollbild</button>
-            <button id="downloadSelectedBtn" disabled>⬇ Ausgewählte laden (<span id="selectedCount">0</span>)</button>
+            <button id="fullscreenBtn">⛶ Fullscreen</button>
+            <button id="downloadSelectedBtn" disabled>⬇ Download Selected (<span id="selectedCount">0</span>)</button>
         </div>
 
         <div class="gallery" id="gallery"></div>
 
         <div style="text-align: center;">
-            <a href="https://github.com/derlemue/villa-kunterbunt/blob/main/README.md" class="back-link">← Zurück zum Hauptmenü</a>
+            <a href="https://github.com/derlemue/villa-kunterbunt/blob/main/README_EN.md" class="back-link">← Back to
+                Main Menu</a>
         </div>
     </div>
 
@@ -359,7 +360,7 @@
             <img id="lightboxImg" src="" alt="Illustration">
             <div class="lightbox-controls">
                 <button id="downloadCurrentBtn">⬇ Download</button>
-                <button id="lightboxFullscreenBtn">⛶ Vollbild</button>
+                <button id="lightboxFullscreenBtn">⛶ Fullscreen</button>
             </div>
         </div>
         <div class="image-counter" id="imageCounter">1 / 40</div>
@@ -533,14 +534,14 @@
             playPauseBtn.textContent = '⏸ Pause';
             const speed = parseInt(autoplaySpeed.value);
             autoplayInterval = setInterval(nextImage, speed);
-            statusBar.textContent = `Autoplay aktiv • ${speed / 1000} Sekunden`;
+            statusBar.textContent = `Autoplay active • ${speed / 1000} Seconds`;
         }
 
         function stopAutoplay() {
             isPlaying = false;
             playPauseBtn.textContent = '▶ Autoplay';
             clearInterval(autoplayInterval);
-            statusBar.textContent = `Galerie geladen • ${images.length} Illustrationen`;
+            statusBar.textContent = `Gallery loaded • ${images.length} Illustrations`;
         }
 
         function toggleAutoplay() {
