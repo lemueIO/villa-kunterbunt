@@ -45,6 +45,9 @@ This document is rather more than a mere letter of complaint. It is the protocol
 
 It chronicles the desperate struggle of a customer who, armed with logic, measuring instruments, and physical facts, sets forth to battle against a "service universe" where, it appears, rather different natural laws hold sway.
 
+
+> | Note: Please be aware that the document in this section is currently available in the original German version only.
+
 [![PDF Download](https://img.shields.io/badge/Download-PDF_Ebook-red?style=for-the-badge&logo=adobeacrobatreader)](assets/Die%20Villa%20Kunterbunt%20-%20Korrespondez%20Epos%20-%20derlemue.pdf) [![ePub Download](https://img.shields.io/badge/Download-ePub_Ebook-blue?style=for-the-badge&logo=adobeacrobatreader)](assets/Die%20Villa%20Kunterbunt%20-%20Korrespondez%20Epos%20-%20derlemue.epub)
 
 ---
@@ -60,8 +63,8 @@ It chronicles the desperate struggle of a customer who, armed with logic, measur
 > The valuable dataset was ultimately provided to the company together with a formal cover letter for complaints and quality management.
 >
 > [![Cover Letter Download](https://img.shields.io/badge/Download-Cover_Letter_Report-blue?style=for-the-badge&logo=adobeacrobatreader)](assets/E.ON-Report_%20Datenübergabe.pdf)
->
-> *Note: Please be aware that the document in this section is currently available in the original German version only.*
+
+> | Note: Please be aware that the document in this section is currently available in the original German version only.
 
 ---
 
@@ -73,7 +76,7 @@ The eBook itself becomes here the object of a meta-analysis: how does humour bec
 
 [![System-Analytical Study and Evaluation Download](https://img.shields.io/badge/Download-System--Analytical_Study_and_Evaluation-blue?style=for-the-badge&logo=adobeacrobatreader)](assets/Die%20Villa%20Kunterbunt%20-%20Systemanalytische%20Studie%20und%20Bewertung.pdf) <br> [![Podcast Player](https://img.shields.io/badge/Web_Player-Analysis_Podcast-FF4B4B?style=for-the-badge&logo=rss&logoColor=white)](https://derlemue.github.io/villa-kunterbunt/podcast/analyse.html) [![Podcast Player](https://img.shields.io/badge/Web_Player-Dossier_Podcast-FF4B4B?style=for-the-badge&logo=rss&logoColor=white)](https://derlemue.github.io/villa-kunterbunt/podcast/dossier.html)
 
-> *Note: Please be aware that some documents in this section are currently available in the original German version only.*
+> | Note: Please be aware that some documents in this section are currently available in the original German version only.
 
 ---
 
@@ -85,7 +88,7 @@ There exists the possibility that documents which chronicle an **improvement of 
 > Statements, attempted explanations, and other mere symbols are expressly excluded from this and shall be rejected.
 
 [![Request Submission](https://img.shields.io/badge/Request-Submission-success?style=for-the-badge&logo=github)](https://github.com/derlemue/villa-kunterbunt/issues/new?title=Submission%20Request)
-[![Upload Guide](https://img.shields.io/badge/📤_Upload--Guide-Help-blue?style=for-the-badge)](https://derlemue.github.io/villa-kunterbunt/upload-guide/index_en.html)
+[![Upload Guide](https://img.shields.io/badge/📤_Upload--Guide-Help-blue?style=for-the-badge)](upload-guide/index_en.html)
 
 ---
 
@@ -152,7 +155,7 @@ Download here the complete correspondence and experience how one combats windmil
 <br>
 [**🗂️ Download Complete Dataset as ZIP**](https://github.com/derlemue/villa-kunterbunt/archive/refs/heads/main.zip)
 
-> *Note: Please be aware that the documents in this section are currently available in the original German version only.*
+> | Note: Please be aware that the documents in this section are currently available in the original German version only.
 
 ---
 <div align="center">
