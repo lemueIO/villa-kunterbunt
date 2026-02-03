@@ -21,7 +21,8 @@
 | :--- | :--- | :--- |
 | **derlemue** | **Stakeholder Management:** SPOC (Single Point of Contact) für E.ON / Bayernwerk. Koordination und Prüfung eingereichter Prozess-Dokumente. | *ongoing* |
 | **Ph0x** | **SEO-Strategie:** Laufende Optimierung der Inhalte für maximale Auffindbarkeit in Suchmaschinen. | *ongoing* |
-| **Cipher** | **Accessibility & Translation:** Erstellung der `README_DE2.md` (Leichte Sprache) und `README_EN.md` (1:1 Übersetzung). Prüfung Ebook-Übersetzung (EN). | *Q2/2026* |
+| **Cipher** | **Accessibility & Translation:** Erstellung der `README_DE2.md` (Leichte Sprache) und `README_EN.md` (1:1 Übersetzung). | *Q2/2026* |
+| **Ph0x & Cipher** | **Internationalization:** Geplante Übersetzung aller Download-Materialien (PDFs, Reports) ins Englische. | *Planning* |
 | **m3l** | **Education Edition:** Kommentierte Fassung des eBooks mit Erläuterungen für fachfremde Leser ohne elektrotechnische Vorkenntnisse. | *Q2/2026* |
 
 <br>
@@ -38,6 +39,7 @@
 *   **Podcast Integration:** Vollständige Web-Player für alle 5 Episoden ("Satire", "Analyse", "Dossier", "DeepDive", "Zupftest") implementiert.
 *   **Ebook Release:** Bereitstellung des Ebooks in den Formaten PDF und ePub.
 *   **Dokumente:** Veröffentlichung des "Begleitschreiben Reports" und der "Systemanalytischen Studie".
+*   **Upload-Guides:** Neue Guides in Englisch (`index_en.html`) und Einfacher Sprache (`index_de2.html`) erstellt.
 *   **Galerie:** Interaktive Galerie für Memes und Illustrationen hinzugefügt.
 
 #### 🎨 Design & UI
@@ -49,12 +51,14 @@
     *   Rechte Buttons (nächste Episode): rechtsbündig
     *   Übersichts-Links (Anfang/Ende): zentriert mit Highlight-Styling, einheitlicher Text "Alle Episoden"
     *   Fix für mobile Ansicht: Fehlende CSS-Klassen in Episode 2 und 3 ergänzt
-*   **Sprachwahl-Design:** Umstellung der Sprachnavigation auf Badge-Buttons (Flagge + Name). Aktive Sprache in kontrastreichem **Petrol/Dunkelcyan** (`00838F`) hervorgehoben für optimale Lesbarkeit.
+*   **Sprachwahl-Design:** Umstellung auf Badge-Buttons (Flagge + Name).
+*   **Site-Navigation:** Links von der Landing-Page (`/site`) führen nun direkt und im gleichen Tab zur Repository-README.
 
 #### ⚙️ Infrastructure & Workflows
 *   **Workflow Fixes:** Vollständige Implementierung von `sync-fork`, `deploy-pages` und `automerge` mit korrekten Berechtigungen.
 *   **Automerge:** Aktiviert für Whitelist-User (derlemue, m3l1nda, osint-inc, Cipher-Pup).
 *   **Self-Hosted CI/CD:** Optimierung für Self-Hosted Runner und Vermeidung von Deadlocks.
+*   **Fixes:** Mermaid-Diagramm-Syntax in Upload-Guides gehärtet (Kompatibilitäts-Fix).
 
 
 
