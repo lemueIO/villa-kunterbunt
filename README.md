@@ -83,6 +83,7 @@ Es besteht die Möglichkeit, dass Dokumente, die eine **Verbesserung von Prozess
 > Stellungnahmen, Erklärungsversuche und andere bloße Symbole sind ausdrücklich davon ausgenommen und werden abgelehnt.
 
 [![Request Submission](https://img.shields.io/badge/Request-Submission-success?style=for-the-badge&logo=github)](https://github.com/derlemue/villa-kunterbunt/issues/new?title=Submission%20Request)
+[![Upload-Leitfaden](https://img.shields.io/badge/📤_Upload--Leitfaden-Hilfe-blue?style=for-the-badge)](https://derlemue.github.io/villa-kunterbunt/upload-guide/){:target="_blank"}
 
 ---
 
