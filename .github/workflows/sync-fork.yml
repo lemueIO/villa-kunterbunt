@@ -17,20 +17,21 @@ jobs:
   sync:
     runs-on: [self-hosted, vps-debian]
     if: github.repository != 'derlemue/villa-kunterbunt' # Verhindert Ausführung im Original-Repo (derlemue)
-steps:
-      # Schritt 1: Sicherstellen, dass der Workspace sauber ist
+
+    steps:
+      # FIX 2: Aggressiver Cleanup für Self-Hosted Runner
+      # Löscht alte Artefakte und .git Ordner, um "Lockfile"-Fehler zu verhindern
       - name: Clean Workspace
         run: |
-          # Löscht rekursiv alle Dateien im aktuellen Verzeichnis vor dem Checkout
-          rm -rf * rm -rf .git
+          rm -rf ./*
+          rm -rf ./.git
 
-      # Schritt 2: Checkout mit 'clean: true' (Standard, aber hier explizit zur Sicherheit)
       - name: Checkout
         uses: actions/checkout@v4
         with:
           ref: main
           fetch-depth: 0
-          clean: true
+          clean: true # Erzwingt sauberen Checkout
 
       - name: Configure Git
         run: |
