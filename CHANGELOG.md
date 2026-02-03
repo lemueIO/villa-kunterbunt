@@ -44,6 +44,10 @@
 *   **Premium Badges:** Vollständiges Redesign der Status-Badges (Anthrazit/Orange) für konsistenten, professionellen Look.
 *   **Layout:** Optimierung der README für satirischen "Premium-Dokumentations-Stil".
 *   **Navigation:** Verbesserte Verlinkungen zwischen den Dokumenten und Playern.
+*   **Webplayer Button-Harmonisierung:** Konsistente Textausrichtung über alle 5 Podcast-Webplayer:
+    *   Linke Buttons (vorherige Episode): linksbündig
+    *   Rechte Buttons (nächste Episode): rechtsbündig
+    *   Übersichts-Links (Anfang/Ende): zentriert für visuelle Abhebung
 
 #### ⚙️ Infrastructure & Workflows
 *   **Workflow Fixes:** Vollständige Implementierung von `sync-fork`, `deploy-pages` und `automerge` mit korrekten Berechtigungen.
