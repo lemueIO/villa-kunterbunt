@@ -2,10 +2,10 @@ name: Sync Fork
 
 on:
   schedule:
-    - cron: '*/15 * * * *' # Alle 15 Minuten
-  workflow_dispatch: # Erlaubt den manuellen Start zum Testen
+    - cron: '*/15 * * * *' # Tipp: Nutzen Sie unterschiedliche Minuten für verschiedene Forks (z.B. 7, 22, 37...)
+  workflow_dispatch:
 
-# NEU: Verhindert parallele Ausführung dieses Workflows
+# FIX 1: Concurrency verhindert, dass zwei Sync-Jobs für dasselbe Repo gleichzeitig laufen
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: false
@@ -16,8 +16,9 @@ permissions:
 jobs:
   sync:
     runs-on: [self-hosted, vps-debian]
-    if: github.repository != 'derlemue/villa-kunterbunt' # Verhindert Ausführung im Original-Repo (derlemue)
-
+    if: github.repository != 'derlemue/villa-kunterbunt'
+    
+    # KORREKTUR: 'steps' muss hier eingerückt sein (Teil von 'sync')
     steps:
       # FIX 2: Aggressiver Cleanup für Self-Hosted Runner
       # Löscht alte Artefakte und .git Ordner, um "Lockfile"-Fehler zu verhindern
@@ -40,18 +41,19 @@ jobs:
 
       - name: Sync with Upstream
         run: |
-          # URL des Original-Repositories (Quelle für alle Forks)
           UPSTREAM_URL="https://github.com/derlemue/villa-kunterbunt.git"
           
           echo "Füge Upstream hinzu: $UPSTREAM_URL"
+          # || true verhindert Fehler, falls Remote schon existiert
           git remote add upstream "$UPSTREAM_URL" || git remote set-url upstream "$UPSTREAM_URL"
           
           echo "Fetch Upstream..."
           git fetch upstream
           
           echo "Merge Upstream/main..."
-          # Wir nutzen --allow-unrelated-histories falls nötig, meistens aber nicht
           git merge upstream/main --no-edit
           
           echo "Push zu Origin..."
+          # FIX 3: Rebase vor Push löst "non-fast-forward" Fehler durch parallele Runner
+          git pull --rebase origin main
           git push origin main
