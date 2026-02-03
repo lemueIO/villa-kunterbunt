@@ -193,17 +193,17 @@
         <div class="diagram-container">
             <div class="mermaid">
                 graph TD
-                A[Start: Dokument fertig] --> B[Datei umbenennen: 'NEW_' davor schreiben]
-                B --> C[Hochladen in Ordner: /assets/reports/]
-                C --> D[Änderungs-Vorschlag machen (Pull Request)]
-                D --> E{Prüfung durch Chef}
+                A["Start: Dokument fertig"] --> B["Datei umbenennen: 'NEW_' davor schreiben"]
+                B --> C["Hochladen in Ordner: /assets/reports/"]
+                C --> D["Änderungs-Vorschlag machen (Pull Request)"]
+                D --> E{"Prüfung durch Chef"}
 
-                E -- Fehler gefunden --> F[Rückmeldung an Firma]
+                E -- "Fehler gefunden" --> F["Rückmeldung an Firma"]
                 F --> B
 
-                E -- Alles okay --> G['NEW_' wird entfernt]
-                G --> H[Dokument ist veröffentlicht]
-                H --> I[Ende]
+                E -- "Alles okay" --> G["'NEW_' wird entfernt"]
+                G --> H["Dokument ist veröffentlicht"]
+                H --> I["Ende"]
             </div>
         </div>
 
