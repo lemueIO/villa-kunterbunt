@@ -18,7 +18,6 @@ jobs:
     runs-on: [self-hosted, vps-debian]
     if: github.repository != 'derlemue/villa-kunterbunt'
     
-    # KORREKTUR: 'steps' muss hier eingerückt sein (Teil von 'sync')
     steps:
       - name: Clean Workspace
         run: |
@@ -50,8 +49,6 @@ jobs:
           # Damit wird die History sauber, aber Ihre Config ist kurzzeitig weg.
           git checkout main
           git reset --hard upstream/main
-          
-
           
           echo "Force Push zu Origin..."
           # Force Push ist notwendig, da wir die History neu geschrieben haben
