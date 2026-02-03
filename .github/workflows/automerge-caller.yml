@@ -1,0 +1,12 @@
+name: Automerge Caller
+
+on:
+  pull_request_review:
+    types: [submitted]
+  check_run:
+    types: [completed]
+
+jobs:
+  call-automerge:
+    uses: lemueIO/.github/workflows/automerge.yml@main
+    secrets: inherit
