@@ -154,7 +154,7 @@ Download here the complete correspondence and experience how one combats windmil
 
 ## 🔗 Source Links
 
-<sup>¹</sup> *Currently available in German only. English translations are planned for future releases.*
+<sup><a href="#-source-links"><b>¹</b></a></sup> *Currently available in German only. English translations are planned for future releases.*
 
 ---
 <div align="center">
