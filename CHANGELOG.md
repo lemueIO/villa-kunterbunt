@@ -19,10 +19,10 @@
 
 | Zuständigkeit | Aufgabe | Status / Ziel |
 | :--- | :--- | :--- |
-| **@derlemue** | **Stakeholder Management:** SPOC (Single Point of Contact) für E.ON / Bayernwerk. Koordination und Prüfung eingereichter Prozess-Dokumente. | *~ ongoing* |
-| **@Ph0x** | **SEO-Strategie:** Laufende Optimierung der Inhalte für maximale Auffindbarkeit in Suchmaschinen. | *~ ongoing* |
-| **@Cipher** | **Accessibility & Translation:** Erstellung der `README_DE2.md` (Leichte Sprache) und `README_EN.md` (1:1 Übersetzung). | *~ 03/2026* |
-| **@m3l** | **Education Edition:** Kommentierte Fassung des eBooks mit Erläuterungen für fachfremde Leser ohne elektrotechnische Vorkenntnisse. | *~ Q2/2026* |
+| **@derlemue** | **Stakeholder Management:** SPOC (Single Point of Contact) für E.ON / Bayernwerk. Koordination und Prüfung eingereichter Prozess-Dokumente. | *ongoing* |
+| **@Ph0x** | **SEO-Strategie:** Laufende Optimierung der Inhalte für maximale Auffindbarkeit in Suchmaschinen. | *ongoing* |
+| **@Cipher** | **Accessibility & Translation:** Erstellung der `README_DE2.md` (Leichte Sprache) und `README_EN.md` (1:1 Übersetzung). | *03/2026* |
+| **@m3l** | **Education Edition:** Kommentierte Fassung des eBooks mit Erläuterungen für fachfremde Leser ohne elektrotechnische Vorkenntnisse. | *Q2/2026* |
 
 <br>
 
