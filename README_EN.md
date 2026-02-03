@@ -158,5 +158,5 @@ Download here the complete correspondence and experience how one combats windmil
 
 ---
 <div align="center">
-<i>"Total short circuit in <b>customer service</b> — the <b>service customer</b> assumes network management."</i>
+<i>"Total short circuit in <b>customer service</b> - the <b>service customer</b> assumes network management."</i>
 </div>
