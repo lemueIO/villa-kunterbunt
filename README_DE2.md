@@ -31,11 +31,7 @@
 
 <div align="center">
 
-### 🌍 Sprache wählen / Choose Language
-
-[![Deutsch](https://img.shields.io/badge/🇩🇪_Deutsch-Standard-blue?style=for-the-badge)](README.md)
-[![Einfache Sprache](https://img.shields.io/badge/🇩🇪_Einfache_Sprache-Aktiv-green?style=for-the-badge)](README_DE2.md)
-[![English](https://img.shields.io/badge/🇬🇧_English-Available-red?style=for-the-badge)](README_EN.md)
+[🇩🇪 Deutsch](README.md) | **🇩🇪 Einfache Sprache** | [🇬🇧 English](README_EN.md)
 
 </div>
 
