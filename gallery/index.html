@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Villa Kunterbunt - Memes & Illustrationen Galerie</title>
-    <meta name="description" content="Visuelle Galerie der Memes und Illustrationen aus der Villa Kunterbunt - Das Korrespondenz Epos">
+    <meta name="description"
+        content="Visuelle Galerie der Memes und Illustrationen aus der Villa Kunterbunt - Das Korrespondenz Epos">
     <style>
         * {
             margin: 0;
@@ -63,7 +65,8 @@
             gap: 10px;
         }
 
-        button, select {
+        button,
+        select {
             padding: 10px 20px;
             font-size: 1rem;
             border: none;
@@ -297,6 +300,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <header>
@@ -325,7 +329,6 @@
                 </select>
             </div>
             <button id="fullscreenBtn">⛶ Vollbild</button>
-            <button id="downloadBtn" disabled>⬇ Download</button>
         </div>
 
         <div class="gallery" id="gallery"></div>
@@ -409,7 +412,6 @@
         const playPauseBtn = document.getElementById('playPauseBtn');
         const autoplaySpeed = document.getElementById('autoplaySpeed');
         const fullscreenBtn = document.getElementById('fullscreenBtn');
-        const downloadBtn = document.getElementById('downloadBtn');
         const downloadCurrentBtn = document.getElementById('downloadCurrentBtn');
         const lightboxFullscreenBtn = document.getElementById('lightboxFullscreenBtn');
         const closeBtn = document.getElementById('closeBtn');
@@ -436,13 +438,11 @@
             currentIndex = index;
             updateLightbox();
             lightbox.classList.add('active');
-            downloadBtn.disabled = false;
             document.body.style.overflow = 'hidden';
         }
 
         function closeLightbox() {
             lightbox.classList.remove('active');
-            downloadBtn.disabled = true;
             document.body.style.overflow = '';
             stopAutoplay();
         }
@@ -472,7 +472,7 @@
             playPauseBtn.textContent = '⏸ Pause';
             const speed = parseInt(autoplaySpeed.value);
             autoplayInterval = setInterval(nextImage, speed);
-            statusBar.textContent = `Autoplay aktiv • ${speed/1000} Sekunden`;
+            statusBar.textContent = `Autoplay aktiv • ${speed / 1000} Sekunden`;
         }
 
         function stopAutoplay() {
@@ -521,7 +521,6 @@
             }
         });
         fullscreenBtn.addEventListener('click', toggleFullscreen);
-        downloadBtn.addEventListener('click', downloadImage);
         downloadCurrentBtn.addEventListener('click', downloadImage);
         lightboxFullscreenBtn.addEventListener('click', toggleFullscreen);
         closeBtn.addEventListener('click', closeLightbox);
@@ -531,8 +530,8 @@
         // Keyboard controls
         document.addEventListener('keydown', (e) => {
             if (!lightbox.classList.contains('active')) return;
-            
-            switch(e.key) {
+
+            switch (e.key) {
                 case 'Escape':
                     closeLightbox();
                     break;
@@ -568,4 +567,5 @@
         initGallery();
     </script>
 </body>
+
 </html>
