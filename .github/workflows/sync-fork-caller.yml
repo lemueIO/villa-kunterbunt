@@ -1,0 +1,15 @@
+name: Sync Fork Caller
+
+on:
+  schedule:
+    - cron: '00 */2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+
+jobs:
+  call-sync-fork:
+    uses: lemueIO/.github/.github/workflows/sync-fork.yml@main
+    secrets: inherit

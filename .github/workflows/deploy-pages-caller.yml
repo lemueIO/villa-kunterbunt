@@ -1,0 +1,19 @@
+name: Deploy Pages Caller
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+
+
+jobs:
+  call-deploy-pages:
+    uses: lemueIO/.github/.github/workflows/deploy-pages.yml@main
+    secrets: inherit
