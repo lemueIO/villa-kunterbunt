@@ -20,7 +20,7 @@
 
 [![PDF Download](https://img.shields.io/badge/Download-PDF_Ebook-red?style=for-the-badge&logo=adobeacrobatreader)](assets/Die%20Villa%20Kunterbunt%20-%20Korrespondez%20Epos%20-%20derlemue.pdf)
 [![ePub Download](https://img.shields.io/badge/Download-ePub_Ebook-blue?style=for-the-badge&logo=adobeacrobatreader)](assets/Die%20Villa%20Kunterbunt%20-%20Korrespondez%20Epos%20-%20derlemue.epub)
-[![Podcast Player](https://img.shields.io/badge/Web_Player-DeepDive_Podcast-FF4B4B?style=for-the-badge&logo=rss&logoColor=white)](https://derlemue.github.io/villa-kunterbunt/podcast/deepdive.html)
+[![Podcast Player](https://img.shields.io/badge/Web_Player-Satire_Podcast-FF4B4B?style=for-the-badge&logo=rss&logoColor=white)](https://derlemue.github.io/villa-kunterbunt/podcast/satire.html)
 [![Status](https://img.shields.io/badge/Status-66%25_Operational-orange?style=for-the-badge)](#-warum-wie-kommt-es-zu-diesem-repository)
 [![Phase L3](https://img.shields.io/badge/Phase_L3-MISSING-critical?style=for-the-badge)](#-warum-wie-kommt-es-zu-diesem-repository)
 [![Request Submission](https://img.shields.io/badge/Request-Submission-success?style=for-the-badge&logo=github)](https://github.com/derlemue/villa-kunterbunt/issues/new?title=Submission%20Request)
