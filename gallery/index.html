@@ -316,11 +316,7 @@
             <div class="control-group">
                 <button id="playPauseBtn">▶ Autoplay</button>
                 <select id="autoplaySpeed">
-                    <option value="1000">1 Sekunde</option>
-                    <option value="2000">2 Sekunden</option>
-                    <option value="3000" selected>3 Sekunden</option>
-                    <option value="4000">4 Sekunden</option>
-                    <option value="5000">5 Sekunden</option>
+                    <option value="5000" selected>5 Sekunden</option>
                     <option value="6000">6 Sekunden</option>
                     <option value="7000">7 Sekunden</option>
                     <option value="8000">8 Sekunden</option>
@@ -449,7 +445,7 @@
 
         function updateLightbox() {
             const img = images[currentIndex];
-            lightboxImg.src = basePath + img.full;
+            lightboxImg.src = basePath + img.thumb;
             imageCounter.textContent = `${currentIndex + 1} / ${images.length}`;
         }
 
