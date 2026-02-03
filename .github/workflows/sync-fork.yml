@@ -43,17 +43,24 @@ jobs:
         run: |
           UPSTREAM_URL="https://github.com/derlemue/villa-kunterbunt.git"
           
-          echo "Füge Upstream hinzu: $UPSTREAM_URL"
-          # || true verhindert Fehler, falls Remote schon existiert
+          echo "Füge Upstream hinzu..."
           git remote add upstream "$UPSTREAM_URL" || git remote set-url upstream "$UPSTREAM_URL"
           
           echo "Fetch Upstream..."
           git fetch upstream
           
           echo "Merge Upstream/main..."
+          # Merge durchführen (dies überschreibt möglicherweise Ihre Config)
           git merge upstream/main --no-edit
           
+          echo "Restoring custom workflow configuration..."
+          # FIX: Erzwingt die Wiederherstellung IHRER Version der Datei aus dem Origin
+          # Dadurch werden Änderungen vom Upstream an dieser spezifischen Datei ignoriert
+          git checkout origin/main -- .github/workflows/sync-fork.yml
+          
+          # Commit der Wiederherstellung, damit der Workspace sauber (clean) für den Rebase ist
+          git commit -m "Keep custom sync-fork.yml configuration" || echo "No changes to restore"
+          
           echo "Push zu Origin..."
-          # FIX 3: Rebase vor Push löst "non-fast-forward" Fehler durch parallele Runner
           git pull --rebase origin main
           git push origin main
