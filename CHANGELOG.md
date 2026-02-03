@@ -31,9 +31,10 @@
 
 ## v.1.1.0-RC (Release Candidate)
 ### "Druckfertige Ausgabe - Die Rakete ist in der Luft"
-*3. Februar 2026*
+*2. Februar 2026*
 
-> **Status:** Versand an Hauptdarsteller ausgelöst. Private Spende. :P
+> **Status:** Versand an Hauptdarsteller seit 02.02. erfolgreich ausgelöst.
+> **Update 03.02.:** Finaler Feinschliff der Dokumentation (Day 1 Patch).
 
 #### 🚀 Features & Content
 *   **Podcast Integration:** Vollständige Web-Player für alle 5 Episoden ("Satire", "Analyse", "Dossier", "DeepDive", "Zupftest") implementiert.
@@ -59,6 +60,11 @@
 *   **Mobile Support:** Implementierung von High-Resolution Flaggen (Base64 SVG) für perfekte Darstellung auf allen mobilen Geräten (iOS/Android) ohne Rendering-Fehler.
 *   **Download Links:** Umstellung aller Dokumenten-Links auf absolute Pfade (GitHub Pages) zur Stabilisierung externer Referenzen.
 *   **Header Design:** Optimierung des Layouts: Versions-Badges oben rechts, zentraler Website-Button (vergrößert 40px, Label "Jetzt erleben") über dem Titel mit finalem Spacing.
+
+#### ✨ Final Polish (03.02.)
+*   **Fork Badges:** Responsives 2x2 Grid-Layout für die Fork-Badges implementiert (inkl. Status-Anzeige).
+*   **Screenshots:** Aktualisierung aller Screenshots in den Upload-Guides (Dateiauswahl, PR-Erstellung, Erfolg) für maximale Klarheit.
+*   **Guides:** Vollständige Bebilderung der Upload-Prozesse in allen 3 Sprachversionen (`DE`, `DE-Einfach`, `EN`).
 
 #### ⚙️ Infrastructure & Workflows
 *   **Workflow Fixes:** Vollständige Implementierung von `sync-fork`, `deploy-pages` und `automerge` mit korrekten Berechtigungen.
