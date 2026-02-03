@@ -49,6 +49,7 @@
     *   Rechte Buttons (nächste Episode): rechtsbündig
     *   Übersichts-Links (Anfang/Ende): zentriert mit Highlight-Styling, einheitlicher Text "Alle Episoden"
     *   Fix für mobile Ansicht: Fehlende CSS-Klassen in Episode 2 und 3 ergänzt
+*   **Sprachwahl-Design:** Umstellung der Sprachnavigation auf Badge-Buttons (Flagge + Name) im konsistenten Anthrazit/Orange-Theme.
 
 #### ⚙️ Infrastructure & Workflows
 *   **Workflow Fixes:** Vollständige Implementierung von `sync-fork`, `deploy-pages` und `automerge` mit korrekten Berechtigungen.
