@@ -4,7 +4,7 @@
 ### Die Chronik des Wahnsinns
 
 <p align="center">
-  <img src="assets/Die Villa Kunterbunt - Korrespondez Epos Cover Front.png" width="30%" alt="Cover Front" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);">
+  <img src="assets/Die Villa Kunterbunt - Korrespondez Epos Cover Front_HQ_thumb.png" width="30%" alt="Cover Front" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);">
 </p>
 
 [![Status](https://img.shields.io/badge/Status-Project_Active-success?style=for-the-badge)](#)
