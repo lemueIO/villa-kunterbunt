@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anleitung zum Hochladen - Villa Kunterbunt</title>
+    <meta name="description" content="Einfache Anleitung für Firmen: So reichen Sie Dokumente ein.">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            color: #764ba2;
+            font-size: 1.8rem;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        h3 {
+            color: #667eea;
+            font-size: 1.3rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: left;
+            /* Besser für Einfache Sprache */
+        }
+
+        .diagram-container {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .mermaid {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            display: inline-block;
+        }
+
+        .highlight-box {
+            background: rgba(102, 126, 234, 0.1);
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .highlight-box strong {
+            color: #667eea;
+        }
+
+        ol {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        ol li {
+            margin-bottom: 15px;
+            padding-left: 10px;
+        }
+
+        ul {
+            margin-left: 40px;
+            margin-bottom: 15px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #e83e8c;
+        }
+
+        .example {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 5px;
+        }
+
+        .status-new {
+            background: #fef3cd;
+            color: #856404;
+        }
+
+        .status-approved {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 12px 24px;
+            background: #764ba2;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            background: #5f3c82;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(118, 75, 162, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>📤 Anleitung zum Hochladen</h1>
+        <p class="subtitle">Wie Firmen Dokumente einreichen können. In Einfacher Sprache.</p>
+
+        <div class="highlight-box">
+            <strong>Wichtig:</strong> Hier erklären wir, wie Sie Dokumente (PDF oder Word) hochladen können.
+            Bitte halten Sie sich an die Regeln. Dann behalten wir den Überblick.
+        </div>
+
+        <h2>📊 So läuft das ab</h2>
+        <div class="diagram-container">
+            <div class="mermaid">
+                graph TD
+                A[Start: Dokument fertig] --> B[Datei umbenennen: 'NEW_' davor schreiben]
+                B --> C[Hochladen in Ordner: /assets/reports/]
+                C --> D[Änderungs-Vorschlag machen (Pull Request)]
+                D --> E{Prüfung durch Chef}
+
+                E -- Fehler gefunden --> F[Rückmeldung an Firma]
+                F --> B
+
+                E -- Alles okay --> G['NEW_' wird entfernt]
+                G --> H[Dokument ist veröffentlicht]
+                H --> I[Ende]
+            </div>
+        </div>
+
+        <h2>1️⃣ Datei vorbereiten</h2>
+        <p>Bevor Sie eine Datei hochladen: Ändern Sie den Namen.</p>
+        <p>Schreiben Sie <strong>NEW_</strong> vor den Namen.</p>
+        <p>Das heißt: Das ist neu. Wir müssen das prüfen.</p>
+
+        <div class="highlight-box">
+            <strong>So muss es aussehen:</strong> <code>NEW_Dateiname.Dateiendung</code>
+        </div>
+
+        <p><strong>Beispiele:</strong></p>
+        <div class="example">
+            NEW_Bericht_FirmaXY.pdf<br>
+            NEW_Erklaerung.docx
+        </div>
+
+        <h2>2️⃣ Der richtige Ordner</h2>
+        <p>Alle Dokumente müssen in diesen Ordner:</p>
+        <div class="highlight-box">
+            <code>assets/reports/</code>
+        </div>
+
+        <h2>3️⃣ Schritt für Schritt Anleitung</h2>
+        <ol>
+            <li>
+                <strong>Gehen Sie zum Ordner:</strong><br>
+                Klicken Sie auf GitHub in den Ordner <code>assets/reports/</code>.
+            </li>
+            <li>
+                <strong>Datei hochladen:</strong>
+                <ul>
+                    <li>Klicken Sie oben rechts auf <strong>"Add file"</strong> (Datei hinzufügen).</li>
+                    <li>Dann auf <strong>"Upload files"</strong> (Dateien hochladen).</li>
+                    <li>Ziehen Sie Ihre Datei mit dem <code>NEW_</code> Namen in das Feld.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Speichern (Commit):</strong>
+                <ul>
+                    <li>Schreiben Sie kurz, was das für eine Datei ist. (Bei "Commit changes").</li>
+                    <li>Wählen Sie unten: <strong>"Create a new branch..."</strong> (Neuen Zweig erstellen).</li>
+                    <li>Klicken Sie auf den grünen Knopf <strong>"Propose changes"</strong> (Änderungen vorschlagen).
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <strong>Vorschlag absenden (Pull Request):</strong><br>
+                Klicken Sie am Ende auf <strong>"Create pull request"</strong>.
+            </li>
+        </ol>
+
+        <h2>4️⃣ Was passiert dann?</h2>
+        <p>Wir prüfen Ihre Datei.</p>
+
+        <h3>Status "Neu"</h3>
+        <p><span class="status-badge status-new">📋 NEU</span> Die Datei heißt noch <code>NEW_...</code>. Wir haben sie
+            noch nicht geprüft.</p>
+
+        <h3>Status "Fertig"</h3>
+        <p><span class="status-badge status-approved">✅ FREIGEGEBEN</span> Wir haben die Datei geprüft. Alles ist gut.
+            Wir entfernen das <code>NEW_</code>. Jetzt können alle die Datei sehen.</p>
+
+        <div class="highlight-box" style="margin-top: 40px;">
+            <strong>💡 Hinweis:</strong> Wenn etwas falsch ist, sagen wir Ihnen Bescheid. Dann müssen Sie es ändern und
+            nochmal hochladen.
+        </div>
+
+        <div style="text-align: center;">
+            <a href="https://github.com/derlemue/villa-kunterbunt/blob/main/README_DE2.md" class="back-link">← Zurück
+                zur Start-Seite (Einfache Sprache)</a>
+        </div>
+    </div>
+
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis'
+            }
+        });
+    </script>
+</body>
+
+</html>
