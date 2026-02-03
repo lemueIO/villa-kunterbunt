@@ -149,6 +149,13 @@ Download here the complete correspondence and experience how one combats windmil
 <br>
 [**🗂️ Download Complete Dataset as ZIP**](https://github.com/derlemue/villa-kunterbunt/archive/refs/heads/main.zip)
 
+
+---
+
+## 🔗 Source Links
+
+<sup>[1]</sup> *Currently available in German only. English translations are planned for future releases.*
+
 ---
 <div align="center">
 <i>"Total short circuit in customer service—the service customer assumes network management."</i>
