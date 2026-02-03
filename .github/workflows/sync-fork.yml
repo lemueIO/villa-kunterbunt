@@ -51,15 +51,7 @@ jobs:
           git checkout main
           git reset --hard upstream/main
           
-          echo "Wiederherstellen der Custom-Workflow-Datei..."
-          # Wir holen uns die Datei explizit aus DEINEM Repository (origin) zurück
-          # Das stellt sicher, dass Ihre Fixes (Concurrency, Cleanup) erhalten bleiben
-          git checkout origin/main -- .github/workflows/sync-fork.yml
-          
-          echo "Commit der Custom-Config..."
-          # Falls sich die Datei unterscheidet, erstellen wir einen Commit
-          git add .github/workflows/sync-fork.yml
-          git commit -m "Keep custom sync-fork.yml configuration" || echo "Keine Änderungen nötig"
+
           
           echo "Force Push zu Origin..."
           # Force Push ist notwendig, da wir die History neu geschrieben haben
