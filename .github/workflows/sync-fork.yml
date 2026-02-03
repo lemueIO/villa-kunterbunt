@@ -20,8 +20,6 @@ jobs:
     
     # KORREKTUR: 'steps' muss hier eingerückt sein (Teil von 'sync')
     steps:
-      # FIX 2: Aggressiver Cleanup für Self-Hosted Runner
-      # Löscht alte Artefakte und .git Ordner, um "Lockfile"-Fehler zu verhindern
       - name: Clean Workspace
         run: |
           rm -rf ./*
@@ -32,35 +30,37 @@ jobs:
         with:
           ref: main
           fetch-depth: 0
-          clean: true # Erzwingt sauberen Checkout
+          clean: true
 
       - name: Configure Git
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
-      - name: Sync with Upstream
+      - name: Sync with Upstream and Restore Config
         run: |
           UPSTREAM_URL="https://github.com/derlemue/villa-kunterbunt.git"
           
-          echo "Füge Upstream hinzu..."
+          echo "Upstream Remote einrichten..."
           git remote add upstream "$UPSTREAM_URL" || git remote set-url upstream "$UPSTREAM_URL"
-          
-          echo "Fetch Upstream..."
           git fetch upstream
           
-          echo "Merge Upstream/main..."
-          # Merge durchführen (dies überschreibt möglicherweise Ihre Config)
-          git merge upstream/main --no-edit
+          echo "Reset auf Upstream (Hard Reset)..."
+          # Wir zwingen den lokalen Stand auf das Original. 
+          # Damit wird die History sauber, aber Ihre Config ist kurzzeitig weg.
+          git checkout main
+          git reset --hard upstream/main
           
-          echo "Restoring custom workflow configuration..."
-          # FIX: Erzwingt die Wiederherstellung IHRER Version der Datei aus dem Origin
-          # Dadurch werden Änderungen vom Upstream an dieser spezifischen Datei ignoriert
+          echo "Wiederherstellen der Custom-Workflow-Datei..."
+          # Wir holen uns die Datei explizit aus DEINEM Repository (origin) zurück
+          # Das stellt sicher, dass Ihre Fixes (Concurrency, Cleanup) erhalten bleiben
           git checkout origin/main -- .github/workflows/sync-fork.yml
           
-          # Commit der Wiederherstellung, damit der Workspace sauber (clean) für den Rebase ist
-          git commit -m "Keep custom sync-fork.yml configuration" || echo "No changes to restore"
+          echo "Commit der Custom-Config..."
+          # Falls sich die Datei unterscheidet, erstellen wir einen Commit
+          git add .github/workflows/sync-fork.yml
+          git commit -m "Keep custom sync-fork.yml configuration" || echo "Keine Änderungen nötig"
           
-          echo "Push zu Origin..."
-          git pull --rebase origin main
-          git push origin main
+          echo "Force Push zu Origin..."
+          # Force Push ist notwendig, da wir die History neu geschrieben haben
+          git push origin main --force
