@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Der DeepDive - Villa Kunterbunt</title>
+    <meta name="description"
+        content="Episode 4: Der DeepDive. In diesem Podcast-Teil analysieren die Sprecher das Phänomen des „Remote Voodoo“: den Konflikt zwischen perfekten digitalen Dashboards und einer fehlerhaften analogen Realität.">
+    <!-- Google Fonts for premium typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0f1115;
+            --text-main: #ffffff;
+            --text-muted: #a0a0a0;
+            --accent-gold: #d4af37;
+            /* Noble gold accent */
+            --glass-bg: rgba(20, 20, 20, 0.75);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-highlight: rgba(255, 255, 255, 0.03);
+            --shadow-soft: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+        }
+
+        /* Ambient Background */
+        .ambient-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('../assets/images/Die Villa Kunterbunt - Korrespondez Epos Cover Front_HQ_thumb.png');
+            background-size: cover;
+            background-position: center;
+            filter: blur(60px) brightness(0.25) saturate(1.2);
+            z-index: -1;
+            transform: scale(1.1);
+        }
+
+        .main-container {
+            width: 100%;
+            max-width: 800px;
+            padding: 40px 20px;
+            z-index: 1;
+            box-sizing: border-box;
+            flex-grow: 1;
+        }
+
+        /* Header Section */
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 0;
+            color: var(--text-main);
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--accent-gold);
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        /* Episode Card */
+        .episode-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: var(--shadow-soft);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 20px;
+            animation: fadeInUp 0.8s ease-out;
+            position: relative;
+        }
+
+        .episode-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--glass-highlight), transparent);
+        }
+
+        .cover-art {
+            width: 200px;
+            height: 200px;
+            border-radius: 12px;
+            object-fit: cover;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .cover-art:hover {
+            transform: scale(1.02);
+        }
+
+        .episode-tag {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--accent-gold);
+            font-weight: 600;
+        }
+
+        .episode-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            margin: 0;
+        }
+
+        .episode-description {
+            font-size: 1rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            max-width: 600px;
+        }
+
+        /* Player Controls */
+        .player-controls {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+            max-width: 500px;
+            margin-top: 20px;
+        }
+
+        .play-btn {
+            background: var(--text-main);
+            color: var(--bg-dark);
+            border: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            flex-shrink: 0;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+        }
+
+        .play-btn:hover {
+            background: var(--accent-gold);
+            transform: scale(1.1);
+        }
+
+        .progress-wrapper {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .progress-bar-bg {
+            width: 100%;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--accent-gold);
+            width: 0%;
+            border-radius: 3px;
+            position: relative;
+        }
+
+        .time-display {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            display: flex;
+            justify-content: space-between;
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* Navigation Links */
+        .nav-links {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        /* Specific positioning for prev/next */
+        .prev-episode {
+            margin-right: auto;
+            text-align: left;
+        }
+
+        .next-episode {
+            margin-left: auto;
+            text-align: right;
+        }
+
+        .nav-link {
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            border-radius: 30px;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+
+        .nav-link:hover {
+            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-1px);
+        }
+
+        .nav-link.highlight {
+            border-color: rgba(212, 175, 55, 0.3);
+            color: var(--accent-gold);
+        }
+
+        .nav-link.highlight:hover {
+            background: rgba(212, 175, 55, 0.1);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
+            color: #fff;
+        }
+
+        footer {
+            margin-top: auto;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            padding: 40px 0;
+        }
+
+        a {
+            color: var(--text-main);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* SEO Cloak */
+        .seo-cloud {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="ambient-bg"></div>
+
+    <div class="main-container">
+        <header>
+            <div class="subtitle">Die Villa Kunterbunt</div>
+            <h1>Der DeepDive</h1>
+        </header>
+
+        <article class="episode-card">
+            <img src="../assets/images/Die Villa Kunterbunt - Korrespondez Epos Cover Front_HQ_thumb.png"
+                alt="Cover Art" class="cover-art">
+
+            <div class="episode-tag">Episode 04</div>
+
+            <div class="episode-description">
+                In diesem Podcast-Teil analysieren die Sprecher das Phänomen des „Remote Voodoo“: den Konflikt zwischen
+                perfekten digitalen Dashboards und einer fehlerhaften analogen Realität. Es wird detailliert erläutert,
+                wie eine lockere Schraube an einer Zählerklemme eine Diagnose-Lücke verursachte, die der Kunde
+                schließlich durch den physikalischen „FI-Beweis“ aus seinem Wohnzimmer heraus entlarvte. Zudem
+                thematisiert die Folge die „Latenzlücke“ bei Zahlprozessen und die satirische Reaktion des Kunden in
+                Form von „Bureaucratic Jamming“.
+            </div>
+
+            <div class="player-controls">
+                <button class="play-btn" id="play-btn" aria-label="Play Episode">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8 5v14l11-7z" />
+                    </svg>
+                </button>
+                <div class="progress-wrapper">
+                    <div class="progress-bar-bg" id="progress-container">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                    <div class="time-display">
+                        <span id="current-time">0:00</span>
+                        <span id="duration">0:00</span>
+                    </div>
+                </div>
+            </div>
+            <audio id="audio-player" src="../assets/audio/Die Villa Kunterbunt – DeepDive.mp3"
+                preload="metadata"></audio>
+
+            <div class="nav-links">
+                <a href="satire.html" class="nav-link prev-episode highlight">
+                    <span>Vorherige Episode: Die Satire</span>
+                </a>
+                <a href="zupftest.html" class="nav-link next-episode highlight">
+                    <span>Nächste Episode: Der Zupftest</span>
+                </a>
+            </div>
+        </article>
+
+        <footer>
+            <a href="https://github.com/derlemue/villa-kunterbunt">Projekt auf GitHub</a>
+        </footer>
+    </div>
+
+    <!-- Hidden SEO Content -->
+    <div class="seo-cloud">
+        E.ON, Bayernwerk, Kundenservice, Erfahrung, Beschwerde, Störung, Stromausfall, Hotline, Erreichbarkeit, Problem,
+        Ärger, Bewertung, Kritik, E.ON Erfahrungen, Bayernwerk Erfahrungen, Netzbetreiber, Stromanbieter, Service,
+        Support, Hilfe, Abzocke, Betrug, Unfähig, Warteschleife, Keine Antwort, Ignoriert, Verbraucherschutz,
+        Bundesnetzagentur, Schlichtungsstelle, Anwalt, Klage, Schadenersatz, Verdienstausfall, Phasenausfall,
+        Nullleiter, Anschluss, Zählerwechsel, Zähler, Smart Meter, Techniker, Termin, Versäumt, Kosten, Rechnung,
+        Mahnung, Inkasso, Energieversorger, Strompreis, Gaspreis, Vertrag, Kündigung, Widerruf, Neuanschluss,
+        Bauherrenservice, Netzanschluss, Hausanschluss, Kabel, Leitung, Muffe, Verteiler, Trafo, Spannung, Volt, Ampere,
+        Watt, kWh, Verbrauch, Abschlag, Rückzahlung, Guthaben, Bonus, Prämie, Tarif, Wechsel, Vergleich, Check24,
+        Verivox, Trustpilot, Reclabox, Google Bewertung, Facebook, Twitter, Social Media, Shitstorm, Skandal, Presse,
+        Medien, Fernsehen, Radio, Zeitung, Bericht, Reportage, Doku, Dokumentation, Fall, Akte, Dossier, Analyse,
+        Podcast, Audio, MP3, Hören, Stream, Download, Kostenlos, Gratis, Online, Digital, Portal, Login, Mein E.ON,
+        Kundenportal, Registrierung, Passwort, Vergessen, Netzcenter, Kundencenter, Email, Telefonnummer, Adresse,
+        Vorstand, Beschwerdemanagement, Qualitätsmanagement, Feedback, Rezension, Stern, Warnung.
+    </div>
+
+    <script>
+        const playIcon = '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
+        const pauseIcon = '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>';
+
+        const audio = document.getElementById('audio-player');
+        const progressContainer = document.getElementById('progress-container');
+        const progressFill = document.getElementById('progress-fill');
+        const currentTimeEl = document.getElementById('current-time');
+        const durationEl = document.getElementById('duration');
+        const playBtn = document.getElementById('play-btn');
+
+        audio.addEventListener('timeupdate', () => {
+            const { duration, currentTime } = audio;
+            if (isNaN(duration)) return;
+            const progressPercent = (currentTime / duration) * 100;
+            progressFill.style.width = `${progressPercent}%`;
+            currentTimeEl.textContent = formatTime(currentTime);
+        });
+
+        progressContainer.addEventListener('click', (e) => {
+            const width = progressContainer.clientWidth;
+            const clickX = e.offsetX;
+            const duration = audio.duration;
+            audio.currentTime = (clickX / width) * duration;
+        });
+
+        audio.addEventListener('loadedmetadata', () => {
+            durationEl.textContent = formatTime(audio.duration);
+        });
+
+        audio.addEventListener('ended', () => {
+            playBtn.innerHTML = playIcon;
+            progressFill.style.width = '0%';
+            currentTimeEl.textContent = '0:00';
+        });
+
+        function formatTime(seconds) {
+            const min = Math.floor(seconds / 60);
+            const sec = Math.floor(seconds % 60);
+            return `${min}:${sec < 10 ? '0' : ''}${sec}`;
+        }
+
+        playBtn.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                playBtn.innerHTML = pauseIcon;
+            } else {
+                audio.pause();
+                playBtn.innerHTML = playIcon;
+            }
+        });
+    </script>
+</body>
+
+</html>
