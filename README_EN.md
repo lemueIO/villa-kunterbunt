@@ -147,3 +147,8 @@ Download here the complete correspondence and experience how one combats windmil
 [**🎧 Download Zupftest Podcast as MP3**](https://raw.githubusercontent.com/derlemue/villa-kunterbunt/refs/heads/main/assets/audio/Die%20Villa%20Kunterbunt%20–%20Zupftest.mp3?raw=true)
 <br>
 [**🗂️ Download Complete Dataset as ZIP**](https://github.com/derlemue/villa-kunterbunt/archive/refs/heads/main.zip)
+
+---
+<div align="center">
+<i>"Total short circuit in customer service—the service customer assumes network management."</i>
+</div>

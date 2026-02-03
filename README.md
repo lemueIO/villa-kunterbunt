@@ -148,3 +148,8 @@ Laden Sie hier die vollständige Korrespondenz herunter und erleben Sie, wie man
 [**🎧 Podcast-Zupftest als MP3 herunterladen**](https://raw.githubusercontent.com/derlemue/villa-kunterbunt/refs/heads/main/assets/audio/Die%20Villa%20Kunterbunt%20–%20Zupftest.mp3?raw=true)
 <br>
 [**🗂️ vollständigen Datensatz als ZIP herunterladen**](https://github.com/derlemue/villa-kunterbunt/archive/refs/heads/main.zip)
+
+---
+<div align="center">
+<i>"Totaler Kurzschluss im Kundenservice - der Servicekunde übernimmt die Netzführung."</i>
+</div>
