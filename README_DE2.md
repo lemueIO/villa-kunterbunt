@@ -31,7 +31,7 @@
 
 <div align="center">
 
-[🇩🇪 Deutsch](README.md) | **🇩🇪 Einfache Sprache** | [🇬🇧 English](README_EN.md)
+<small>[🇩🇪 Deutsch](README.md) | **🇩🇪 Einfache Sprache** | [🇬🇧 English](README_EN.md)</small>
 
 </div>
 
