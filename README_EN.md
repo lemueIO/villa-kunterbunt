@@ -88,7 +88,7 @@ There exists the possibility that documents which chronicle an **improvement of 
 > Statements, attempted explanations, and other mere symbols are expressly excluded from this and shall be rejected.
 
 [![Request Submission](https://img.shields.io/badge/Request-Submission-success?style=for-the-badge&logo=github)](https://github.com/derlemue/villa-kunterbunt/issues/new?title=Submission%20Request)
-[![Upload Guide](https://img.shields.io/badge/📤_Upload--Guide-Help-blue?style=for-the-badge)](upload-guide/index_en.html)
+[![Upload Guide](https://img.shields.io/badge/📤_Upload--Guide-Help-blue?style=for-the-badge)](https://derlemue.github.io/villa-kunterbunt/upload-guide/index_en.html)
 
 ---
 

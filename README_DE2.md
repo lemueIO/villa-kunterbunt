@@ -106,7 +106,7 @@ Wenn sie gut sind, werden sie hier veröffentlicht.
 > Es muss echte Verbesserung sein.
 
 [![Request Submission](https://img.shields.io/badge/Request-Submission-success?style=for-the-badge&logo=github)](https://github.com/derlemue/villa-kunterbunt/issues/new?title=Submission%20Request)
-[![Upload-Leitfaden](https://img.shields.io/badge/📤_Upload--Leitfaden-Hilfe-blue?style=for-the-badge)](upload-guide/index_de2.html)
+[![Upload-Leitfaden](https://img.shields.io/badge/📤_Upload--Leitfaden-Hilfe-blue?style=for-the-badge)](https://derlemue.github.io/villa-kunterbunt/upload-guide/index_de2.html)
 
 ---
 
