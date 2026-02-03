@@ -31,7 +31,7 @@
 
 <div align="center">
 
-<small>[🇩🇪 Deutsch](README.md) | **🇩🇪 Einfache Sprache** | [🇬🇧 English](README_EN.md)</small>
+[![Deutsch](https://img.shields.io/badge/🇩🇪-Deutsch-36454F?style=for-the-badge)](README.md) [![Einfache Sprache](https://img.shields.io/badge/🇩🇪-Einfache%20Sprache-orange?style=for-the-badge)](README_DE2.md) [![English](https://img.shields.io/badge/🇬🇧-English-36454F?style=for-the-badge)](README_EN.md)
 
 </div>
 
