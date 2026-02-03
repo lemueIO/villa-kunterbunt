@@ -152,5 +152,5 @@ Laden Sie hier die vollständige Korrespondenz herunter und erleben Sie, wie man
 
 ---
 <div align="center">
-<i>"Totaler Kurzschluss im Kundenservice - der Servicekunde übernimmt die Netzführung."</i>
+<i>"Totaler Kurzschluss im <b>Kundenservice</b> - der <b>Servicekunde</b> übernimmt die Netzführung."</i>
 </div>

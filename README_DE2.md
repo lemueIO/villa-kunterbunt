@@ -177,5 +177,5 @@ Hier können Sie alle Dokumente herunterladen.
 
 ---
 <div align="center">
-<i>"Wenn der Service nicht funktioniert, muss der Kunde die Arbeit selbst machen."</i>
+<i>"Wenn der <b>Service</b> nicht funktioniert, muss der <b>Kunde</b> die Arbeit selbst machen."</i>
 </div>

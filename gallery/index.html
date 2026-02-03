@@ -143,6 +143,21 @@
             font-size: 0.9rem;
         }
 
+        .gallery-item .checkbox {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .gallery-item.selected {
+            outline: 4px solid #667eea;
+            outline-offset: -4px;
+        }
+
         /* Lightbox/Modal */
         .lightbox {
             display: none;
@@ -325,6 +340,7 @@
                 </select>
             </div>
             <button id="fullscreenBtn">⛶ Vollbild</button>
+            <button id="downloadSelectedBtn" disabled>⬇ Ausgewählte laden (<span id="selectedCount">0</span>)</button>
         </div>
 
         <div class="gallery" id="gallery"></div>
@@ -399,6 +415,7 @@
         let isPlaying = false;
         let autoplayInterval = null;
         const basePath = '../assets/illustrations/';
+        const selectedImages = new Set();
 
         // DOM Elements
         const gallery = document.getElementById('gallery');
@@ -409,6 +426,8 @@
         const autoplaySpeed = document.getElementById('autoplaySpeed');
         const fullscreenBtn = document.getElementById('fullscreenBtn');
         const downloadCurrentBtn = document.getElementById('downloadCurrentBtn');
+        const downloadSelectedBtn = document.getElementById('downloadSelectedBtn');
+        const selectedCount = document.getElementById('selectedCount');
         const lightboxFullscreenBtn = document.getElementById('lightboxFullscreenBtn');
         const closeBtn = document.getElementById('closeBtn');
         const prevBtn = document.getElementById('prevBtn');
@@ -420,12 +439,58 @@
             images.forEach((img, index) => {
                 const item = document.createElement('div');
                 item.className = 'gallery-item';
+                item.dataset.index = index;
                 item.innerHTML = `
                     <img src="${basePath}${img.thumb}" alt="Illustration ${img.num}" loading="lazy">
                     <div class="number">${img.num}</div>
+                    <input type="checkbox" class="checkbox" data-index="${index}">
                 `;
-                item.addEventListener('click', () => openLightbox(index));
+
+                // Checkbox handler
+                const checkbox = item.querySelector('.checkbox');
+                checkbox.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    toggleSelection(index, item, checkbox);
+                });
+
+                // Image click handler
+                item.querySelector('img').addEventListener('click', () => openLightbox(index));
+
                 gallery.appendChild(item);
+            });
+        }
+
+        // Toggle selection
+        function toggleSelection(index, item, checkbox) {
+            if (checkbox.checked) {
+                selectedImages.add(index);
+                item.classList.add('selected');
+            } else {
+                selectedImages.delete(index);
+                item.classList.remove('selected');
+            }
+            updateSelectedCount();
+        }
+
+        // Update selected count
+        function updateSelectedCount() {
+            const count = selectedImages.size;
+            selectedCount.textContent = count;
+            downloadSelectedBtn.disabled = count === 0;
+        }
+
+        // Download selected images
+        function downloadSelected() {
+            if (selectedImages.size === 0) return;
+
+            selectedImages.forEach(index => {
+                const img = images[index];
+                const link = document.createElement('a');
+                link.href = basePath + img.full;
+                link.download = img.full;
+                link.click();
+                // Small delay between downloads
+                setTimeout(() => { }, 100);
             });
         }
 
@@ -518,6 +583,7 @@
         });
         fullscreenBtn.addEventListener('click', toggleFullscreen);
         downloadCurrentBtn.addEventListener('click', downloadImage);
+        downloadSelectedBtn.addEventListener('click', downloadSelected);
         lightboxFullscreenBtn.addEventListener('click', toggleFullscreen);
         closeBtn.addEventListener('click', closeLightbox);
         prevBtn.addEventListener('click', prevImage);
