@@ -1,7 +1,7 @@
 
 
 <div align="right">
-  <a href="CHANGELOG.md">
+  <a href="../CHANGELOG.md">
     <img src="https://img.shields.io/badge/VERSION-v.1.1.0--RC-orange?style=for-the-badge&logo=none&labelColor=36454F" alt="Version 1.0-rc"><br>
     <img src="https://img.shields.io/badge/TAG-066%2F100__170__e0nBw-FFB74D?style=flat&logo=none&labelColor=36454F" alt="Build Tag" height="16">
   </a>
@@ -28,7 +28,7 @@
 
 [![PDF Download](https://img.shields.io/badge/Download-PDF_Ebook-red?style=for-the-badge&logo=adobeacrobatreader)](https://derlemue.github.io/villa-kunterbunt/assets/Die%20Villa%20Kunterbunt%20-%20Korrespondez%20Epos%20-%20derlemue.pdf)
 [![ePub Download](https://img.shields.io/badge/Download-ePub_Ebook-blue?style=for-the-badge&logo=adobeacrobatreader)](https://derlemue.github.io/villa-kunterbunt/assets/Die%20Villa%20Kunterbunt%20-%20Korrespondez%20Epos%20-%20derlemue.epub)
-[![Podcast Player](https://img.shields.io/badge/Web_Player-Satire_Podcast-FF4B4B?style=for-the-badge&logo=rss&logoColor=white)](https://derlemue.github.io/villa-kunterbunt/../../main/podcast/satire.html)
+[![Podcast Player](https://img.shields.io/badge/Web_Player-Satire_Podcast-FF4B4B?style=for-the-badge&logo=rss&logoColor=white)](https://derlemue.github.io/villa-kunterbunt/core/main/podcast/satire.html)
 [![Status](https://img.shields.io/badge/Status-66%25_Operational-orange?style=for-the-badge)](#-why-how-did-this-repository-come-to-be)
 [![Phase L3](https://img.shields.io/badge/Phase_L3-MISSING-critical?style=for-the-badge)](#-why-how-did-this-repository-come-to-be)
 [![Request Submission](https://img.shields.io/badge/Request-Submission-success?style=for-the-badge&logo=github)](https://github.com/derlemue/villa-kunterbunt/issues/new?title=Submission%20Request)
@@ -82,7 +82,7 @@ This study examines the present repository "Villa Kunterbunt" as a digital artef
 
 The eBook itself becomes here the object of a meta-analysis: how does humour become a weapon against automated depersonalisation?
 
-[![System-Analytical Study and Evaluation Download](https://img.shields.io/badge/Download-System--Analytical_Study_and_Evaluation-blue?style=for-the-badge&logo=adobeacrobatreader)](https://derlemue.github.io/villa-kunterbunt/assets/Die%20Villa%20Kunterbunt%20-%20Systemanalytische%20Studie%20und%20Bewertung.pdf) <br> [![Podcast Player](https://img.shields.io/badge/Web_Player-Analysis_Podcast-FF4B4B?style=for-the-badge&logo=rss&logoColor=white)](https://derlemue.github.io/villa-kunterbunt/../../main/podcast/analyse.html) [![Podcast Player](https://img.shields.io/badge/Web_Player-Dossier_Podcast-FF4B4B?style=for-the-badge&logo=rss&logoColor=white)](https://derlemue.github.io/villa-kunterbunt/../../main/podcast/dossier.html)
+[![System-Analytical Study and Evaluation Download](https://img.shields.io/badge/Download-System--Analytical_Study_and_Evaluation-blue?style=for-the-badge&logo=adobeacrobatreader)](https://derlemue.github.io/villa-kunterbunt/assets/Die%20Villa%20Kunterbunt%20-%20Systemanalytische%20Studie%20und%20Bewertung.pdf) <br> [![Podcast Player](https://img.shields.io/badge/Web_Player-Analysis_Podcast-FF4B4B?style=for-the-badge&logo=rss&logoColor=white)](https://derlemue.github.io/villa-kunterbunt/core/main/podcast/analyse.html) [![Podcast Player](https://img.shields.io/badge/Web_Player-Dossier_Podcast-FF4B4B?style=for-the-badge&logo=rss&logoColor=white)](https://derlemue.github.io/villa-kunterbunt/core/main/podcast/dossier.html)
 
 > Note: Please be aware that some documents in this section are currently available in the original German version only.
 
@@ -97,7 +97,7 @@ There exists the possibility that documents which chronicle an **improvement of 
 > Statements, attempted explanations, and other mere symbols are expressly excluded from this and shall be rejected.
 
 [![Request Submission](https://img.shields.io/badge/Request-Submission-success?style=for-the-badge&logo=github)](https://github.com/derlemue/villa-kunterbunt/issues/new?title=Submission%20Request)
-[![Upload Guide](https://img.shields.io/badge/📤_Upload--Guide-Help-blue?style=for-the-badge)](https://derlemue.github.io/villa-kunterbunt/../../main/docs/upload-guide/index_en.html)
+[![Upload Guide](https://img.shields.io/badge/📤_Upload--Guide-Help-blue?style=for-the-badge)](https://derlemue.github.io/villa-kunterbunt/core/main/docs/upload-guide/index_en.html)
 
 ---
 
@@ -136,7 +136,7 @@ A visual journey through the madness. Here you shall find all memes and illustra
 
 <br>
 
-[![Gallery](https://img.shields.io/badge/Gallery-Memes_%26_Illustrations-purple?style=for-the-badge&logo=github)](https://derlemue.github.io/villa-kunterbunt/gallery/index_en.html)
+[![Gallery](https://img.shields.io/badge/Gallery-Memes_%26_Illustrations-purple?style=for-the-badge&logo=github)](https://derlemue.github.io/villa-kunterbunt/core/main/gallery/index_en.html)
 
 ---
 
@@ -144,23 +144,23 @@ A visual journey through the madness. Here you shall find all memes and illustra
 
 Download here the complete correspondence and experience how one combats windmills with humour.
 
-[**📄 Download eBook as PDF**](https://raw.githubusercontent.com/derlemue/villa-kunterbunt/refs/heads/main/../../../assets/Die%20Villa%20Kunterbunt%20-%20Korrespondenz%20Epos%20-%20derlemue.pdf?raw=true)
+[**📄 Download eBook as PDF**](https://raw.githubusercontent.com/derlemue/villa-kunterbunt/main/assets/Die%20Villa%20Kunterbunt%20-%20Korrespondenz%20Epos%20-%20derlemue.pdf?raw=true)
 <br>
-[**📄 Download eBook as ePub**](https://raw.githubusercontent.com/derlemue/villa-kunterbunt/refs/heads/main/../../../assets/Die%20Villa%20Kunterbunt%20-%20Korrespondenz%20Epos%20-%20derlemue.epub?raw=true)
+[**📄 Download eBook as ePub**](https://raw.githubusercontent.com/derlemue/villa-kunterbunt/main/assets/Die%20Villa%20Kunterbunt%20-%20Korrespondenz%20Epos%20-%20derlemue.epub?raw=true)
 <br>
-[**📄 Download Cover Letter as PDF**](https://raw.githubusercontent.com/derlemue/villa-kunterbunt/refs/heads/main/../../../assets/E.ON-Report_%20Datenübergabe.pdf?raw=true)
+[**📄 Download Cover Letter as PDF**](https://raw.githubusercontent.com/derlemue/villa-kunterbunt/main/assets/E.ON-Report_%20Datenübergabe.pdf?raw=true)
 <br>
-[**📄 Download System-Analytical Study and Evaluation as PDF**](https://raw.githubusercontent.com/derlemue/villa-kunterbunt/refs/heads/main/../../../assets/Die%20Villa%20Kunterbunt%20-%20Systemanalytische%20Studie%20und%20Bewertung.pdf?raw=true)
+[**📄 Download System-Analytical Study and Evaluation as PDF**](https://raw.githubusercontent.com/derlemue/villa-kunterbunt/main/assets/Die%20Villa%20Kunterbunt%20-%20Systemanalytische%20Studie%20und%20Bewertung.pdf?raw=true)
 <br>
-[**🎧 Download Analysis Podcast as MP3**](https://raw.githubusercontent.com/derlemue/villa-kunterbunt/refs/heads/main/../../../assets/audio/Die%20Villa%20Kunterbunt%20-%20Analyse%20Podcast.mp3?raw=true)
+[**🎧 Download Analysis Podcast as MP3**](https://raw.githubusercontent.com/derlemue/villa-kunterbunt/main/assets/audio/Die%20Villa%20Kunterbunt%20-%20Analyse%20Podcast.mp3?raw=true)
 <br>
-[**🎧 Download Dossier Podcast as MP3**](https://raw.githubusercontent.com/derlemue/villa-kunterbunt/refs/heads/main/../../../assets/audio/Die%20Villa%20Kunterbunt%20-%20Dossier%20Podcast.mp3?raw=true)
+[**🎧 Download Dossier Podcast as MP3**](https://raw.githubusercontent.com/derlemue/villa-kunterbunt/main/assets/audio/Die%20Villa%20Kunterbunt%20-%20Dossier%20Podcast.mp3?raw=true)
 <br>
-[**🎧 Download Satire Podcast as MP3**](https://raw.githubusercontent.com/derlemue/villa-kunterbunt/refs/heads/main/../../../assets/audio/Die%20Villa%20Kunterbunt%20–%20Satire.mp3?raw=true)
+[**🎧 Download Satire Podcast as MP3**](https://raw.githubusercontent.com/derlemue/villa-kunterbunt/main/assets/audio/Die%20Villa%20Kunterbunt%20–%20Satire.mp3?raw=true)
 <br>
-[**🎧 Download DeepDive Podcast as MP3**](https://raw.githubusercontent.com/derlemue/villa-kunterbunt/refs/heads/main/../../../assets/audio/Die%20Villa%20Kunterbunt%20–%20DeepDive.mp3?raw=true)
+[**🎧 Download DeepDive Podcast as MP3**](https://raw.githubusercontent.com/derlemue/villa-kunterbunt/main/assets/audio/Die%20Villa%20Kunterbunt%20–%20DeepDive.mp3?raw=true)
 <br>
-[**🎧 Download Zupftest Podcast as MP3**](https://raw.githubusercontent.com/derlemue/villa-kunterbunt/refs/heads/main/../../../assets/audio/Die%20Villa%20Kunterbunt%20–%20Zupftest.mp3?raw=true)
+[**🎧 Download Zupftest Podcast as MP3**](https://raw.githubusercontent.com/derlemue/villa-kunterbunt/main/assets/audio/Die%20Villa%20Kunterbunt%20–%20Zupftest.mp3?raw=true)
 <br>
 [**🗂️ Download Complete Dataset as ZIP**](https://github.com/derlemue/villa-kunterbunt/archive/refs/heads/main.zip)
 
