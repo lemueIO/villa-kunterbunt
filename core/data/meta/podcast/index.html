@@ -300,8 +300,17 @@
         <div class="episode-list">
             <!-- Episode 1 -->
             <article class="episode-card fade-in-up delay-1">
-                <img src="../images/das_villa_kunterbunt_kompendium_podcast_thumb.png" alt="Cover Art"
-                    class="cover-art">
+                <div class="cover-flip-container" onclick="this.classList.toggle('flipped')">
+                    <div class="flipper">
+                        <div class="front">
+                            <img src="../images/das_villa_kunterbunt_kompendium_podcast_thumb.png" alt="Front Cover">
+                        </div>
+                        <div class="back">
+                            <img src="../images/das_villa_kunterbunt_kompendium_audiobook_cover_back.png"
+                                alt="Back Cover">
+                        </div>
+                    </div>
+                </div>
                 <div class="episode-content">
                     <div class="episode-tag">Meta Podcast</div>
                     <h2 class="episode-title">Korrespondenz System Analyse</h2>
