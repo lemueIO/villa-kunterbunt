@@ -260,6 +260,29 @@
             transform: translateY(-1px);
         }
 
+        .action-link {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 16px;
+            background: rgba(212, 175, 55, 0.15);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 20px;
+            color: var(--accent-gold);
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .action-link:hover {
+            background: rgba(212, 175, 55, 0.3);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+            transform: translateY(-1px);
+            color: #fff;
+        }
+
         .nav-link.highlight {
             border-color: rgba(212, 175, 55, 0.3);
             color: var(--accent-gold);
@@ -338,6 +361,10 @@
         <header>
             <div class="subtitle">Die Villa Kunterbunt</div>
             <h1>Die Studie</h1>
+            <div style="margin-top: 30px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                <a href="../../meta/podcast/index.html" class="action-link">🎙️ Zum Meta Podcast</a>
+                <a href="../../cowork/podcast/index.html" class="action-link">🎧 Zum Cowork Podcast</a>
+            </div>
         </header>
 
         <article class="episode-card">
@@ -380,7 +407,7 @@
                     <span>Nächste Episode: Das Epos</span>
                 </a>
             </div>
-            <div class="nav-links" style="border-top: none; margin-top: 20px; padding-top: 0;">
+            <div class="nav-links" style="border-top: none; margin-top: 20px; padding-top: 0; justify-content: center;">
                 <a href="index.html" class="nav-link centered-link highlight">
                     <span>Alle Episoden</span>
                 </a>

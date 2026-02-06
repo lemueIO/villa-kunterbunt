@@ -314,13 +314,27 @@
             }
         }
 
-        .fade-in-up {
-            animation: fadeInUp 0.8s ease-out forwards;
-            opacity: 0;
+        .action-link {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 16px;
+            background: rgba(212, 175, 55, 0.15);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 20px;
+            color: var(--accent-gold);
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.2s ease;
+            text-decoration: none;
         }
 
-        .delay-1 {
-            animation-delay: 0.2s;
+        .action-link:hover {
+            background: rgba(212, 175, 55, 0.3);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+            transform: translateY(-1px);
+            color: #fff;
         }
     </style>
 </head>
@@ -333,12 +347,8 @@
             <div class="subtitle">Villa Kunterbunt Anthologie</div>
 
             <div style="margin-top: 30px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-                <a href="../../main/podcast/index.html" class="action-link"
-                    style="border-color: var(--accent-gold); background: rgba(212, 175, 55, 0.1);">🏰 Zum Haupt
-                    Podcast</a>
-                <a href="../../meta/podcast/index.html" class="action-link"
-                    style="border-color: var(--accent-gold); background: rgba(212, 175, 55, 0.1);">🎙️ Zum Meta
-                    Podcast</a>
+                <a href="../../main/podcast/index.html" class="action-link">🏰 Zum Haupt Podcast</a>
+                <a href="../../meta/podcast/index.html" class="action-link">🎙️ Zum Meta Podcast</a>
             </div>
         </header>
 
