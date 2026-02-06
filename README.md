@@ -15,6 +15,8 @@
 >
 > 👉 **[JETZT EINTRETEN](https://derlemue.github.io/villa-kunterbunt/)**
 
+---
+
 Das Projekt wurde restrukturiert. Alle Inhalte befinden sich nun in der strukturierten Datenablage.
 
 👉 **[ZUM DATEN-VERZEICHNIS](core/)**
