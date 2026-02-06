@@ -24,7 +24,7 @@
     <header>
         <nav>
             <div class="logo">🎪 Villa Kunterbunt</div>
-            <div class="audio-wrapper">
+            <div class="audio-wrapper expanded">
                 <button id="toggle-player" class="btn-icon" aria-label="Toggle Player">🎵</button>
                 <div class="audio-controls" id="audio-controls">
                     <button id="toggle-audio" class="btn-icon" aria-label="Play/Pause">
@@ -213,7 +213,7 @@
             const iconSound = document.getElementById('icon-sound');
             const iconMute = document.getElementById('icon-mute');
 
-            audio.volume = 0.7;
+            audio.volume = 0.5;
 
             // Autoplay handling
             const playPromise = audio.play();
