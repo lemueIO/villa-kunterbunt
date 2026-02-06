@@ -1015,20 +1015,20 @@ header {
 /* Confetti Widget */
 .confetti-widget {
   position: fixed;
-  top: 200px;
-  right: 0;
+  top: 80px;
+  left: 0;
   z-index: 200;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 .confetti-btn {
   background: rgba(15, 23, 42, 0.8);
   backdrop-filter: blur(8px);
   border: 1px solid var(--card-border);
-  border-right: none;
-  border-radius: 12px 0 0 12px;
+  border-left: none;
+  border-radius: 0 12px 12px 0;
   padding: 10px 14px;
   width: 50px;
   height: 50px;
@@ -1038,29 +1038,29 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: -4px 4px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .confetti-btn:hover {
   background: rgba(30, 41, 59, 0.95);
-  transform: translateX(-2px);
+  transform: translateX(2px);
 }
 
 .confetti-btn.confetti-active {
   background: rgba(16, 185, 129, 0.2);
   border-color: rgba(16, 185, 129, 0.4);
-  box-shadow: -4px 4px 15px rgba(16, 185, 129, 0.3);
+  box-shadow: 4px 4px 15px rgba(16, 185, 129, 0.3);
 }
 
 .confetti-btn.confetti-inactive {
   background: rgba(239, 68, 68, 0.2);
   border-color: rgba(239, 68, 68, 0.4);
-  box-shadow: -4px 4px 15px rgba(239, 68, 68, 0.3);
+  box-shadow: 4px 4px 15px rgba(239, 68, 68, 0.3);
 }
 
 @media (max-width: 768px) {
   .confetti-widget {
-    top: 180px;
+    top: 80px;
   }
 
   .confetti-btn {

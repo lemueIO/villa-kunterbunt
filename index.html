@@ -50,11 +50,6 @@
                     🔇 Nein ich will nur schauen
                 </button>
             </div>
-            <div class="consent-footer">
-                <button id="consent-data" class="consent-btn consent-data">
-                    📉 Ich will nur die daten
-                </button>
-            </div>
         </div>
     </div>
 
@@ -273,7 +268,6 @@
             const consentMaybe = document.getElementById('consent-maybe');
             const consentProbablyNot = document.getElementById('consent-probably-not');
             const consentNo = document.getElementById('consent-no');
-            const consentData = document.getElementById('consent-data');
 
             // Check if user has already made a choice
             const audioConsent = sessionStorage.getItem('audioConsent');
@@ -323,10 +317,6 @@
                 updateMuteState(true);
             });
 
-            consentData.addEventListener('click', () => {
-                window.open('https://github.com/derlemue/villa-kunterbunt', '_blank');
-            });
-
             // Init State
             audio.volume = 0.2;
             // Initialize muted state and update UI
@@ -338,7 +328,7 @@
                 clearTimeout(autoCollapseTimeout);
                 autoCollapseTimeout = setTimeout(() => {
                     audioWidget.classList.remove('expanded');
-                }, 4000);
+                }, 3000);
             }
 
             // Start collapse timer on load
