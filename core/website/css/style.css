@@ -844,9 +844,9 @@ header {
   font-family: var(--font-main);
   font-size: 1rem;
   line-height: 1.6;
-  color: var(--accent);
-  background: rgba(245, 158, 11, 0.1);
-  border-left: 3px solid var(--accent);
+  color: #f472b6;
+  background: rgba(244, 114, 182, 0.1);
+  border-left: 3px solid #f472b6;
   padding: 1rem;
   margin-bottom: 1.5rem;
   text-align: left;

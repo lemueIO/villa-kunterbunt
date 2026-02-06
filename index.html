@@ -26,19 +26,22 @@
         <div class="audio-consent-modal">
             <h1 class="consent-headline">Willkommen in der Villa Kunterbunt</h1>
             <p class="consent-body">
-                Willkommen in der systemischen Kernschmelze. Sie betreten die teuerste Anstalt der Branche, in der
-                Wahnsinn chirurgisch präzise verwaltet wird. Dieses eBook ist Ihre Einweisungsurkunde in eine Welt, in
-                der das Chaos die Projektleitung übernommen hat.
+                Willkommen in der <strong>systemischen Kernschmelze</strong>. Sie betreten die <strong>teuerste Anstalt
+                    der Branche</strong>, in der
+                Wahnsinn <strong>chirurgisch präzise</strong> verwaltet wird. Dieses eBook ist Ihre
+                <strong>Einweisungsurkunde</strong> in eine Welt, in
+                der das <strong>Chaos die Projektleitung</strong> übernommen hat.
             </p>
             <p class="consent-warning">
-                <strong>🥳 Freundliche Empfehlung des Authors</strong><br>
-                Hören Sie auf die Stimmen: Um diesen Wahnsinn physisch zu fühlen, ist der vollimmersive Modus die
-                Sahnehaube. Vollbild an, Realität aus – lassen Sie die Villa ungefiltert wirken.
+                <strong>❤️ Freundliche Empfehlung des Authors</strong><br>
+                Hören Sie auf die Stimmen: Um diesen Wahnsinn <strong>physisch zu fühlen</strong>, ist der
+                <strong>vollimmersive Modus</strong> die
+                Sahnehaube. <strong>Vollbild an, Realität aus</strong> – lassen Sie die Villa ungefiltert wirken.
             </p>
 
             <div class="consent-buttons">
                 <button id="consent-yes" class="consent-btn consent-primary">
-                    🔊 Jaaa unbedingt
+                    🔊 Jaaa unbedingt <span id="countdown"></span>
                 </button>
                 <button id="consent-maybe" class="consent-btn consent-secondary">
                     🫣 Ich weiß nicht
@@ -279,6 +282,30 @@
                     audio.muted = false;
                     audio.play().catch(e => console.log('Autoplay prevented:', e));
                 }
+            } else {
+                // Start countdown timer
+                const countdownSpan = document.getElementById('countdown');
+                let timeLeft = 5;
+
+                const updateCountdown = () => {
+                    if (timeLeft > 0) {
+                        countdownSpan.textContent = `(${timeLeft})`;
+                        timeLeft--;
+                    } else {
+                        // Auto-click yes button
+                        consentYes.click();
+                    }
+                };
+
+                updateCountdown();
+                const countdownInterval = setInterval(updateCountdown, 1000);
+
+                // Clear countdown if user clicks any button
+                const clearCountdown = () => clearInterval(countdownInterval);
+                consentYes.addEventListener('click', clearCountdown, { once: true });
+                consentMaybe.addEventListener('click', clearCountdown, { once: true });
+                consentProbablyNot.addEventListener('click', clearCountdown, { once: true });
+                consentNo.addEventListener('click', clearCountdown, { once: true });
             }
 
             // Consent handlers
