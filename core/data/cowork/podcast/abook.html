@@ -467,6 +467,10 @@
             background: rgba(212, 175, 55, 0.1) !important;
         }
 
+        .info-text.visible {
+            display: block !important;
+        }
+
         .info-text {
             display: none;
             background: rgba(0, 0, 0, 0.3);
@@ -568,14 +572,23 @@
                  Wait, I swapped them in index.html to put audiobook_cover_back FIRST.
                  So here I will use audiobook_cover_back as the main image to match the user's preference for "start position".
             -->
-            <img src="../images/thumbs/die_villa_kunterbunt_anthologie_audiobook_cover_back_thumb.png" alt="Cover Art"
-                class="cover-art">
+            <div class="cover-container">
+                <div class="front">
+                    <img src="../images/thumbs/die_villa_kunterbunt_anthologie_audiobook_cover_front_thumb.png"
+                        alt="Front Cover">
+                </div>
+                <div class="back">
+                    <img src="../images/thumbs/die_villa_kunterbunt_anthologie_audiobook_cover_back_thumb.png"
+                        alt="Back Cover">
+                </div>
+            </div>
 
             <div class="episode-tag">Episode VI - Das Hörbuch (beta)</div>
 
             <div class="info-bar">
                 <button id="tts-btn" class="info-btn" onclick="toggleInfo()">TTS</button>
-                <button class="info-btn source-btn no-source" onclick="openSource('')">Quelle</button>
+                <button class="info-btn source-btn has-source"
+                    onclick="openSource('../documents/die_villa_kunterbunt_anthologie.pdf')">Quelle</button>
             </div>
 
             <div id="info-text" class="info-text">
