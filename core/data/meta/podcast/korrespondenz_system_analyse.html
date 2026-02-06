@@ -742,24 +742,65 @@
                     präziser Diskurs über die Belastbarkeit chaotischer Strukturen in einer regulatorisch geprägten
                     Welt.
                 </div>
-                <button id="toggle-description-btn" onclick="toggleDescription()"
-                    style="background:none; border:none; color:var(--accent-gold); cursor:pointer; font-size:0.9rem; margin-top:10px; padding:0; text-decoration:underline;">aufklappen</button>
+                <div class="toggle-container" style="text-align: center; margin-top: 15px;">
+                    <button id="toggle-description-btn" onclick="toggleDescription()" class="toggle-btn">
+                        <span id="toggle-text">Mehr anzeigen</span>
+                        <svg id="toggle-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M6 9l6 6 6-6" />
+                        </svg>
+                    </button>
+                </div>
             </div>
+
+            <style>
+                .toggle-btn {
+                    background: rgba(255, 255, 255, 0.05);
+                    border: 1px solid var(--glass-border);
+                    color: var(--text-muted);
+                    padding: 8px 16px;
+                    border-radius: 20px;
+                    cursor: pointer;
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 8px;
+                    font-size: 0.85rem;
+                    transition: all 0.3s ease;
+                }
+
+                .toggle-btn:hover {
+                    background: rgba(212, 175, 55, 0.1);
+                    color: var(--accent-gold);
+                    border-color: rgba(212, 175, 55, 0.3);
+                }
+
+                .toggle-btn svg {
+                    transition: transform 0.3s ease;
+                }
+
+                .toggle-btn.expanded svg {
+                    transform: rotate(180deg);
+                }
+            </style>
 
             <script>
                 function toggleDescription() {
                     const shortDesc = document.getElementById('description-short');
                     const fullDesc = document.getElementById('description-full');
                     const btn = document.getElementById('toggle-description-btn');
+                    const text = document.getElementById('toggle-text');
+                    const icon = document.getElementById('toggle-icon');
 
                     if (fullDesc.style.display === 'none') {
                         fullDesc.style.display = 'block';
                         shortDesc.style.display = 'none';
-                        btn.textContent = 'zuklappen';
+                        text.textContent = 'Weniger anzeigen';
+                        btn.classList.add('expanded');
                     } else {
                         fullDesc.style.display = 'none';
                         shortDesc.style.display = 'block';
-                        btn.textContent = 'aufklappen';
+                        text.textContent = 'Mehr anzeigen';
+                        btn.classList.remove('expanded');
                     }
                 }
             </script>
