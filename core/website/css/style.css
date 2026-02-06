@@ -1018,10 +1018,13 @@ header {
     position: fixed;
     top: 80px;
     left: 0;
+    right: auto;
     z-index: 200;
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    transform: none;
+    /* Reset any potential transforms */
   }
 
   .confetti-btn {
