@@ -73,7 +73,48 @@ Es besteht die Möglichkeit, dass Dokumente, die eine **Verbesserung von Prozess
 [![Request Submission](https://img.shields.io/badge/✨_Request_Submission-success?style=for-the-badge&logo=github)](https://github.com/derlemue/villa-kunterbunt/issues/new?title=Submission%20Request)
 [![Upload-Leitfaden](https://img.shields.io/badge/📤_Upload--Leitfaden-Hilfe-blue?style=for-the-badge)](https://derlemue.github.io/villa-kunterbunt/core/git/docs/upload-guide/)
 
+
 </div>
+
+<br>
+
+### 🤯 🗺️ Die Struktur des Wahnsinns
+
+Ein kleiner Wegweiser durch den digitalen Kaninchenbau.
+
+```ascii
+/
+├── .git/
+├── .github/
+├── assets/
+│   └── *.pdf
+├── core/
+│   ├── data/
+│   │   ├── cowork/
+│   │   │   └── *.html
+│   │   ├── main/
+│   │   │   └── *.html
+│   │   ├── meta/
+│   │   │   └── *.html
+│   ├── git/
+│   │   ├── docs/
+│   │   ├── images/
+│   │   ├── reports/
+│   │   ├── translations/
+│   │   └── CHANGELOG.md
+│   ├── scripts/
+│   │   └── *.sh
+│   ├── templates/
+│   │   └── *.html
+│   └── website/
+│       └── *.html
+├── scripts/
+│   └── *.sh
+├── .gitignore
+├── LICENSE
+├── README.md
+└── index.html
+```
 
 <br>
 
