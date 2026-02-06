@@ -147,8 +147,12 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="core/website/data/main/images/die_villa_kunterbunt_ebook_cover_front_hq_thumb.png"
-                    alt="Villa Kunterbunt Cover">
+                <img id="cover-image"
+                    src="core/website/data/main/images/die_villa_kunterbunt_ebook_cover_front_hq_thumb.png"
+                    alt="Villa Kunterbunt Cover" style="cursor: pointer;"
+                    data-front="core/website/data/main/images/die_villa_kunterbunt_ebook_cover_front_hq_thumb.png"
+                    data-back="core/website/data/main/images/die_villa_kunterbunt_ebook_cover_back_hq_thumb.png"
+                    data-showing="front">
             </div>
         </section>
 
@@ -528,6 +532,21 @@
             // Start confetti on load
             createConfetti();
             animateConfetti();
+
+            // Cover Image Toggle
+            const coverImage = document.getElementById('cover-image');
+            if (coverImage) {
+                coverImage.addEventListener('click', () => {
+                    const currentSide = coverImage.dataset.showing;
+                    if (currentSide === 'front') {
+                        coverImage.src = coverImage.dataset.back;
+                        coverImage.dataset.showing = 'back';
+                    } else {
+                        coverImage.src = coverImage.dataset.front;
+                        coverImage.dataset.showing = 'front';
+                    }
+                });
+            }
 
         });
     </script>
