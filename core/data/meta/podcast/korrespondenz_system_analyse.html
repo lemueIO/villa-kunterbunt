@@ -147,6 +147,51 @@
             transform: scale(1.02);
         }
 
+        /* Flip Card Styles */
+        .cover-flip-container {
+            width: 200px;
+            height: 200px;
+            perspective: 1000px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        .flipper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .cover-flip-container:hover .flipper,
+        .cover-flip-container.flipped .flipper {
+            transform: rotateY(180deg);
+        }
+
+        .front,
+        .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .front img,
+        .back img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .back {
+            transform: rotateY(180deg);
+        }
+
         .episode-tag {
             font-size: 0.8rem;
             text-transform: uppercase;
@@ -272,7 +317,10 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            margin-left: 10px;
+            margin-left: 0;
+            width: 100%;
+            justify-content: center;
+            margin-top: 10px;
         }
 
         .volume-slider {
@@ -623,8 +671,18 @@
         </header>
 
         <article class="episode-card">
-            <img src="../images/thumbs/das_villa_kunterbunt_kompendium_audiobook_cover_back_thumb.png" alt="Cover Art"
-                class="cover-art">
+            <div class="cover-flip-container" onclick="this.classList.toggle('flipped')">
+                <div class="flipper">
+                    <div class="front">
+                        <img src="../images/thumbs/das_villa_kunterbunt_kompendium_audiobook_cover_front_thumb.png"
+                            alt="Front Cover">
+                    </div>
+                    <div class="back">
+                        <img src="../images/thumbs/das_villa_kunterbunt_kompendium_audiobook_cover_back_thumb.png"
+                            alt="Back Cover">
+                    </div>
+                </div>
+            </div>
 
             <div class="episode-tag">Meta Podcast</div>
 
@@ -634,8 +692,15 @@
             </div>
 
             <div id="info-text" class="info-text">
-                Die Audioinhalte wurden mittels Text-to-Speech-Synthese (TTS) generiert. Als Datengrundlage dienen
-                strukturierte Markdown-Skripte.
+                Die Audioinhalte wurden mittels <strong>Text-to-Speech-Synthese (TTS)</strong> generiert. Als
+                Datengrundlage dienen
+                <strong>strukturierte Markdown-Skripte</strong>, die aus Studien, Berichten und technischer
+                Dokumentation extrahiert
+                wurden. Die Skripterstellung erfolgt intern oder durch Dritte, wobei sowohl <strong>rein manuelle
+                    Verfahren</strong> als auch <strong>hybride Prozesse</strong> unter Einsatz von
+                <strong>Deep-Research-Modellen</strong> zur Anwendung kommen. Sämtliche Quelldateien unterliegen einer
+                <strong>abschließenden manuellen
+                    Qualitätsprüfung</strong>.
             </div>
 
             <div class="episode-description">
@@ -677,8 +742,51 @@
                         oninput="setVolume(this.value)">
                 </div>
             </div>
-            <audio id="audio-player" src="../audio/villa_kunterbunt_korrespondenz_system_analyse.mp3"
-                preload="metadata"></audio>
+            const audio = document.getElementById('audio-player');
+
+            // Persistence
+            function getPersistenceKey(src) {
+            return 'vp_time_' + src.split('/').pop();
+            }
+
+            function setupPersistence(audio) {
+            const key = getPersistenceKey(audio.currentSrc || audio.src);
+            const savedTime = localStorage.getItem(key);
+            if (savedTime && !isNaN(savedTime)) {
+            audio.currentTime = parseFloat(savedTime);
+            }
+            audio.addEventListener('timeupdate', () => {
+            localStorage.setItem(key, audio.currentTime);
+            });
+            }
+
+            // MediaSession
+            function setupMediaSession(audio) {
+            if ('mediaSession' in navigator) {
+            audio.addEventListener('play', () => {
+            navigator.mediaSession.metadata = new MediaMetadata({
+            title: "Meta: Die Studie",
+            artist: "Villa Kunterbunt",
+            album: "Die Villa Kunterbunt",
+            artwork: [
+            { src: "../images/thumbs/die_villa_kunterbunt_audiobook_cover_front_thumb.png", sizes: '512x512', type:
+            'image/png' }
+            ]
+            });
+            navigator.mediaSession.setActionHandler('play', () => audio.play());
+            navigator.mediaSession.setActionHandler('pause', () => audio.pause());
+            navigator.mediaSession.setActionHandler('seekbackward', (details) => {
+            audio.currentTime = Math.max(audio.currentTime - (details.seekOffset || 10), 0);
+            });
+            navigator.mediaSession.setActionHandler('seekforward', (details) => {
+            audio.currentTime = Math.min(audio.currentTime + (details.seekOffset || 10), audio.duration);
+            });
+            });
+            }
+            }
+
+            setupPersistence(audio);
+            setupMediaSession(audio);
 
             <div class="nav-links"
                 style="border-top: none; margin-top: 20px; padding-top: 0; display: flex; justify-content: center;">

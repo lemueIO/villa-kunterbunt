@@ -197,6 +197,7 @@
         }
 
         /* Player Controls */
+        /* Player Controls */
         .player-controls {
             display: flex;
             align-items: center;
@@ -204,6 +205,8 @@
             width: 100%;
             max-width: 500px;
             margin-top: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         .play-btn {
@@ -232,6 +235,7 @@
             display: flex;
             flex-direction: column;
             gap: 8px;
+            width: 100%;
         }
 
         .progress-bar-bg {
@@ -257,6 +261,16 @@
             display: flex;
             justify-content: space-between;
             font-variant-numeric: tabular-nums;
+        }
+
+        .volume-control {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-left: 0;
+            width: 100%;
+            justify-content: center;
+            margin-top: 10px;
         }
 
         /* Navigation Links */
@@ -551,11 +565,15 @@
             </div>
 
             <div id="info-text" class="info-text">
-                Die Audioinhalte wurden mittels Text-to-Speech-Synthese (TTS) generiert. Als Datengrundlage dienen
-                strukturierte Markdown-Skripte, die aus Studien, Berichten und technischer Dokumentation extrahiert
-                wurden. Die Erstellung der Quelldateien erfolgte im hybriden Verfahren – manuell oder durch validiertes
-                Prompt-Engineering für Deep-Research-Modelle – und unterlag einer abschließenden manuellen
-                Qualitätsprüfung.
+                Die Audioinhalte wurden mittels <strong>Text-to-Speech-Synthese (TTS)</strong> generiert. Als
+                Datengrundlage dienen
+                <strong>strukturierte Markdown-Skripte</strong>, die aus Studien, Berichten und technischer
+                Dokumentation extrahiert
+                wurden. Die Skripterstellung erfolgt intern oder durch Dritte, wobei sowohl <strong>rein manuelle
+                    Verfahren</strong> als auch <strong>hybride Prozesse</strong> unter Einsatz von
+                <strong>Deep-Research-Modellen</strong> zur Anwendung kommen. Sämtliche Quelldateien unterliegen einer
+                <strong>abschließenden manuellen
+                    Qualitätsprüfung</strong>.
             </div>
 
             <div class="episode-description">
@@ -649,6 +667,49 @@
         const pauseIcon = '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>';
 
         const audio = document.getElementById('audio-player');
+
+        // Persistence
+        function getPersistenceKey(src) {
+            return 'vp_time_' + src.split('/').pop();
+        }
+
+        function setupPersistence(audio) {
+            const key = getPersistenceKey(audio.currentSrc || audio.src);
+            const savedTime = localStorage.getItem(key);
+            if (savedTime && !isNaN(savedTime)) {
+                audio.currentTime = parseFloat(savedTime);
+            }
+            audio.addEventListener('timeupdate', () => {
+                localStorage.setItem(key, audio.currentTime);
+            });
+        }
+
+        // MediaSession
+        function setupMediaSession(audio) {
+            if ('mediaSession' in navigator) {
+                audio.addEventListener('play', () => {
+                    navigator.mediaSession.metadata = new MediaMetadata({
+                        title: "Episode I: Die Satire",
+                        artist: "Villa Kunterbunt",
+                        album: "Die Villa Kunterbunt",
+                        artwork: [
+                            { src: "../images/thumbs/die_villa_kunterbunt_audiobook_cover_front_thumb.png", sizes: '512x512', type: 'image/png' }
+                        ]
+                    });
+                    navigator.mediaSession.setActionHandler('play', () => audio.play());
+                    navigator.mediaSession.setActionHandler('pause', () => audio.pause());
+                    navigator.mediaSession.setActionHandler('seekbackward', (details) => {
+                        audio.currentTime = Math.max(audio.currentTime - (details.seekOffset || 10), 0);
+                    });
+                    navigator.mediaSession.setActionHandler('seekforward', (details) => {
+                        audio.currentTime = Math.min(audio.currentTime + (details.seekOffset || 10), audio.duration);
+                    });
+                });
+            }
+        }
+
+        setupPersistence(audio);
+        setupMediaSession(audio);
         const progressContainer = document.getElementById('progress-container');
         const progressFill = document.getElementById('progress-fill');
         const currentTimeEl = document.getElementById('current-time');

@@ -219,8 +219,11 @@
             display: flex;
             align-items: center;
             gap: 20px;
+            width: 100%;
+            max-width: 500px;
             margin-top: auto;
             flex-wrap: wrap;
+            justify-content: center;
         }
 
         .play-btn {
@@ -248,6 +251,7 @@
             display: flex;
             flex-direction: column;
             gap: 5px;
+            width: 100%;
         }
 
         .progress-bar-bg {
@@ -291,6 +295,16 @@
             display: flex;
             justify-content: space-between;
             font-variant-numeric: tabular-nums;
+        }
+
+        .volume-control {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-left: 0;
+            width: 100%;
+            justify-content: center;
+            margin-top: 10px;
         }
 
         /* Responsive */
@@ -574,11 +588,15 @@
                     </div>
 
                     <div id="info-text-1" class="info-text">
-                        Die Audioinhalte wurden mittels Text-to-Speech-Synthese (TTS) generiert. Als Datengrundlage
-                        dienen strukturierte Markdown-Skripte, die aus Studien, Berichten und technischer Dokumentation
-                        extrahiert wurden. Die Erstellung der Quelldateien erfolgte im hybriden Verfahren – manuell oder
-                        durch validiertes Prompt-Engineering für Deep-Research-Modelle – und unterlag einer
-                        abschließenden manuellen Qualitätsprüfung.
+                        Die Audioinhalte wurden mittels <strong>Text-to-Speech-Synthese (TTS)</strong> generiert. Als
+                        Datengrundlage dienen
+                        <strong>strukturierte Markdown-Skripte</strong>, die aus Studien, Berichten und technischer
+                        Dokumentation extrahiert
+                        wurden. Die Skripterstellung erfolgt intern oder durch Dritte, wobei sowohl <strong>rein
+                            manuelle Verfahren</strong> als auch <strong>hybride Prozesse</strong> unter Einsatz von
+                        <strong>Deep-Research-Modellen</strong> zur Anwendung kommen. Sämtliche Quelldateien unterliegen
+                        einer <strong>abschließenden manuellen
+                            Qualitätsprüfung</strong>.
                     </div>
 
                     <div class="episode-description">
@@ -652,11 +670,15 @@
                     </div>
 
                     <div id="info-text-2" class="info-text">
-                        Die Audioinhalte wurden mittels Text-to-Speech-Synthese (TTS) generiert. Als Datengrundlage
-                        dienen strukturierte Markdown-Skripte, die aus Studien, Berichten und technischer Dokumentation
-                        extrahiert wurden. Die Erstellung der Quelldateien erfolgte im hybriden Verfahren – manuell oder
-                        durch validiertes Prompt-Engineering für Deep-Research-Modelle – und unterlag einer
-                        abschließenden manuellen Qualitätsprüfung.
+                        Die Audioinhalte wurden mittels <strong>Text-to-Speech-Synthese (TTS)</strong> generiert. Als
+                        Datengrundlage dienen
+                        <strong>strukturierte Markdown-Skripte</strong>, die aus Studien, Berichten und technischer
+                        Dokumentation extrahiert
+                        wurden. Die Skripterstellung erfolgt intern oder durch Dritte, wobei sowohl <strong>rein
+                            manuelle Verfahren</strong> als auch <strong>hybride Prozesse</strong> unter Einsatz von
+                        <strong>Deep-Research-Modellen</strong> zur Anwendung kommen. Sämtliche Quelldateien unterliegen
+                        einer <strong>abschließenden manuellen
+                            Qualitätsprüfung</strong>.
                     </div>
 
                     <div class="episode-description">
@@ -730,11 +752,15 @@
                     </div>
 
                     <div id="info-text-3" class="info-text">
-                        Die Audioinhalte wurden mittels Text-to-Speech-Synthese (TTS) generiert. Als Datengrundlage
-                        dienen strukturierte Markdown-Skripte, die aus Studien, Berichten und technischer Dokumentation
-                        extrahiert wurden. Die Erstellung der Quelldateien erfolgte im hybriden Verfahren – manuell oder
-                        durch validiertes Prompt-Engineering für Deep-Research-Modelle – und unterlag einer
-                        abschließenden manuellen Qualitätsprüfung.
+                        Die Audioinhalte wurden mittels <strong>Text-to-Speech-Synthese (TTS)</strong> generiert. Als
+                        Datengrundlage dienen
+                        <strong>strukturierte Markdown-Skripte</strong>, die aus Studien, Berichten und technischer
+                        Dokumentation extrahiert
+                        wurden. Die Skripterstellung erfolgt intern oder durch Dritte, wobei sowohl <strong>rein
+                            manuelle Verfahren</strong> als auch <strong>hybride Prozesse</strong> unter Einsatz von
+                        <strong>Deep-Research-Modellen</strong> zur Anwendung kommen. Sämtliche Quelldateien unterliegen
+                        einer <strong>abschließenden manuellen
+                            Qualitätsprüfung</strong>.
                     </div>
 
                     <div class="episode-description">
@@ -1210,6 +1236,102 @@
                 window.open(url, '_blank');
             }
         }
+
+        // Episode Data for MediaSession
+        const episodeData = {
+            1: { title: "Episode I: Die Satire", artist: "Villa Kunterbunt", artwork: "../images/thumbs/die_villa_kunterbunt_audiobook_cover_front_thumb.png" },
+            2: { title: "Episode II: Die Analyse", artist: "Villa Kunterbunt", artwork: "../images/thumbs/die_villa_kunterbunt_audiobook_cover_front_thumb.png" },
+            3: { title: "Episode III: Das Dossier", artist: "Villa Kunterbunt", artwork: "../images/thumbs/die_villa_kunterbunt_audiobook_cover_front_thumb.png" },
+            4: { title: "Episode IV: Der DeepDive", artist: "Villa Kunterbunt", artwork: "../images/thumbs/die_villa_kunterbunt_audiobook_cover_front_thumb.png" },
+            5: { title: "Episode V: Der Zupftest", artist: "Villa Kunterbunt", artwork: "../images/thumbs/die_villa_kunterbunt_audiobook_cover_front_thumb.png" },
+            6: { title: "Episode VI: Die Studie", artist: "Villa Kunterbunt", artwork: "../images/thumbs/die_villa_kunterbunt_audiobook_cover_front_thumb.png" },
+            7: { title: "Episode VII: Das Epos", artist: "Villa Kunterbunt", artwork: "../images/thumbs/die_villa_kunterbunt_audiobook_cover_front_thumb.png" }
+        };
+
+        function getPersistenceKey(src) {
+            return 'vp_time_' + src.split('/').pop();
+        }
+
+        function setupPersistence(audio) {
+            const key = getPersistenceKey(audio.currentSrc || audio.src);
+            const savedTime = localStorage.getItem(key);
+
+            if (savedTime) {
+                audio.currentTime = parseFloat(savedTime);
+            }
+
+            audio.addEventListener('timeupdate', () => {
+                localStorage.setItem(key, audio.currentTime);
+            });
+
+            // Optional: clear on end if desired, but user might want to replay so keeping it is safe, 
+            // or maybe reset strictly on 'ended'. User request implied holding "timestamp", so we keep it.
+        }
+
+        function setupMediaSession(audio, id) {
+            if ('mediaSession' in navigator && episodeData[id]) {
+                const data = episodeData[id];
+
+                audio.addEventListener('play', () => {
+                    navigator.mediaSession.metadata = new MediaMetadata({
+                        title: data.title,
+                        artist: data.artist,
+                        album: "Die Villa Kunterbunt",
+                        artwork: [
+                            { src: data.artwork, sizes: '512x512', type: 'image/png' }
+                        ]
+                    });
+
+                    navigator.mediaSession.setActionHandler('play', () => audio.play());
+                    navigator.mediaSession.setActionHandler('pause', () => audio.pause());
+                    navigator.mediaSession.setActionHandler('seekbackward', (details) => {
+                        audio.currentTime = Math.max(audio.currentTime - (details.seekOffset || 10), 0);
+                    });
+                    navigator.mediaSession.setActionHandler('seekforward', (details) => {
+                        audio.currentTime = Math.min(audio.currentTime + (details.seekOffset || 10), audio.duration);
+                    });
+                });
+            }
+        }
+
+        function initPlayer(id) {
+            const audio = document.getElementById(`audio-player-${id}`);
+            const progressContainer = document.getElementById(`progress-container-${id}`);
+            const progressFill = document.getElementById(`progress-fill-${id}`);
+            const currentTimeEl = document.getElementById(`current-time-${id}`);
+            const durationEl = document.getElementById(`duration-${id}`);
+            const playBtn = document.getElementById(`play-btn-${id}`);
+
+            setupPersistence(audio);
+            setupMediaSession(audio, id);
+
+            audio.addEventListener('timeupdate', () => {
+                const { duration, currentTime } = audio;
+                if (isNaN(duration)) return;
+                const progressPercent = (currentTime / duration) * 100;
+                progressFill.style.width = `${progressPercent}%`;
+                currentTimeEl.textContent = formatTime(currentTime);
+            });
+
+            progressContainer.addEventListener('click', (e) => {
+                const width = progressContainer.clientWidth;
+                const clickX = e.offsetX;
+                const duration = audio.duration;
+                audio.currentTime = (clickX / width) * duration;
+            });
+
+            audio.addEventListener('loadedmetadata', () => {
+                durationEl.textContent = formatTime(audio.duration);
+            });
+
+            audio.addEventListener('ended', () => {
+                playBtn.innerHTML = playIcon;
+                progressFill.style.width = '0%';
+                currentTimeEl.textContent = '0:00';
+            });
+        }
+
+        // ... (rest of functions like formatTime, togglePlay, etc. are outside initPlayer) ...
 
         // Initialize all players
         window.addEventListener('DOMContentLoaded', () => {

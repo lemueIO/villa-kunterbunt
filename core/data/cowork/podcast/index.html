@@ -552,11 +552,11 @@
                 <div class="cover-flip-container" onclick="this.classList.toggle('flipped')">
                     <div class="flipper">
                         <div class="front">
-                            <img src="../images/thumbs/die_villa_kunterbunt_anthologie_audiobook_cover_front_thumb.png"
+                            <img src="../images/thumbs/die_villa_kunterbunt_anthologie_audiobook_cover_back_thumb.png"
                                 alt="Front Cover">
                         </div>
                         <div class="back">
-                            <img src="../images/thumbs/die_villa_kunterbunt_anthologie_audiobook_cover_back_thumb.png"
+                            <img src="../images/thumbs/die_villa_kunterbunt_anthologie_audiobook_cover_front_thumb.png"
                                 alt="Back Cover">
                         </div>
                     </div>
@@ -571,8 +571,15 @@
                     </div>
 
                     <div id="info-text-1" class="info-text">
-                        Die Audioinhalte wurden mittels Text-to-Speech-Synthese (TTS) generiert. Als Datengrundlage
-                        dienen strukturierte Markdown-Skripte.
+                        Die Audioinhalte wurden mittels <strong>Text-to-Speech-Synthese (TTS)</strong> generiert. Als
+                        Datengrundlage dienen
+                        <strong>strukturierte Markdown-Skripte</strong>, die aus Studien, Berichten und technischer
+                        Dokumentation extrahiert
+                        wurden. Die Skripterstellung erfolgt intern oder durch Dritte, wobei sowohl <strong>rein
+                            manuelle Verfahren</strong> als auch <strong>hybride Prozesse</strong> unter Einsatz von
+                        <strong>Deep-Research-Modellen</strong> zur Anwendung kommen. Sämtliche Quelldateien unterliegen
+                        einer <strong>abschließenden manuellen
+                            Qualitätsprüfung</strong>.
                     </div>
 
                     <div class="episode-description">
@@ -633,6 +640,39 @@
         const playIcon = '<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
         const pauseIcon = '<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>';
 
+        // Persistence
+        function getPersistenceKey(src) {
+            return 'vp_time_' + src.split('/').pop();
+        }
+
+        function setupPersistence(audio) {
+            const key = getPersistenceKey(audio.currentSrc || audio.src);
+            const savedTime = localStorage.getItem(key);
+            if (savedTime && !isNaN(savedTime)) {
+                audio.currentTime = parseFloat(savedTime);
+            }
+            audio.addEventListener('timeupdate', () => {
+                localStorage.setItem(key, audio.currentTime);
+            });
+        }
+
+        // MediaSession
+        function setupMediaSession(audio, metadata) {
+            if ('mediaSession' in navigator) {
+                audio.addEventListener('play', () => {
+                    navigator.mediaSession.metadata = new MediaMetadata(metadata);
+                    navigator.mediaSession.setActionHandler('play', () => audio.play());
+                    navigator.mediaSession.setActionHandler('pause', () => audio.pause());
+                    navigator.mediaSession.setActionHandler('seekbackward', (details) => {
+                        audio.currentTime = Math.max(audio.currentTime - (details.seekOffset || 10), 0);
+                    });
+                    navigator.mediaSession.setActionHandler('seekforward', (details) => {
+                        audio.currentTime = Math.min(audio.currentTime + (details.seekOffset || 10), audio.duration);
+                    });
+                });
+            }
+        }
+
         function initPlayer(id) {
             const audio = document.getElementById(`audio-player-${id}`);
             const progressContainer = document.getElementById(`progress-container-${id}`);
@@ -640,6 +680,21 @@
             const currentTimeEl = document.getElementById(`current-time-${id}`);
             const durationEl = document.getElementById(`duration-${id}`);
             const playBtn = document.getElementById(`play-btn-${id}`);
+
+            // Setup Persistence
+            setupPersistence(audio);
+
+            // Setup MediaSession (Specific for Ep 1 currently)
+            if (id === 1) {
+                setupMediaSession(audio, {
+                    title: "Episode VI: Die Anthologie",
+                    artist: "Villa Kunterbunt",
+                    album: "Die Villa Kunterbunt",
+                    artwork: [
+                        { src: "../images/thumbs/die_villa_kunterbunt_audiobook_cover_front_thumb.png", sizes: '512x512', type: 'image/png' }
+                    ]
+                });
+            }
 
             audio.addEventListener('timeupdate', () => {
                 const { duration, currentTime } = audio;
