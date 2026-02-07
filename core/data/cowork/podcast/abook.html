@@ -539,7 +539,7 @@
             margin-bottom: 20px;
             border-left: 3px solid var(--accent-gold);
             animation: fadeIn 0.3s ease;
-            text-align: left;
+            text-align: left !important;
         }
 
         .info-text.visible {
@@ -933,9 +933,20 @@
             audio.volume = value;
         }
 
+        let ttsTimeout;
+
         function toggleInfo() {
             const infoText = document.getElementById('info-text');
-            infoText.classList.toggle('visible');
+
+            if (ttsTimeout) clearTimeout(ttsTimeout);
+
+            const isVisible = infoText.classList.toggle('visible');
+
+            if (isVisible) {
+                ttsTimeout = setTimeout(() => {
+                    infoText.classList.remove('visible');
+                }, 10000);
+            }
         }
 
         function openSource(url) {
@@ -956,26 +967,18 @@
         });
 
         function triggerTTSHint() {
-            const hintKey = 'tts_hint_shown';
+            const hintKey = 'cowork_abook_tts_hint_shown';
             if (localStorage.getItem(hintKey)) return;
 
             const ttsBtn = document.getElementById('tts-btn');
-            const infoText = document.getElementById('info-text');
-
-            if (!ttsBtn || !infoText) return;
 
             setTimeout(() => {
+                toggleInfo(); // Auto-open with 10s timer
+
                 ttsBtn.classList.add('pulse-gold');
                 setTimeout(() => {
-                    infoText.classList.add('visible');
-                    setTimeout(() => {
-                        infoText.classList.remove('visible');
-                        ttsBtn.classList.add('pulse-gold');
-                        setTimeout(() => {
-                            ttsBtn.classList.remove('pulse-gold');
-                        }, 3000);
-                    }, 4000);
-                }, 1000);
+                    ttsBtn.classList.remove('pulse-gold');
+                }, 3000);
             }, 500);
 
             localStorage.setItem(hintKey, 'true');

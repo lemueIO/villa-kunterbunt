@@ -532,7 +532,7 @@
             margin-bottom: 20px;
             border-left: 3px solid var(--accent-gold);
             animation: fadeIn 0.3s ease;
-            text-align: left;
+            text-align: left !important;
         }
 
         .info-text.visible {
@@ -703,22 +703,38 @@
         }
 
         // Onboarding / TTS Hint Logic
+        let ttsTimeout;
+
+        function toggleInfo() {
+            const infoText = document.getElementById('info-text');
+
+            if (ttsTimeout) clearTimeout(ttsTimeout);
+
+            const isVisible = infoText.classList.toggle('visible');
+
+            if (isVisible) {
+                ttsTimeout = setTimeout(() => {
+                    infoText.classList.remove('visible');
+                }, 10000);
+            }
+        }
+
+        // Onboarding / TTS Hint Logic
         function triggerTTSHint() {
             const hintKey = 'main_abook_tts_hint_shown';
             if (localStorage.getItem(hintKey)) return;
 
             const ttsBtn = document.getElementById('tts-btn');
-            const infoText = document.getElementById('info-text');
 
             setTimeout(() => {
-                infoText.classList.add('visible');
+                toggleInfo(); // Auto-open with 10s timer
+
+                // Visual cue (pulse) while open or after?
+                // Kept simple: just pulse the button to draw attention
+                ttsBtn.classList.add('pulse-gold');
                 setTimeout(() => {
-                    infoText.classList.remove('visible');
-                    ttsBtn.classList.add('pulse-gold');
-                    setTimeout(() => {
-                        ttsBtn.classList.remove('pulse-gold');
-                    }, 3000);
-                }, 4000);
+                    ttsBtn.classList.remove('pulse-gold');
+                }, 3000);
             }, 500);
 
             localStorage.setItem(hintKey, 'true');
@@ -761,10 +777,6 @@
             audio.volume = value;
         }
 
-        function toggleInfo() {
-            const infoText = document.getElementById('info-text');
-            infoText.classList.toggle('visible');
-        }
 
         function openSource(url) {
             if (url) {
