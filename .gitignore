@@ -1,6 +1,3 @@
-.ag/
+.agent/
 .inbox/
-Die Villa Kunterbunt - Korrespondez Epos - derlemue_backup.pdf
-.queue*.aup3
-
-*.aup3
+.queue/
