@@ -1,7 +1,9 @@
-name: Deploy GitHub Pages
+name: Fork Deploy Caller
 
 on:
-  workflow_call: # Ermöglicht den Aufruf durch den Caller
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
@@ -9,43 +11,9 @@ permissions:
   pages: write
   id-token: write
 
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
 jobs:
   deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: [self-hosted, vps-debian]
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Configure Git Safe Directory
-        run: |
-          # Notwendig für Docker-Umgebungen auf dem VPS
-          git config --global --add safe.directory "$GITHUB_WORKSPACE"
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          # Pfad-Fix: Root hochladen, damit /site/index.html funktioniert
-          path: '.' 
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-
-      # Hält den VPS-Speicher nach dem Deployment sauber
-      - name: Cleanup workspace
-        if: always()
-        run: |
-          echo "Cleaning up workspace on VPS..."
-          rm -rf "${{ github.workspace }}"/*
-          # Entfernt ungenutzte Docker-Daten
-          docker system prune -f --volumes || true
+    uses: lemueIO/.github/.github/workflows/central-pages-logic.yml@main
+    with:
+      publish_dir: '.' # Oder './site', falls die index.html dort liegt
+    secrets: inherit
