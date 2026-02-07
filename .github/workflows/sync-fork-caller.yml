@@ -13,3 +13,11 @@ jobs:
   call-sync-fork:
     uses: lemueIO/.github/.github/workflows/sync-fork.yml@main
     secrets: inherit
+    
+- name: Cleanup workspace
+        if: always() # Läuft auch, wenn der Job fehlschlägt
+        run: |
+          echo "Cleaning up workspace on VPS..."
+          rm -rf "${{ github.workspace }}"/*
+          # Löscht Docker-Leichen, falls vorhanden
+          docker system prune -f --volumes || true
