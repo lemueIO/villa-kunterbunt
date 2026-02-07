@@ -11,6 +11,8 @@ jobs:
   deploy:
     # Hier werden die Pages- und Token-Rechte weitergegeben
     permissions:
+      contents: write
+      pages: write
       id-token: write
     uses: lemueIO/.github/.github/workflows/central-pages-logic.yml@main
     with:
