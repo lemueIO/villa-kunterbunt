@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Korrespondenz System Analyse - Villa Kunterbunt Meta</title>
+    <title>Villa Kunterbunt | Das Kompendium</title>
+    <link rel="icon" type="image/png" href="../../../website/data/main/images/favicon.png">
 
     <!-- SEO / Social Media -->
     <meta property="og:title" content="Die Villa Kunterbunt | Die erweiterte Studienanalyse">
@@ -120,7 +121,7 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            gap: 20px;
+            gap: 15px;
             animation: fadeInUp 0.8s ease-out;
             position: relative;
             overflow: hidden;
@@ -729,196 +730,194 @@
     <div class="main-container">
         <header>
             <h1>Die Villa Kunterbunt</h1>
-            <div class="subtitle">Das Kompendium | Die erweiterte Studienanalyse</div>
-            <div style="margin-top: 30px; display: flex; gap: 15px; flex-wrap: wrap; justify-content: center;">
-                <a href="../../main/podcast/index.html" class="action-link">🏰 Das Epos</a>
-                <a href="../../cowork/podcast/index.html" class="action-link">🎧 Die Anthologie</a>
-            </div>
-        </header>
+            <<<<<<< HEAD <div class="subtitle">Das Kompendium | Die erweiterte Studienanalyse
+    </div>
+    =======
+    <div class="subtitle">Das Kompendium</div>
+    >>>>>>> 4a81382 (Refactor: Standardize podcast layout, branding, and playback settings)
+    <div style="margin-top: 30px; display: flex; gap: 15px; flex-wrap: wrap; justify-content: center;">
+        <a href="../../main/podcast/index.html" class="action-link">🏰 Das Epos</a>
+        <a href="../../cowork/podcast/index.html" class="action-link">🎧 Die Anthologie</a>
+    </div>
+    </header>
 
-        <article class="episode-card">
-            <div class="cover-flip-container" onclick="this.classList.toggle('flipped')">
-                <div class="flipper">
-                    <div class="front">
-                        <img src="../images/thumbs/das_villa_kunterbunt_kompendium_audiobook_cover_front_thumb.png"
-                            alt="Front Cover">
-                    </div>
-                    <div class="back">
-                        <img src="../images/thumbs/das_villa_kunterbunt_kompendium_audiobook_cover_back_thumb.png"
-                            alt="Back Cover">
-                    </div>
+    <article class="episode-card">
+        <div class="cover-flip-container" onclick="this.classList.toggle('flipped')">
+            <div class="flipper">
+                <div class="front">
+                    <img src="../images/thumbs/das_villa_kunterbunt_kompendium_audiobook_cover_front_thumb.png"
+                        alt="Front Cover">
+                </div>
+                <div class="back">
+                    <img src="../images/thumbs/das_villa_kunterbunt_kompendium_audiobook_cover_back_thumb.png"
+                        alt="Back Cover">
                 </div>
             </div>
+        </div>
 
-            <div class="episode-tag">E01: Die erweiterte Studienanalyse</div>
-            <h2 class="episode-title">Die erweiterte Studienanalyse</h2>
+        <div class="episode-tag">E01: Korrespondenz System Analyse</div>
+        <h2 class="episode-title">Korrespondenz System Analyse</h2>
 
-            <div class="info-bar">
-                <button id="tts-btn" class="info-btn" onclick="toggleInfo()">TTS</button>
-                <button class="info-btn source-btn has-source"
-                    onclick="openSource('../documents/das_villa_kunterbunt_kompendium.pdf')">Quelle</button>
+        <div class="info-bar">
+            <button id="tts-btn" class="info-btn" onclick="toggleInfo()">TTS</button>
+            <button class="info-btn source-btn has-source"
+                onclick="openSource('../documents/villa_kunterbunt_systemanalytische_studie_und_bewertung.pdf')">Quelle</button>
+        </div>
+
+        <div id="info-text" class="info-text">
+            Die Audioinhalte wurden mittels <strong>Text-to-Speech-Synthese (TTS)</strong> generiert. Als
+            Datengrundlage dienen
+            <strong>strukturierte Markdown-Skripte</strong>, die aus Studien, Berichten und technischer
+            Dokumentation extrahiert
+            wurden. Die Skripterstellung erfolgt intern oder durch Dritte, wobei sowohl <strong>rein manuelle
+                Verfahren</strong> als auch <strong>hybride Prozesse</strong> unter Einsatz von
+            <strong>Deep-Research-Modellen</strong> zur Anwendung kommen. Sämtliche Quelldateien unterliegen einer
+            <strong>abschließenden manuellen
+                Qualitätsprüfung</strong>.
+        </div>
+
+        <div class="episode-description">
+            <div id="description-short">
+                In dieser Episode erfolgt eine tiefgehende systemtheoretische Dekonstruktion der „Villa Kunterbunt“
+                als IT-Infrastruktur. Was literarisch als Ort der Freiheit gilt, wird hier unter der Leitung der
+                Moderatorin und eines Experten für Systemanalyse als hochkomplexes, aber instabiles
+                <strong>Legacy-System</strong> analysiert. Die Analyse konzentriert sich primär auf die
+                <strong>Korrespondenzsysteme</strong>...
             </div>
-
-            <div id="info-text" class="info-text">
-                Die Audioinhalte wurden mittels <strong>Text-to-Speech-Synthese (TTS)</strong> generiert. Als
-                Datengrundlage dienen
-                <strong>strukturierte Markdown-Skripte</strong>, die aus Studien, Berichten und technischer
-                Dokumentation extrahiert
-                wurden. Die Skripterstellung erfolgt intern oder durch Dritte, wobei sowohl <strong>rein manuelle
-                    Verfahren</strong> als auch <strong>hybride Prozesse</strong> unter Einsatz von
-                <strong>Deep-Research-Modellen</strong> zur Anwendung kommen. Sämtliche Quelldateien unterliegen einer
-                <strong>abschließenden manuellen
-                    Qualitätsprüfung</strong>.
+            <div id="description-full" style="display: none;">
+                In dieser Episode erfolgt eine tiefgehende systemtheoretische Dekonstruktion der „Villa Kunterbunt“
+                als IT-Infrastruktur. Was literarisch als Ort der Freiheit gilt, wird hier unter der Leitung der
+                Moderatorin und eines Experten für Systemanalyse als hochkomplexes, aber instabiles
+                <strong>Legacy-System</strong> analysiert. Die Analyse konzentriert sich primär auf die
+                <strong>Korrespondenzsysteme</strong> und die zugrunde liegende Architektur, wobei die Villa als
+                <strong>monolithisches Gefüge</strong> identifiziert wird, das durch eine extreme Anhäufung
+                technischer Schulden geprägt ist.
+                <br><br>
+                Die zentralen Argumente betreffen die <strong>mangelnde Governance</strong> und die
+                <strong>kritische Sicherheitsarchitektur</strong> des Standorts. Es wird erörtert, wie das Fehlen
+                einer effektiven Firewall den Zugriff durch externe Akteure wie staatliche Behörden begünstigt,
+                während der „Root-User“ Pippi Langstrumpf durch unbeschränkte Privilegien jegliche Standardisierung
+                verhindert. Die Diskussion beleuchtet zudem die asynchronen Kommunikationsprotokolle der
+                Protagonistin sowie die Einbindung heterogener Peripherieeinheiten in das instabile Systemgefüge.
+                <br><br>
+                Der technologische Kontext verknüpft klassische Systemanalyse mit modernen Begriffen der
+                <strong>IT-Security</strong> und des <strong>Prozessmanagements</strong>. Diese Folge bietet für
+                Professionals im Bereich Software-Architektur und Business-Analyse einen innovativen Blickwinkel auf
+                die Bewertung non-konformer Systeme und die Herausforderungen der <strong>Schatten-IT</strong>. Ein
+                präziser Diskurs über die Belastbarkeit chaotischer Strukturen in einer regulatorisch geprägten
+                Welt.
             </div>
-
-            <div class="episode-description">
-                <div id="description-short">
-                    In dieser Episode erfolgt eine tiefgehende systemtheoretische Dekonstruktion der „Villa Kunterbunt“
-                    als IT-Infrastruktur. Was literarisch als Ort der Freiheit gilt, wird hier unter der Leitung der
-                    Moderatorin und eines Experten für Systemanalyse als hochkomplexes, aber instabiles
-                    <strong>Legacy-System</strong> analysiert. Die Analyse konzentriert sich primär auf die
-                    <strong>Korrespondenzsysteme</strong>...
-                </div>
-                <div id="description-full" style="display: none;">
-                    In dieser Episode erfolgt eine tiefgehende systemtheoretische Dekonstruktion der „Villa Kunterbunt“
-                    als IT-Infrastruktur. Was literarisch als Ort der Freiheit gilt, wird hier unter der Leitung der
-                    Moderatorin und eines Experten für Systemanalyse als hochkomplexes, aber instabiles
-                    <strong>Legacy-System</strong> analysiert. Die Analyse konzentriert sich primär auf die
-                    <strong>Korrespondenzsysteme</strong> und die zugrunde liegende Architektur, wobei die Villa als
-                    <strong>monolithisches Gefüge</strong> identifiziert wird, das durch eine extreme Anhäufung
-                    technischer Schulden geprägt ist.
-                    <br><br>
-                    Die zentralen Argumente betreffen die <strong>mangelnde Governance</strong> und die
-                    <strong>kritische Sicherheitsarchitektur</strong> des Standorts. Es wird erörtert, wie das Fehlen
-                    einer effektiven Firewall den Zugriff durch externe Akteure wie staatliche Behörden begünstigt,
-                    während der „Root-User“ Pippi Langstrumpf durch unbeschränkte Privilegien jegliche Standardisierung
-                    verhindert. Die Diskussion beleuchtet zudem die asynchronen Kommunikationsprotokolle der
-                    Protagonistin sowie die Einbindung heterogener Peripherieeinheiten in das instabile Systemgefüge.
-                    <br><br>
-                    Der technologische Kontext verknüpft klassische Systemanalyse mit modernen Begriffen der
-                    <strong>IT-Security</strong> und des <strong>Prozessmanagements</strong>. Diese Folge bietet für
-                    Professionals im Bereich Software-Architektur und Business-Analyse einen innovativen Blickwinkel auf
-                    die Bewertung non-konformer Systeme und die Herausforderungen der <strong>Schatten-IT</strong>. Ein
-                    präziser Diskurs über die Belastbarkeit chaotischer Strukturen in einer regulatorisch geprägten
-                    Welt.
-                </div>
-                <div class="toggle-container" style="text-align: center; margin-top: 15px;">
-                    <button id="toggle-description-btn" onclick="toggleDescription()" class="toggle-btn">
-                        <span id="toggle-text">Mehr anzeigen</span>
-                        <svg id="toggle-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M6 9l6 6 6-6" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-
-            <style>
-                .toggle-btn {
-                    background: rgba(255, 255, 255, 0.05);
-                    border: 1px solid var(--glass-border);
-                    color: var(--text-muted);
-                    padding: 8px 16px;
-                    border-radius: 20px;
-                    cursor: pointer;
-                    display: inline-flex;
-                    align-items: center;
-                    gap: 8px;
-                    font-size: 0.85rem;
-                    transition: all 0.3s ease;
-                }
-
-                .toggle-btn:hover {
-                    background: rgba(212, 175, 55, 0.1);
-                    color: var(--accent-gold);
-                    border-color: rgba(212, 175, 55, 0.3);
-                }
-
-                .toggle-btn svg {
-                    transition: transform 0.3s ease;
-                }
-
-                .toggle-btn.expanded svg {
-                    transform: rotate(180deg);
-                }
-            </style>
-
-
-
-            <div class="player-controls">
-                <button class="control-btn" onclick="skip(-30)" title="-30s">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M11 18V6l-8.5 6 8.5 6zm.5-6l8.5 6V6l-8.5 6z" />
+            <div class="toggle-container" style="text-align: center; margin-top: 15px;">
+                <button id="toggle-description-btn" onclick="toggleDescription()" class="toggle-btn">
+                    <span id="toggle-text">Mehr anzeigen</span>
+                    <svg id="toggle-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 9l6 6 6-6" />
                     </svg>
                 </button>
-
-                <button class="play-btn" id="play-btn" aria-label="Play Episode">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M8 5v14l11-7z" />
-                    </svg>
-                </button>
-
-                <button class="control-btn" onclick="skip(30)" title="+30s">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M4 18l8.5-6L4 6v12zm9-12v12l8.5-6L13 6z" />
-                    </svg>
-                </button>
-
-                <div class="progress-wrapper">
-                    <div class="progress-bar-bg" id="progress-container">
-                        <div class="progress-fill" id="progress-fill"></div>
-                    </div>
-                    <div class="time-display">
-                        <span id="current-time">0:00</span>
-                        <span id="duration">0:00</span>
-                    </div>
-                </div>
-
-                <div class="volume-control">
-                    <input type="range" class="volume-slider" min="0" max="1" step="0.1" value="0.8"
-                        oninput="setVolume(this.value)">
-                </div>
             </div>
+        </div>
 
-            <audio id="audio-player" src="../audio/das_villa_kunterbunt_kompendium_die_erweiterte_studienanalyse.mp3"
-                preload="metadata"></audio>
+        <style>
+            .toggle-btn {
+                background: rgba(255, 255, 255, 0.05);
+                border: 1px solid var(--glass-border);
+                color: var(--text-muted);
+                padding: 8px 16px;
+                border-radius: 20px;
+                cursor: pointer;
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                font-size: 0.85rem;
+                transition: all 0.3s ease;
+            }
 
-            <div class="nav-links"
-                style="border-top: none; margin-top: 20px; padding-top: 0; display: flex; justify-content: center; flex-direction: column; gap: 15px;">
-                <div style="display: flex; justify-content: center; gap: 20px;">
-                    <button class="nav-link" disabled style="opacity: 0.5; cursor: not-allowed;">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M19 12H5M12 19l-7-7 7-7" />
-                        </svg>
-                        <span>Vorherige Episode</span>
-                    </button>
-                    <button class="nav-link" disabled style="opacity: 0.5; cursor: not-allowed;">
-                        <span>Nächste Episode</span>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M5 12h14M12 5l7 7-7 7" />
-                        </svg>
-                    </button>
-                </div>
-                <div style="display: flex; justify-content: center;">
-                    <a href="index.html" class="nav-link highlight">
-                        <span>Alle Episoden</span>
-                    </a>
-                </div>
-            </div>
-        </article>
+            .toggle-btn:hover {
+                background: rgba(212, 175, 55, 0.1);
+                color: var(--accent-gold);
+                border-color: rgba(212, 175, 55, 0.3);
+            }
 
-        <footer>
-            <a href="https://derlemue.github.io/villa-kunterbunt/" class="nav-link"
-                style="display:inline-flex; width:auto; border-bottom:none;">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                    <path
-                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+            .toggle-btn svg {
+                transition: transform 0.3s ease;
+            }
+
+            .toggle-btn.expanded svg {
+                transform: rotate(180deg);
+            }
+        </style>
+
+
+
+        <div class="player-controls">
+            <button class="control-btn" onclick="skip(-30)" title="-30s">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M11 18V6l-8.5 6 8.5 6zm.5-6l8.5 6V6l-8.5 6z" />
                 </svg>
-                <span>Zum Projekt auf GitHub</span>
-            </a>
-        </footer>
+            </button>
+
+            <button class="play-btn" id="play-btn" aria-label="Play Episode">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z" />
+                </svg>
+            </button>
+
+            <button class="control-btn" onclick="skip(30)" title="+30s">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M4 18l8.5-6L4 6v12zm9-12v12l8.5-6L13 6z" />
+                </svg>
+            </button>
+
+            <div class="progress-wrapper">
+                <div class="progress-bar-bg" id="progress-container">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <div class="time-display">
+                    <span id="current-time">0:00</span>
+                    <span id="duration">0:00</span>
+                </div>
+            </div>
+
+            <div class="volume-control">
+                <input type="range" class="volume-slider" min="0" max="1" step="0.1" value="0.8"
+                    oninput="setVolume(this.value)">
+            </div>
+        </div>
+
+        <audio id="audio-player" src="../audio/das_villa_kunterbunt_kompendium_die_erweiterte_studienanalyse.mp3"
+            preload="metadata"></audio>
+
+        <div class="nav-links"
+            style="border-top: none; margin-top: 20px; padding-top: 0; display: flex; justify-content: center; flex-direction: column; gap: 15px;">
+            <div style="display: flex; justify-content: center; gap: 20px;">
+                <button class="nav-link" disabled style="opacity: 0.5; cursor: not-allowed;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 12H5M12 19l-7-7 7-7" />
+                    </svg>
+                    <span>Vorherige Episode</span>
+                </button>
+                <a href="korrespondenz_epos.html" class="nav-link">
+                    <span>Nächste Episode</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </a>
+            </div>
+            <div style="display: flex; justify-content: center;">
+                <a href="index.html" class="nav-link highlight">
+                    <span>Alle Episoden</span>
+                </a>
+            </div>
+        </div>
+    </article>
+
+    <footer>
+        <p>&copy; 2026 Villa Kunterbunt Project. Alle Rechte vorbehalten.</p>
+        <p><a href="https://github.com/derlemue/villa-kunterbunt" target="_blank">Projekt auf GitHub</a></p>
+    </footer>
     </div>
 
     <script>
@@ -1004,9 +1003,15 @@
         function setupMediaSession(audio) {
             if ('mediaSession' in navigator) {
                 navigator.mediaSession.metadata = new MediaMetadata({
+<<<<<<< HEAD
                     title: "E01: Die erweiterte Studienanalyse",
                     artist: "Die Villa Kunterbunt",
                     album: "Das Villa Kunterbunt Kompendium",
+=======
+                    title: "E01: Korrespondenz System Analyse",
+                    artist: "Villa Kunterbunt",
+                    album: "Das Kompendium",
+>>>>>>> 4a81382 (Refactor: Standardize podcast layout, branding, and playback settings)
                     artwork: [
                         { src: new URL("../images/thumbs/das_villa_kunterbunt_kompendium_audiobook_cover_front_thumb.png", window.location.href).href, sizes: '512x512', type: 'image/png' }
                     ]

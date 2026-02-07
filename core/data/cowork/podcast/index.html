@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Villa Kunterbunt Cowork</title>
+    <title>Villa Kunterbunt | Die Anthologie & Apokryphen</title>
+    <link rel="icon" type="image/png" href="../../../website/data/main/images/favicon.png">
 
     <!-- SEO / Social Media -->
-    <meta property="og:title" content="Die Villa Kunterbunt - Die Anthologie">
+    <meta property="og:title" content="Die Villa Kunterbunt - Anthologie & Apokryphen">
     <meta property="og:description"
         content="Satire als letzte Instanz. Die Dokumentation des kommunikativen Schlagabtauschs.">
     <meta property="og:image"
@@ -216,6 +217,21 @@
             font-size: 1.8rem;
             margin: 0 0 10px;
             line-height: 1.2;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-radius: 4px;
+            background: var(--accent-gold);
+            color: var(--bg-dark);
+            vertical-align: middle;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            font-family: 'Inter', sans-serif;
         }
 
         .episode-description {
@@ -635,7 +651,7 @@
     <div class="main-container">
         <header>
             <h1>Die Villa Kunterbunt</h1>
-            <div class="subtitle">Die Villa Kunterbunt Anthologie | Das Hörbuch</div>
+            <div class="subtitle">Die Anthologie & Apokryphen</div>
 
 
             <div style="margin-top: 30px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
@@ -669,8 +685,8 @@
                     </div>
                 </div>
                 <div class="episode-content">
-                    <div class="episode-tag">Die Villa Kunterbunt Anthologie (Hörbuch)</div>
-                    <h2 class="episode-title">Das Hörbuch</h2>
+                    <div class="episode-tag">Die Anthologie & Apokryphen (Hörbuch)</div>
+                    <h2 class="episode-title">Das Hörbuch <span class="badge">BETA</span></h2>
 
                     <div class="info-bar">
                         <button id="tts-btn-1" class="info-btn" onclick="toggleInfo(1)">TTS</button>
@@ -802,9 +818,9 @@
                 const absoluteArtworkUrl = new URL(artworkPath, window.location.href).href;
 
                 setupMediaSession(audio, {
-                    title: "Die Villa Kunterbunt Anthologie | Das Hörbuch",
-                    artist: "Die Villa Kunterbunt",
-                    album: "Die Anthologie",
+                    title: "Das Hörbuch",
+                    artist: "Villa Kunterbunt",
+                    album: "Die Anthologie & Apokryphen",
                     artwork: [
                         { src: absoluteArtworkUrl, sizes: '512x512', type: 'image/png' }
                     ]

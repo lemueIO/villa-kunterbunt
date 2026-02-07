@@ -671,11 +671,13 @@ header {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  pointer-events: none;
   font-family: var(--font-main);
 }
 
 /* The Trigger (Waveform Button) */
 .audio-trigger {
+  pointer-events: auto;
   background: rgba(15, 23, 42, 0.8);
   backdrop-filter: blur(8px);
   border: 1px solid var(--card-border);
@@ -720,6 +722,7 @@ header {
 
 /* Controls Panel (Collapsible) */
 .audio-controls-panel {
+  pointer-events: auto;
   background: rgba(15, 23, 42, 0.95);
   backdrop-filter: blur(10px);
   border: 1px solid var(--card-border);
@@ -1099,6 +1102,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  pointer-events: none;
 }
 
 /* Confetti Canvas - Fix for layout issue */
@@ -1113,6 +1117,7 @@ header {
 }
 
 .confetti-btn {
+  pointer-events: auto;
   background: rgba(15, 23, 42, 0.8);
   backdrop-filter: blur(8px);
   border: 1px solid var(--card-border);

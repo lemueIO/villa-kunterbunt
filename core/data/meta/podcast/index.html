@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Villa Kunterbunt Meta</title>
+    <title>Villa Kunterbunt | Das Kompendium</title>
+    <link rel="icon" type="image/png" href="../../../website/data/main/images/favicon.png">
 
     <!-- SEO / Social Media -->
     <meta property="og:title" content="Die Villa Kunterbunt | Das Kompendium">
@@ -430,7 +431,10 @@
             gap: 15px;
             margin-bottom: 20px;
             flex-wrap: wrap;
-            justify-content: center;
+            <<<<<<< HEAD justify-content: center;
+            =======width: 100%;
+            justify-content: flex-start;
+            >>>>>>>4a81382 (Refactor: Standardize podcast layout, branding, and playback settings)
         }
 
         .info-btn {
@@ -710,13 +714,13 @@
                     </div>
                 </div>
                 <div class="episode-content">
-                    <div class="episode-tag">E01: Die erweiterte Studienanalyse</div>
-                    <h2 class="episode-title">Die erweiterte Studienanalyse</h2>
+                    <div class="episode-tag">E01: Korrespondenz System Analyse</div>
+                    <h2 class="episode-title">Korrespondenz System Analyse</h2>
 
                     <div class="info-bar">
                         <button id="tts-btn-1" class="info-btn" onclick="toggleInfo(1)">TTS</button>
                         <button class="info-btn source-btn has-source"
-                            onclick="openSource('../documents/das_villa_kunterbunt_kompendium.pdf')">Quelle</button>
+                            onclick="openSource('../documents/villa_kunterbunt_systemanalytische_studie_und_bewertung.pdf')">Quelle</button>
                     </div>
 
                     <div id="info-text-1" class="info-text">
@@ -777,17 +781,93 @@
                     </div>
                 </div>
             </article>
+            <!-- Episode 2 -->
+            <article class="episode-card fade-in-up delay-2">
+                <div class="cover-flip-container" onclick="this.classList.toggle('flipped')">
+                    <div class="flipper">
+                        <div class="front">
+                            <img src="../images/thumbs/das_villa_kunterbunt_kompendium_audiobook_cover_front_thumb.png"
+                                alt="Front Cover">
+                        </div>
+                        <div class="back">
+                            <img src="../images/thumbs/das_villa_kunterbunt_kompendium_audiobook_cover_back_thumb.png"
+                                alt="Back Cover">
+                        </div>
+                    </div>
+                </div>
+                <div class="episode-content">
+                    <div class="episode-tag">E02: Korrespondenz Epos</div>
+                    <h2 class="episode-title">Korrespondenz Epos</h2>
+
+                    <div class="info-bar">
+                        <button id="tts-btn-2" class="info-btn" onclick="toggleInfo(2)">TTS</button>
+                        <button class="info-btn source-btn has-source"
+                            onclick="openSource('../documents/das_villa_kunterbunt_kompendium.pdf')">Quelle</button>
+                    </div>
+
+                    <div id="info-text-2" class="info-text">
+                        Die Audioinhalte wurden mittels <strong>Text-to-Speech-Synthese (TTS)</strong> generiert. Als
+                        Datengrundlage dienen
+                        <strong>strukturierte Markdown-Skripte</strong>, die aus Studien, Berichten und technischer
+                        Dokumentation extrahiert
+                        wurden. Die Skripterstellung erfolgt intern oder durch Dritte, wobei sowohl <strong>rein
+                            manuelle Verfahren</strong> als auch <strong>hybride Prozesse</strong> unter Einsatz von
+                        <strong>Deep-Research-Modellen</strong> zur Anwendung kommen. Sämtliche Quelldateien unterliegen
+                        einer <strong>abschließenden manuellen
+                            Qualitätsprüfung</strong>.
+                    </div>
+
+                    <div class="episode-description">
+                        Eine metaanalytische Betrachtung des Manifests „Villa Kunterbunt“: Wie Satire und präzise
+                        Systemkritik als Notwehr gegen korporative Trägheit und automatisierte Service-Wüsten dienen.
+                    </div>
+                    <div class="player-controls">
+                        <button class="control-btn" onclick="skip(2, -30)" title="-30s">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M11 18V6l-8.5 6 8.5 6zm.5-6l8.5 6V6l-8.5 6z" />
+                            </svg>
+                        </button>
+
+                        <button class="play-btn" onclick="togglePlay(2)" id="play-btn-2" aria-label="Play Episode 2">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 5v14l11-7z" />
+                            </svg>
+                        </button>
+
+                        <button class="control-btn" onclick="skip(2, 30)" title="+30s">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M4 18l8.5-6L4 6v12zm9-12v12l8.5-6L13 6z" />
+                            </svg>
+                        </button>
+
+                        <div class="progress-wrapper">
+                            <div class="progress-bar-bg" id="progress-container-2">
+                                <div class="progress-fill" id="progress-fill-2"></div>
+                            </div>
+                            <div class="time-display">
+                                <span id="current-time-2">0:00</span>
+                                <span id="duration-2">0:00</span>
+                            </div>
+                        </div>
+
+                        <div class="volume-control">
+                            <input type="range" class="volume-slider" min="0" max="1" step="0.1" value="0.8"
+                                oninput="setVolume(2, this.value)">
+                        </div>
+                    </div>
+                    <audio id="audio-player-2"
+                        src="../audio/das_villa_kunterbunt_kompendium_die_erste_studienanalyse.mp3"
+                        preload="metadata"></audio>
+                    <div style="margin-top: 15px; text-align: right; width: 100%;">
+                        <a href="korrespondenz_epos.html" class="action-link">Zur Folge</a>
+                    </div>
+                </div>
+            </article>
         </div>
 
         <footer>
-            <a href="https://derlemue.github.io/villa-kunterbunt/"
-                style="display:inline-flex; align-items:center; gap:8px; color:var(--text-muted); text-decoration:none; padding:10px 20px; border:1px solid var(--glass-border); border-radius:30px; transition:all 0.2s ease; background:rgba(255,255,255,0.05);">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                    <path
-                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                </svg>
-                <span>Zum Projekt auf GitHub</span>
-            </a>
+            <p>&copy; 2026 Villa Kunterbunt Project. Alle Rechte vorbehalten.</p>
+            <p><a href="https://github.com/derlemue/villa-kunterbunt" target="_blank">Projekt auf GitHub</a></p>
         </footer>
     </div>
 
@@ -842,6 +922,7 @@
             // Setup Persistence
             setupPersistence(audio);
 
+<<<<<<< HEAD
             // Setup MediaSession (Specific for Ep 1 currently)
             if (id === 1) {
                 setupMediaSession(audio, {
@@ -853,6 +934,22 @@
                     ]
                 });
             }
+=======
+            // Setup MediaSession
+            const metadata = (id === 1) ? {
+                title: "E01: Korrespondenz System Analyse",
+                artist: "Villa Kunterbunt",
+                album: "Das Kompendium",
+                artwork: [{ src: new URL("../images/thumbs/das_villa_kunterbunt_kompendium_audiobook_cover_front_thumb.png", window.location.href).href, sizes: '512x512', type: 'image/png' }]
+            } : {
+                title: "E02: Korrespondenz Epos",
+                artist: "Villa Kunterbunt",
+                album: "Das Kompendium",
+                artwork: [{ src: new URL("../images/thumbs/das_villa_kunterbunt_kompendium_audiobook_cover_front_thumb.png", window.location.href).href, sizes: '512x512', type: 'image/png' }]
+            };
+
+            setupMediaSession(audio, metadata);
+>>>>>>> 4a81382 (Refactor: Standardize podcast layout, branding, and playback settings)
 
             audio.addEventListener('timeupdate', () => {
                 const { duration, currentTime } = audio;
@@ -947,7 +1044,11 @@
         }
 
         function triggerTTSHint(id) {
+<<<<<<< HEAD
             const hintKey = (id === 1) ? 'tts_hint_meta_e01' : `tts_hint_meta_e${id}`;
+=======
+            const hintKey = `tts_hint_meta_e${id < 10 ? '0' + id : id}`;
+>>>>>>> 4a81382 (Refactor: Standardize podcast layout, branding, and playback settings)
             if (localStorage.getItem(hintKey)) return;
 
             const ttsBtn = document.getElementById(`tts-btn-${id}`);
@@ -989,6 +1090,7 @@
 
         window.addEventListener('DOMContentLoaded', () => {
             initPlayer(1);
+            initPlayer(2);
 
 
             // Initialize autoplay listeners for all episodes

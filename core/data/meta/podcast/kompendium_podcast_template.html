@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Die Villa Kunterbunt - Das Audio Epos</title>
+    <title>Villa Kunterbunt | Das Kompendium</title>
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
     <meta name="description"
         content="Die Audio-Dokumentation zum Fall Villa Kunterbunt vs. E.ON & Bayernwerk. Erfahrungen, Hintergründe und die Analyse eines administrativen Versagens.">
     <!-- Google Fonts for premium typography -->
@@ -704,14 +705,14 @@
             initPlayer(5);
             initPlayer(6);
         });
-    
+
         function triggerTTSHint(id) {
             const hintKey = 'tts_hint_shown';
             if (localStorage.getItem(hintKey)) return;
 
             const ttsBtn = id ? document.getElementById(`tts-btn-${id}`) : document.getElementById('tts-btn');
             const infoText = id ? document.getElementById(`info-text-${id}`) : document.getElementById('info-text');
-            
+
             if (!ttsBtn || !infoText) return;
 
             setTimeout(() => {

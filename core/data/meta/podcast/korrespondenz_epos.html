@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Villa Kunterbunt | Das Kompendium</title>
+    <link rel="icon" type="image/png" href="../../../website/data/main/images/favicon.png">
+
+    <!-- SEO / Social Media -->
+    <meta property="og:title" content="Die Villa Kunterbunt | Korrespondenz Epos">
+    <meta property="og:description" content="Korrespondenz Epos - Das Kompendium Update.">
+    <meta property="og:image"
+        content="../images/thumbs/das_villa_kunterbunt_kompendium_audiobook_cover_front_thumb.png">
+    <link rel="apple-touch-icon"
+        href="../images/thumbs/das_villa_kunterbunt_kompendium_audiobook_cover_front_thumb.png">
+    <meta name="description"
+        content="Korrespondenz System Analyse. Der Meta-Podcast zur Villa Kunterbunt. Eine tiefergehende Systemanalyse der Korrespondenz.">
+    <!-- Google Fonts for premium typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0f1115;
+            --text-main: #ffffff;
+            --text-muted: #a0a0a0;
+            --accent-gold: #d4af37;
+            /* Noble gold accent */
+            --accent-gold-dim: #aa8c2c;
+            --glass-bg: rgba(20, 20, 20, 0.75);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-highlight: rgba(255, 255, 255, 0.03);
+            --shadow-soft: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+        }
+
+        /* Ambient Background */
+        .ambient-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('../../../website/data/main/images/wallpaper.png');
+            background-size: cover;
+            background-position: center;
+            filter: blur(60px) brightness(0.25) saturate(1.2);
+            z-index: -1;
+            transform: scale(1.1);
+        }
+
+        .main-container {
+            width: 100%;
+            max-width: 800px;
+            padding: 40px 20px;
+            z-index: 1;
+            box-sizing: border-box;
+            flex-grow: 1;
+        }
+
+        /* Header Section */
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 0;
+            background: linear-gradient(to right, #fff, #e0e0e0);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--accent-gold);
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        /* Episode List */
+        .episode-list {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        /* Episode Card */
+        .episode-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: var(--shadow-soft);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 15px;
+            animation: fadeInUp 0.8s ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .episode-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--glass-highlight), transparent);
+        }
+
+        .episode-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px -15px rgba(0, 0, 0, 0.6);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .cover-art {
+            width: 200px;
+            height: 200px;
+            border-radius: 12px;
+            object-fit: cover;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .cover-art:hover {
+            transform: scale(1.02);
+        }
+
+        /* Flip Card Styles */
+        .cover-flip-container {
+            width: 200px;
+            height: 200px;
+            perspective: 1000px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        .flipper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .cover-flip-container.flipped .flipper {
+            transform: rotateY(180deg);
+        }
+
+        .front,
+        .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .front img,
+        .back img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .back {
+            transform: rotateY(180deg);
+        }
+
+        .episode-tag {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--accent-gold);
+            font-weight: 600;
+        }
+
+        .episode-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .episode-description {
+            font-size: 1rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            max-width: 600px;
+        }
+
+        /* Player Controls */
+        .player-controls {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+            max-width: 500px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .play-btn {
+            background: var(--text-main);
+            color: var(--bg-dark);
+            border: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            flex-shrink: 0;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+        }
+
+        .play-btn:hover {
+            background: var(--accent-gold);
+            transform: scale(1.1);
+        }
+
+        .progress-wrapper {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            width: 100%;
+        }
+
+        .progress-bar-bg {
+            width: 100%;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--accent-gold);
+            width: 0%;
+            border-radius: 3px;
+            position: relative;
+        }
+
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            right: -4px;
+            top: -3px;
+            width: 10px;
+            height: 10px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .progress-bar-bg:hover .progress-fill::after {
+            opacity: 1;
+        }
+
+        .time-display {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            display: flex;
+            justify-content: space-between;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .control-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            padding: 5px;
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .control-btn:hover {
+            color: var(--text-main);
+        }
+
+        .volume-control {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-left: 0;
+            width: 100%;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .volume-slider {
+            -webkit-appearance: none;
+            width: 80px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            outline: none;
+        }
+
+        .volume-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 12px;
+            height: 12px;
+            background: var(--text-muted);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .volume-slider:hover::-webkit-slider-thumb {
+            background: var(--accent-gold);
+        }
+
+        /* Navigation Links */
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .nav-link {
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            border-radius: 30px;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+
+        .nav-link:hover {
+            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-1px);
+        }
+
+        .action-link {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 16px;
+            background: rgba(212, 175, 55, 0.15);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 20px;
+            color: var(--accent-gold);
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .action-link:hover {
+            background: rgba(212, 175, 55, 0.3);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+            transform: translateY(-1px);
+            color: #fff;
+        }
+
+        .nav-link.highlight {
+            border-color: rgba(212, 175, 55, 0.3);
+            color: var(--accent-gold);
+        }
+
+        .nav-link.highlight:hover {
+            background: rgba(212, 175, 55, 0.1);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
+            color: #fff;
+        }
+
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            padding-bottom: 40px;
+        }
+
+        a {
+            color: var(--text-main);
+            text-decoration: none;
+            transition: color 0.2s;
+            display: inline-block;
+        }
+
+        a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Info & Source Buttons */
+        .info-bar {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .info-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            color: var(--text-muted);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .info-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-main);
+        }
+
+        .info-btn.source-btn.no-source {
+            background: rgba(220, 53, 69, 0.1);
+            border-color: rgba(220, 53, 69, 0.3);
+            color: #ff4d4d;
+            cursor: default;
+        }
+
+        .info-btn.source-btn.has-source {
+            background: rgba(40, 167, 69, 0.15);
+            border-color: rgba(40, 167, 69, 0.3);
+            color: #28a745;
+        }
+
+        .info-btn.source-btn.has-source {
+            background: rgba(40, 167, 69, 0.1);
+            border-color: rgba(40, 167, 69, 0.3);
+            color: #2ecc71;
+        }
+
+        .info-btn.source-btn.has-source:hover {
+            background: rgba(40, 167, 69, 0.2);
+            border-color: rgba(40, 167, 69, 0.5);
+            color: #2ecc71;
+        }
+
+
+        @keyframes pulse-gold {
+            0% {
+                box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(212, 175, 55, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+            }
+        }
+
+        .pulse-gold {
+            animation: pulse-gold 1.5s infinite;
+            border-color: var(--accent-gold) !important;
+            background: rgba(212, 175, 55, 0.1) !important;
+        }
+
+        .info-text.visible {
+            display: block !important;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 10px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-radius: 4px;
+            background: var(--accent-gold);
+            color: var(--bg-dark);
+            vertical-align: middle;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .info-text {
+            display: none;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            border-left: 3px solid var(--accent-gold);
+            animation: fadeIn 0.3s ease;
+            text-align: left !important;
+        }
+
+        .info-text.visible {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-5px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile specific overrides */
+        @media (max-width: 650px) {
+            .info-text {
+                text-align: left !important;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 650px) {
+            .episode-card {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .cover-art {
+                width: 100%;
+                max-width: 250px;
+                height: auto;
+                aspect-ratio: 1/1;
+                margin: 0 auto;
+            }
+
+            .player-controls {
+                width: 100%;
+                flex-wrap: wrap;
+            }
+
+            .info-btn:hover {
+                background: rgba(255, 255, 255, 0.1);
+                color: var(--text-main);
+            }
+
+            .info-btn.source-btn.no-source {
+                background: rgba(220, 53, 69, 0.1);
+                border-color: rgba(220, 53, 69, 0.3);
+                color: #ff4d4d;
+                cursor: default;
+            }
+
+            .info-btn.source-btn.has-source {
+                background: rgba(40, 167, 69, 0.1);
+                border-color: rgba(40, 167, 69, 0.3);
+                color: #2ecc71;
+            }
+
+            .info-btn.source-btn.has-source:hover {
+                background: rgba(40, 167, 69, 0.2);
+                border-color: rgba(40, 167, 69, 0.5);
+                color: #2ecc71;
+            }
+
+            .info-text.visible {
+                display: block !important;
+            }
+
+            .info-text {
+                display: none;
+                background: rgba(0, 0, 0, 0.3);
+                padding: 15px;
+                border-radius: 8px;
+                font-size: 0.85rem;
+                line-height: 1.5;
+                color: var(--text-muted);
+                margin-bottom: 20px;
+                border-left: 3px solid var(--accent-gold);
+                animation: fadeIn 0.3s ease;
+                text-align: left;
+            }
+
+            .info-text.visible {
+                display: block;
+            }
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(-5px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            /* Enhanced Player Controls */
+            .control-btn {
+                background: transparent;
+                border: none;
+                color: var(--text-muted);
+                cursor: pointer;
+                padding: 5px;
+                transition: color 0.2s;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .control-btn:hover {
+                color: var(--text-main);
+            }
+
+            .volume-control {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                margin-left: 10px;
+            }
+
+            .volume-slider {
+                -webkit-appearance: none;
+                width: 80px;
+                height: 4px;
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 2px;
+                outline: none;
+            }
+
+            .volume-slider::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                width: 12px;
+                height: 12px;
+                background: var(--text-muted);
+                border-radius: 50%;
+                cursor: pointer;
+                transition: background 0.2s;
+            }
+
+            .volume-slider:hover::-webkit-slider-thumb {
+                background: var(--accent-gold);
+            }
+    </style>
+</head>
+
+<body>
+
+    <div class="ambient-bg"></div>
+
+    <div class="main-container">
+        <header>
+            <h1>Die Villa Kunterbunt</h1>
+            <div class="subtitle">Das Kompendium</div>
+            <div style="margin-top: 30px; display: flex; gap: 15px; flex-wrap: wrap; justify-content: center;">
+                <a href="../../main/podcast/index.html" class="action-link">🏰 Das Epos</a>
+                <a href="../../cowork/podcast/index.html" class="action-link">🎧 Die Anthologie</a>
+            </div>
+        </header>
+
+        <article class="episode-card">
+            <div class="cover-flip-container" onclick="this.classList.toggle('flipped')">
+                <div class="flipper">
+                    <div class="front">
+                        <img src="../images/thumbs/das_villa_kunterbunt_kompendium_audiobook_cover_front_thumb.png"
+                            alt="Front Cover">
+                    </div>
+                    <div class="back">
+                        <img src="../images/thumbs/das_villa_kunterbunt_kompendium_audiobook_cover_back_thumb.png"
+                            alt="Back Cover">
+                    </div>
+                </div>
+            </div>
+
+            <div class="episode-tag">E02: Korrespondenz Epos</div>
+            <h2 class="episode-title">Korrespondenz Epos</h2>
+
+            <div class="info-bar">
+                <button id="tts-btn" class="info-btn" onclick="toggleInfo()">TTS</button>
+                <button class="info-btn source-btn has-source"
+                    onclick="openSource('../documents/das_villa_kunterbunt_kompendium.pdf')">Quelle</button>
+            </div>
+
+            <div id="info-text" class="info-text">
+                Die Audioinhalte wurden mittels <strong>Text-to-Speech-Synthese (TTS)</strong> generiert. Als
+                Datengrundlage dienen
+                <strong>strukturierte Markdown-Skripte</strong>, die aus Studien, Berichten und technischer
+                Dokumentation extrahiert
+                wurden. Die Skripterstellung erfolgt intern oder durch Dritte, wobei sowohl <strong>rein manuelle
+                    Verfahren</strong> als auch <strong>hybride Prozesse</strong> unter Einsatz von
+                <strong>Deep-Research-Modellen</strong> zur Anwendung kommen. Sämtliche Quelldateien unterliegen einer
+                <strong>abschließenden manuellen
+                    Qualitätsprüfung</strong>.
+            </div>
+
+            <div class="episode-description">
+                <div id="description-short">
+                    In dieser Episode tauchen wir tief in das „Epos der Villa Kunterbunt“ ein – ein Dokument, das weit
+                    über eine gewöhnliche Kundenbeschwerde hinausgeht und sich als Manifest moderner
+                    Verbraucherfrustration versteht.
+                </div>
+                <div id="description-full" style="display: none;">
+                    In dieser Episode tauchen wir tief in das „Epos der Villa Kunterbunt“ ein – ein Dokument, das weit
+                    über eine gewöhnliche Kundenbeschwerde hinausgeht und sich als Manifest moderner
+                    Verbraucherfrustration versteht. Der Host analysiert die Korrespondenz rund um den berüchtigten
+                    Phasenausfall L3 und dekonstruiert dabei die systemischen Versäumnisse großer
+                    Versorgungsunternehmen. Es ist eine Reise durch ein „prozessuales Paralleluniversum“, in dem
+                    administrative Blindheit auf technische Inkompetenz trifft.
+                    <br><br>
+                    Die Analyse beleuchtet, wie der betroffene Kunde durch einen radikalen Strategiewechsel – weg vom
+                    „Bittsteller“, hin zum „Anlieferer wertvoller Prozessdaten“ – die Spielregeln des Konzern-Dialogs
+                    ändert. Besonders im Fokus stehen die satirischen Spitzen gegen das „Remote-Voodoo“ der Fernanalyse
+                    und die Kunst, für 15 Minuten wirkungslose Arbeit horrende Summen in Rechnung zu stellen. Die
+                    Episode arbeitet heraus, dass die Suche nach der „dritten Phase“ letztlich die Suche nach einer
+                    kompetenten Instanz ist, die Verantwortung in einem automatisierten System übernimmt.
+                    <br><br>
+                    Für Professionals aus den Bereichen Customer Experience (CX), Qualitätsmanagement und
+                    Business-Transformation bietet diese Folge eine brillante Fallstudie. Sie zeigt auf, wie Unternehmen
+                    durch Ignoranz ihre eigene Reputation demontieren und warum echte Fachkompetenz am „Kabel“
+                    wertvoller ist als jede Management-Sitzung. Ein tiefgründiger, analytischer und zugleich
+                    unterhaltsamer Blick auf die Abgründe des modernen Dienstleistungswesens.
+                </div>
+                <div class="toggle-container" style="text-align: center; margin-top: 15px;">
+                    <button id="toggle-description-btn" onclick="toggleDescription()" class="toggle-btn">
+                        <span id="toggle-text">Mehr anzeigen</span>
+                        <svg id="toggle-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M6 9l6 6 6-6" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <style>
+                .toggle-btn {
+                    background: rgba(255, 255, 255, 0.05);
+                    border: 1px solid var(--glass-border);
+                    color: var(--text-muted);
+                    padding: 8px 16px;
+                    border-radius: 20px;
+                    cursor: pointer;
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 8px;
+                    font-size: 0.85rem;
+                    transition: all 0.3s ease;
+                }
+
+                .toggle-btn:hover {
+                    background: rgba(212, 175, 55, 0.1);
+                    color: var(--accent-gold);
+                    border-color: rgba(212, 175, 55, 0.3);
+                }
+
+                .toggle-btn svg {
+                    transition: transform 0.3s ease;
+                }
+
+                .toggle-btn.expanded svg {
+                    transform: rotate(180deg);
+                }
+            </style>
+
+
+
+            <div class="player-controls">
+                <button class="control-btn" onclick="skip(-30)" title="-30s">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M11 18V6l-8.5 6 8.5 6zm.5-6l8.5 6V6l-8.5 6z" />
+                    </svg>
+                </button>
+
+                <button class="play-btn" id="play-btn" aria-label="Play Episode">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8 5v14l11-7z" />
+                    </svg>
+                </button>
+
+                <button class="control-btn" onclick="skip(30)" title="+30s">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M4 18l8.5-6L4 6v12zm9-12v12l8.5-6L13 6z" />
+                    </svg>
+                </button>
+
+                <div class="progress-wrapper">
+                    <div class="progress-bar-bg" id="progress-container">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                    <div class="time-display">
+                        <span id="current-time">0:00</span>
+                        <span id="duration">0:00</span>
+                    </div>
+                </div>
+
+                <div class="volume-control">
+                    <input type="range" class="volume-slider" min="0" max="1" step="0.1" value="0.8"
+                        oninput="setVolume(this.value)">
+                </div>
+            </div>
+
+            <audio id="audio-player" src="../audio/das_villa_kunterbunt_kompendium_die_erste_studienanalyse.mp3"
+                preload="metadata"></audio>
+
+            <div class="nav-links"
+                style="border-top: none; margin-top: 20px; padding-top: 0; display: flex; justify-content: center; flex-direction: column; gap: 15px;">
+                <div style="display: flex; justify-content: center; gap: 20px;">
+                    <a href="korrespondenz_system_analyse.html" class="nav-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M19 12H5M12 19l-7-7 7-7" />
+                        </svg>
+                        <span>Vorherige Episode</span>
+                    </a>
+                    <button class="nav-link" disabled style="opacity: 0.5; cursor: not-allowed;">
+                        <span>Nächste Episode</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                </div>
+                <div style="display: flex; justify-content: center;">
+                    <a href="index.html" class="nav-link highlight">
+                        <span>Alle Episoden</span>
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <footer>
+            <p>&copy; 2026 Villa Kunterbunt Project. Alle Rechte vorbehalten.</p>
+            <p><a href="https://github.com/derlemue/villa-kunterbunt" target="_blank">Projekt auf GitHub</a></p>
+        </footer>
+    </div>
+
+    <script>
+        const playIcon = '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
+        const pauseIcon = '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>';
+
+        const audio = document.getElementById('audio-player');
+        const progressContainer = document.getElementById('progress-container');
+        const progressFill = document.getElementById('progress-fill');
+        const currentTimeEl = document.getElementById('current-time');
+        const durationEl = document.getElementById('duration');
+        const playBtn = document.getElementById('play-btn');
+
+        // Description Toggle
+        function toggleDescription() {
+            const shortDesc = document.getElementById('description-short');
+            const fullDesc = document.getElementById('description-full');
+            const btn = document.getElementById('toggle-description-btn');
+            const text = document.getElementById('toggle-text');
+
+            if (fullDesc.style.display === 'none') {
+                fullDesc.style.display = 'block';
+                shortDesc.style.display = 'none';
+                text.textContent = 'Weniger anzeigen';
+                btn.classList.add('expanded');
+            } else {
+                fullDesc.style.display = 'none';
+                shortDesc.style.display = 'block';
+                text.textContent = 'Mehr anzeigen';
+                btn.classList.remove('expanded');
+            }
+        }
+
+        // TTS Info Toggle
+        let ttsTimeout;
+        function toggleInfo() {
+            const infoText = document.getElementById('info-text');
+            if (ttsTimeout) clearTimeout(ttsTimeout);
+            const isVisible = infoText.classList.toggle('visible');
+            if (isVisible) {
+                ttsTimeout = setTimeout(() => {
+                    infoText.classList.remove('visible');
+                }, 10000);
+            }
+        }
+
+        // TTS Hint Auto-open logic (Per-Episode)
+        function triggerTTSHint() {
+            const hintKey = 'tts_hint_meta_e02'; // Shared key for E02
+            if (localStorage.getItem(hintKey)) return;
+
+            const ttsBtn = document.getElementById('tts-btn');
+            setTimeout(() => {
+                toggleInfo();
+                if (ttsBtn) {
+                    ttsBtn.classList.add('pulse-gold');
+                    setTimeout(() => ttsBtn.classList.remove('pulse-gold'), 3000);
+                }
+            }, 500);
+            localStorage.setItem(hintKey, 'true');
+        }
+
+        // Set initial volume
+        audio.volume = 0.8;
+
+        // Persistence
+        function getPersistenceKey(src) {
+            return 'vp_time_' + src.split('/').pop();
+        }
+
+        function setupPersistence(audio) {
+            const key = getPersistenceKey(audio.currentSrc || audio.src);
+            const savedTime = localStorage.getItem(key);
+            if (savedTime && !isNaN(savedTime)) {
+                audio.currentTime = parseFloat(savedTime);
+            }
+            audio.addEventListener('timeupdate', () => {
+                localStorage.setItem(key, audio.currentTime);
+            });
+        }
+
+        // MediaSession
+        function setupMediaSession(audio) {
+            if ('mediaSession' in navigator) {
+                navigator.mediaSession.metadata = new MediaMetadata({
+                    title: "E02: Korrespondenz Epos",
+                    artist: "Villa Kunterbunt",
+                    album: "Das Kompendium",
+                    artwork: [
+                        { src: new URL("../images/thumbs/das_villa_kunterbunt_kompendium_audiobook_cover_front_thumb.png", window.location.href).href, sizes: '512x512', type: 'image/png' }
+                    ]
+                });
+                audio.addEventListener('play', () => {
+                    navigator.mediaSession.setActionHandler('play', () => audio.play());
+                    navigator.mediaSession.setActionHandler('pause', () => audio.pause());
+                });
+            }
+        }
+
+        setupPersistence(audio);
+        setupMediaSession(audio);
+
+        audio.addEventListener('timeupdate', () => {
+            const { duration, currentTime } = audio;
+            if (isNaN(duration)) return;
+            progressFill.style.width = `${(currentTime / duration) * 100}%`;
+            currentTimeEl.textContent = formatTime(currentTime);
+        });
+
+        progressContainer.addEventListener('click', (e) => {
+            const width = progressContainer.clientWidth;
+            audio.currentTime = (e.offsetX / width) * audio.duration;
+        });
+
+        audio.addEventListener('loadedmetadata', () => {
+            durationEl.textContent = formatTime(audio.duration);
+        });
+
+        audio.addEventListener('ended', () => {
+            playBtn.innerHTML = playIcon;
+            progressFill.style.width = '0%';
+            currentTimeEl.textContent = '0:00';
+        });
+
+        function formatTime(seconds) {
+            const min = Math.floor(seconds / 60);
+            const sec = Math.floor(seconds % 60);
+            return `${min}:${sec < 10 ? '0' : ''}${sec}`;
+        }
+
+        function skip(seconds) {
+            audio.currentTime += seconds;
+        }
+
+        function setVolume(value) {
+            audio.volume = value;
+        }
+
+        function openSource(url) {
+            window.open(url || '../documents/das_villa_kunterbunt_kompendium.pdf', '_blank');
+        }
+
+        playBtn.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                triggerTTSHint();
+                playBtn.innerHTML = pauseIcon;
+            } else {
+                audio.pause();
+                playBtn.innerHTML = playIcon;
+            }
+        });
+    </script>
+</body>
+
+</html>
