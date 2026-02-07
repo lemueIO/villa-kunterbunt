@@ -499,6 +499,21 @@
             display: block;
         }
 
+        .badge {
+            display: inline-block;
+            padding: 2px 10px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-radius: 4px;
+            background: var(--accent-gold);
+            color: var(--bg-dark);
+            vertical-align: middle;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+            font-family: 'Inter', sans-serif;
+        }
+
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -691,7 +706,7 @@
                 </div>
                 <div class="episode-content">
                     <div class="episode-tag">E01: Die erweiterte Studienanalyse</div>
-                    <h2 class="episode-title">Die erweiterte Studienanalyse</h2>
+                    <h2 class="episode-title">Die erweiterte Studienanalyse <span class="badge">BETA</span></h2>
 
                     <div class="info-bar">
                         <button id="tts-btn-1" class="info-btn" onclick="toggleInfo(1)">TTS</button>
@@ -915,6 +930,7 @@
             if (audio.paused) {
                 audio.play();
                 btn.innerHTML = pauseIcon;
+                triggerTTSHint(id);
             } else {
                 audio.pause();
                 btn.innerHTML = playIcon;
@@ -971,7 +987,7 @@
 
         window.addEventListener('DOMContentLoaded', () => {
             initPlayer(1);
-            triggerTTSHint(1);
+
 
             // Initialize autoplay listeners for all episodes
             document.querySelectorAll('audio[id^="audio-player-"]').forEach(audio => {

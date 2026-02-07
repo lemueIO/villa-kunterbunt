@@ -224,6 +224,21 @@
             margin-bottom: 16px;
         }
 
+        .badge {
+            display: inline-block;
+            padding: 2px 10px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-radius: 4px;
+            background: var(--accent-gold);
+            color: var(--bg-dark);
+            vertical-align: middle;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+            font-family: 'Inter', sans-serif;
+        }
+
         /* Player Controls */
         .player-controls {
             display: flex;
@@ -906,7 +921,7 @@
         }
 
         function triggerTTSHint(id) {
-            const hintKey = 'tts_hint_shown';
+            const hintKey = `tts_hint_shown_${id}`;
             if (localStorage.getItem(hintKey)) return;
 
             const ttsBtn = document.getElementById(`tts-btn-${id}`);
