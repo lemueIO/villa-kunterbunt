@@ -431,10 +431,7 @@
             gap: 15px;
             margin-bottom: 20px;
             flex-wrap: wrap;
-            <<<<<<< HEAD justify-content: center;
-            =======width: 100%;
             justify-content: flex-start;
-            >>>>>>>4a81382 (Refactor: Standardize podcast layout, branding, and playback settings)
         }
 
         .info-btn {
@@ -922,34 +919,17 @@
             // Setup Persistence
             setupPersistence(audio);
 
-<<<<<<< HEAD
             // Setup MediaSession (Specific for Ep 1 currently)
             if (id === 1) {
                 setupMediaSession(audio, {
-                    title: "E01: Die erweiterte Studienanalyse",
-                    artist: "Die Villa Kunterbunt",
-                    album: "Das Villa Kunterbunt Kompendium",
+                    title: "E01: Korrespondenz System Analyse",
+                    artist: "Villa Kunterbunt",
+                    album: "Das Kompendium",
                     artwork: [
                         { src: new URL("../images/thumbs/das_villa_kunterbunt_kompendium_audiobook_cover_front_thumb.png", window.location.href).href, sizes: '512x512', type: 'image/png' }
                     ]
                 });
             }
-=======
-            // Setup MediaSession
-            const metadata = (id === 1) ? {
-                title: "E01: Korrespondenz System Analyse",
-                artist: "Villa Kunterbunt",
-                album: "Das Kompendium",
-                artwork: [{ src: new URL("../images/thumbs/das_villa_kunterbunt_kompendium_audiobook_cover_front_thumb.png", window.location.href).href, sizes: '512x512', type: 'image/png' }]
-            } : {
-                title: "E02: Korrespondenz Epos",
-                artist: "Villa Kunterbunt",
-                album: "Das Kompendium",
-                artwork: [{ src: new URL("../images/thumbs/das_villa_kunterbunt_kompendium_audiobook_cover_front_thumb.png", window.location.href).href, sizes: '512x512', type: 'image/png' }]
-            };
-
-            setupMediaSession(audio, metadata);
->>>>>>> 4a81382 (Refactor: Standardize podcast layout, branding, and playback settings)
 
             audio.addEventListener('timeupdate', () => {
                 const { duration, currentTime } = audio;
@@ -1044,11 +1024,7 @@
         }
 
         function triggerTTSHint(id) {
-<<<<<<< HEAD
-            const hintKey = (id === 1) ? 'tts_hint_meta_e01' : `tts_hint_meta_e${id}`;
-=======
             const hintKey = `tts_hint_meta_e${id < 10 ? '0' + id : id}`;
->>>>>>> 4a81382 (Refactor: Standardize podcast layout, branding, and playback settings)
             if (localStorage.getItem(hintKey)) return;
 
             const ttsBtn = document.getElementById(`tts-btn-${id}`);

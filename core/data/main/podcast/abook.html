@@ -224,6 +224,35 @@
             max-width: 600px;
         }
 
+        .episode-description.collapsed {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .episode-description.expanded {
+            display: block;
+        }
+
+        .read-more-btn {
+            background: none;
+            border: none;
+            color: var(--accent-gold);
+            cursor: pointer;
+            font-size: 0.85rem;
+            margin-top: 5px;
+            padding: 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .read-more-btn:hover {
+            text-decoration: underline;
+        }
+
         /* Player Controls */
         .player-controls {
             display: flex;
@@ -601,7 +630,7 @@
                     Qualitätsprüfung</strong>.
             </div>
 
-            <div class="episode-description">
+            <div class="episode-description collapsed" id="desc-text">
                 In dieser Episode tauchen wir tief in das „Epos der Villa Kunterbunt“ ein – ein Dokument, das weit über
                 eine gewöhnliche Kundenbeschwerde hinausgeht und sich als Manifest moderner Verbraucherfrustration
                 versteht. Der Host analysiert die Korrespondenz rund um den berüchtigten Phasenausfall L3 und
@@ -621,6 +650,7 @@
                 ist als jede Management-Sitzung. Ein tiefgründiger, analytischer und zugleich unterhaltsamer Blick auf
                 die Abgründe des modernen Dienstleistungswesens.
             </div>
+            <button class="read-more-btn" id="read-more-btn" onclick="toggleDescription()">MEHR ANZEIGEN</button>
             <div class="player-controls">
                 <button class="control-btn" onclick="skip(-30)" title="-30s">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
