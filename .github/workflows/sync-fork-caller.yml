@@ -1,20 +1,12 @@
-name: Sync Fork Caller
-
-# Harmonization update
+# Standard Sync Fork Caller (Harmonized)
 on:
   schedule:
-    - cron: '*/15 * * * *'  # Every 15 minutes
+    - cron: '*/15 * * * *'
   workflow_dispatch:
-
-# Globale Berechtigungen für das Token des Callers
-permissions:
-  contents: write
-  pull-requests: write
 
 jobs:
   call-sync-fork:
     if: github.repository != 'derlemue/villa-kunterbunt'
-    # ...und stellen sicher, dass der Job sie auch wirklich anwenden darf
     permissions:
       contents: write
       pull-requests: write

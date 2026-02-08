@@ -7,15 +7,10 @@ on:
       - main
   workflow_dispatch:
 
-concurrency:
-  group: pages-deploy-${{ github.ref }}
-  cancel-in-progress: true
-
 jobs:
   deploy:
-    # Hier werden die Pages- und Token-Rechte weitergegeben
     permissions:
-      contents: write
+      contents: read
       pages: write
       id-token: write
     uses: lemueIO/.github/.github/workflows/central-pages-logic.yml@main
