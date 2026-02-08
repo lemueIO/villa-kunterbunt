@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: pages-deploy-force-reset-${{ github.ref }}
+  group: pages-deploy-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
