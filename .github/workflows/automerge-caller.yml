@@ -12,7 +12,7 @@ on:
 
 jobs:
   automerge:
-    # if: github.repository == 'derlemue/villa-kunterbunt'
+    if: github.repository == 'derlemue/villa-kunterbunt'
     # Berechtigungen müssen direkt im Job stehen
     permissions:
       contents: write
