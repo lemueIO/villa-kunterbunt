@@ -31,6 +31,26 @@
 ---
 <br>
 
+## v.1.2.3 (Workflow Stabilization & Audio Update)
+### "The Guardian of Forks & Melodies"
+*9. Februar 2026*
+
+> **Status:** Automerge-Sicherheit für Forks und Audio-Veredelung abgeschlossen.
+
+#### 🤖 Workflow & Automation
+*   **Automerge Caller Revamp:** Vollständige Überarbeitung des Automerge-Workflows.
+    *   **Repository Check:** Workflow auf `derlemue/villa-kunterbunt` beschränkt, um redundante Ausführungen auf Forks zu verhindern.
+    *   **Permission Fix:** Umstellung auf `pull_request_target` und `pull_request_review`, um Schreibzugriffe (`GITHUB_TOKEN`) für PRs von Forks zu ermöglichen.
+    *   **Validation:** Behebung von Syntax-Fehlern (`pull_request_review_target`) und ungültigen Inputs (`runs_on`).
+    *   **Naming:** Umbenennung in "Automerge Caller" zur besseren Identifikation.
+
+#### 🎵 Media & Content
+*   **Audio Update:** Aktualisierung der Hintergrundmelodie (`villa_kunterbunt_background_melody.mp3`) in `website/global/audio/`.
+*   **Repository Sync:** Manuelle Auflösung von Divergenzen und Synchronisation mit dem Remote-Stand (`git pull --rebase`).
+
+---
+<br>
+
 ## v.1.2.2 (Infrastructure Optimization & Metadata)
 ### "Dynamic Runners & Embedded Souls"
 *7. Februar 2026*
