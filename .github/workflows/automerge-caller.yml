@@ -4,7 +4,7 @@ name: Automerge Caller
 on:
   pull_request_target:
     types: [opened, synchronize, reopened]
-  pull_request_review_target:
+  pull_request_review:
     types: [submitted]
   check_run:
     types: [completed]
