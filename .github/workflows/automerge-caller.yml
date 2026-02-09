@@ -1,5 +1,4 @@
-
-name: Fork Automerge Caller
+name: Automerge Caller
 
 # Harmonization update
 on:
@@ -11,11 +10,10 @@ on:
 
 jobs:
   automerge:
+    # if: github.repository == 'derlemue/villa-kunterbunt'
     # Berechtigungen müssen direkt im Job stehen
     permissions:
       contents: write
       pull-requests: write
     uses: lemueIO/.github/.github/workflows/central-automerge-logic.yml@main
-    with:
-      runs_on: ${{ github.repository == 'lemueIO/villa-kunterbunt' && 'self-hosted' || 'ubuntu-latest' }}
     secrets: inherit
