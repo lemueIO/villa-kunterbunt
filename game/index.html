@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zähler-Anschluss: Abgangsseite</title>
+    <title>Zähler-Anschluss: LOLarex Simulation</title>
     <style>
         :root {
             --bg-color: #f0f2f5;
@@ -13,16 +13,22 @@
             --black-cable: #222222;
             --grey-cable: #808080;
             --highlight-color: rgba(34, 197, 94, 0.2);
-            --highlight-border: #22c55e;
             --select-highlight: #3b82f6;
             --success: #22c55e;
             --warning: #eab308;
             --error: #ef4444;
+            --meter-white: #f3f4f6;
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
+            /* HIER WURDE DAS HINTERGRUNDBILD EINGEFÜGT */
+            background-image: url('https://raw.githubusercontent.com/derlemue/villa-kunterbunt/refs/heads/main/core/data/main/images/die_villa_kunterbunt_wallpaper.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -32,25 +38,91 @@
             color: #333;
         }
 
-        h1 { margin-bottom: 20px; }
-
-        .game-container {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            width: 100%;
-            max-width: 850px;
+        h1 { 
+            margin-bottom: 20px; 
+            /* Textschatten für bessere Lesbarkeit auf dem bunten Bild */
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.9);
+            color: #111;
+            font-weight: 900;
         }
 
-        /* Zähler Klemmenleiste */
-        .meter-block {
+        .game-container {
+            background: rgba(255, 255, 255, 0.95); /* Leicht transparentes Weiß */
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            width: 100%;
+            max-width: 850px;
+            backdrop-filter: blur(5px); /* Milchglas-Effekt */
+        }
+
+        /* --- ZÄHLER VISUALISIERUNG (OBEN) --- */
+        .meter-body {
+            background-color: var(--meter-white);
+            border: 2px solid #9ca3af;
+            border-bottom: none;
+            border-radius: 8px 8px 0 0;
+            padding: 20px;
+            position: relative;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.05);
+        }
+
+        /* LCD Display */
+        .lcd-display {
+            background-color: #dbead5; /* LCD Grüngrau */
+            border: 2px solid #94a3b8;
+            border-radius: 4px;
+            width: 60%;
+            margin: 0 auto 15px auto;
+            padding: 15px;
+            font-family: 'Courier New', monospace;
+            box-shadow: inset 2px 2px 5px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .lcd-top-row {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        
+        .lcd-main-value {
+            font-size: 32px;
+            font-weight: bold;
+            text-align: right;
+            letter-spacing: 2px;
+            color: #111;
+        }
+        .lcd-unit { font-size: 16px; margin-left: 5px; }
+
+        /* Beschriftung */
+        .meter-branding {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        .brand-name {
+            font-size: 24px;
+            font-weight: 800;
+            color: #1e3a8a; /* Dunkelblau */
+        }
+        .model-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: #4b5563;
+        }
+
+        /* --- KLEMMENLEISTE (UNTEN) --- */
+        .meter-terminals-block {
             background: linear-gradient(to bottom, #e5e7eb 0%, #d1d5db 100%);
-            padding: 25px 20px;
-            border-radius: 8px;
-            border-top: 5px solid #9ca3af;
+            padding: 15px 20px 25px 20px;
+            border-radius: 0 0 8px 8px;
+            border: 2px solid #9ca3af;
+            border-top: 4px solid #6b7280; /* Trennlinie */
             margin-bottom: 35px;
-            box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
 
         .terminals-row {
@@ -69,6 +141,7 @@
             font-weight: 600;
             margin-bottom: 6px;
             color: #4b5563;
+            font-size: 14px;
         }
 
         .terminal-slot {
@@ -84,7 +157,8 @@
             justify-content: center;
             align-items: flex-end;
             overflow: hidden;
-            background-image: url('data:image/svg+xml;utf8,<svg width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg"><circle cx="1" cy="1" r="1" fill="%23a3a3a3" opacity="0.3"/></svg>');
+            /* Comic-Raster Effekt */
+            background-image: url('data:image/svg+xml;utf8,<svg width="4" height="4" viewBox="0 0 4 4" xmlns="http://www.w3.org/2000/svg"><circle cx="1" cy="1" r="0.5" fill="%23000" opacity="0.1"/></svg>');
         }
 
         .terminal-slot:hover:not(.blocked) {
@@ -92,7 +166,7 @@
             background-color: #e2e8f0;
         }
 
-        /* Ziel-Klemmen (3, 6, 9) leuchten leicht */
+        /* Ziel-Klemmen Leuchten */
         .terminal-slot.target-highlight {
             background-color: var(--highlight-color);
             box-shadow: inset 0 0 8px var(--highlight-color);
@@ -101,29 +175,30 @@
         /* Blockierte Klemmen */
         .terminal-slot.blocked {
             cursor: not-allowed;
-            background-color: #cbd5e1; /* Etwas dunkler um "belegt" zu zeigen */
+            background-color: #cbd5e1;
+            opacity: 0.9;
         }
-
+        /* Schraube */
         .screw-head {
             position: absolute;
             top: 5px;
             width: 22px;
             height: 22px;
-            background: radial-gradient(circle at 30% 30%, #9ca3af, var(--screw-color));
+            background: radial-gradient(circle at 30% 30%, #d1d5db, #4b5563);
             border-radius: 50%;
-            border: 2px solid #4b5563;
+            border: 1px solid #374151;
             box-shadow: 0 1px 2px rgba(0,0,0,0.3);
             z-index: 2;
         }
         .screw-head::after {
             content: '+';
             position: absolute;
-            color: #d1d5db;
+            color: #e5e7eb;
             font-size: 20px;
-            line-height: 18px;
+            line-height: 19px;
             left: 2px;
             top: 0;
-            text-shadow: 0 1px 1px rgba(0,0,0,0.5);
+            text-shadow: 0 1px 1px rgba(0,0,0,0.8);
         }
 
         /* Kabel Darstellung */
@@ -133,7 +208,7 @@
             margin-bottom: -35px;
             border-radius: 4px 4px 0 0;
             box-shadow: inset 0 -2px 4px rgba(0,0,0,0.2), 0 2px 4px rgba(0,0,0,0.1);
-            border: 2px solid rgba(0,0,0,0.1);
+            border: 1px solid rgba(0,0,0,0.2);
             border-bottom: none;
             z-index: 1;
         }
@@ -141,21 +216,12 @@
         .cable-black { background-color: var(--black-cable); }
         .cable-grey { background-color: var(--grey-cable); }
         .cable-green-yellow {
-            background: repeating-linear-gradient(
-                45deg,
-                #eab308,
-                #eab308 10px,
-                #22c55e 10px,
-                #22c55e 20px
-            );
+            background: repeating-linear-gradient(45deg, #eab308, #eab308 10px, #22c55e 10px, #22c55e 20px);
         }
 
         /* Werkzeugkasten */
-        .toolbox-container {
-            margin-bottom: 35px;
-        }
+        .toolbox-container { margin-bottom: 35px; }
         .toolbox-container h3 { margin-bottom: 15px; color: #374151; }
-
         .toolbox {
             display: flex;
             gap: 25px;
@@ -165,7 +231,6 @@
             border: 3px dashed #cbd5e1;
             justify-content: center;
         }
-
         .loose-cable {
             width: 90px;
             height: 45px;
@@ -176,34 +241,20 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             position: relative;
         }
-        .loose-cable::after {
-            content: '';
-            position: absolute;
-            right: -5px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 10px;
-            height: 20px;
-            background: linear-gradient(to right, #b45309, #d97706);
-            border-radius: 2px;
+        .loose-cable::after { /* Kupfer */
+            content: ''; position: absolute; right: -5px; top: 50%; transform: translateY(-50%);
+            width: 10px; height: 20px; background: linear-gradient(to right, #b45309, #d97706); border-radius: 2px;
         }
         .loose-cable:hover { transform: translateY(-3px); }
         .loose-cable.selected {
-            border-color: var(--select-highlight);
-            transform: scale(1.05);
-            box-shadow: 0 6px 12px rgba(59, 130, 246, 0.3);
+            border-color: var(--select-highlight); transform: scale(1.05); box-shadow: 0 6px 12px rgba(59, 130, 246, 0.3);
         }
         .loose-cable.used {
-            opacity: 0.4;
-            cursor: not-allowed;
-            transform: none;
-            border-color: transparent;
-            box-shadow: none;
+            opacity: 0.4; cursor: not-allowed; transform: none; border-color: transparent; box-shadow: none;
         }
 
         /* UI Elemente */
-        .progress-section { margin-bottom: 30px; }
-        .progress-section p { font-weight: 600; margin-bottom: 10px; color: #4b5563; }
+        .progress-section { margin-bottom: 20px; }
         .progress-bar-bg {
             background-color: #e5e7eb;
             height: 28px;
@@ -213,17 +264,21 @@
         }
         .progress-bar-fill {
             height: 100%;
-            background: linear-gradient(to right, #3b82f6, #2563eb);
+            background-color: #3b82f6; /* Startet Blau */
             width: 0%;
-            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.4s ease;
             text-align: center;
             color: white;
             font-weight: 700;
             line-height: 28px;
             text-shadow: 0 1px 2px rgba(0,0,0,0.2);
         }
+        /* Grün wenn fertig */
+        .progress-bar-fill.ready {
+            background-color: var(--success);
+        }
 
-        .controls { text-align: center; }
+        .controls { text-align: center; margin-top: 20px; }
         
         #finish-btn {
             background: linear-gradient(to bottom, #1e293b, #0f172a);
@@ -236,87 +291,83 @@
             cursor: pointer;
             transition: all 0.2s;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            opacity: 1;
         }
-        #finish-btn:hover {
+        #finish-btn:hover:not(:disabled) {
             transform: translateY(-2px);
             box-shadow: 0 6px 8px rgba(0,0,0,0.15);
             background: linear-gradient(to bottom, #334155, #1e293b);
         }
+        /* Disabled State */
         #finish-btn:disabled {
-            background: #94a3b8;
+            background: #cbd5e1; /* Helles Grau */
+            color: #94a3b8;
             cursor: not-allowed;
             transform: none;
             box-shadow: none;
         }
 
-        /* Nachrichten Bereich */
+        /* Nachrichten */
         #message-area {
-            margin-top: 35px;
-            padding: 25px;
-            border-radius: 10px;
-            text-align: center;
-            display: none;
+            margin-top: 35px; padding: 25px; border-radius: 10px; text-align: center; display: none;
             animation: slideIn 0.5s ease-out;
         }
-        @keyframes slideIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         .msg-success { background-color: #f0fdf4; color: #166534; border: 2px solid var(--success); }
         .msg-warning { background-color: #fefce8; color: #854d0e; border: 2px solid var(--warning); }
         .msg-error { background-color: #fef2f2; color: #991b1b; border: 2px solid var(--error); }
-
         .msg-title { font-size: 26px; font-weight: 800; margin-bottom: 12px; display: block; }
-        .msg-body { font-size: 18px; line-height: 1.5; }
-        .msg-sub { font-size: 15px; margin-top: 12px; display: block; opacity: 0.85; font-style: italic; }
 
-        /* Konfetti */
         .confetti {
-            position: fixed;
-            width: 12px; height: 12px;
-            background-color: #f00;
-            animation: fall 3s linear forwards;
-            z-index: 9999;
-            border-radius: 3px;
+            position: fixed; width: 12px; height: 12px; background-color: #f00; 
+            animation: fall 3s linear forwards; z-index: 9999; border-radius: 3px;
         }
-        @keyframes fall {
-            to { transform: translateY(100vh) rotate(720deg); opacity: 0; }
-        }
+        @keyframes fall { to { transform: translateY(100vh) rotate(720deg); opacity: 0; } }
     </style>
 </head>
 <body>
 
-    <h1>Zähler-Verdrahtung: Abgang</h1>
+    <h1>LOLarex Simulator: Abgangsverdrahtung</h1>
 
     <div class="game-container">
         
         <div class="progress-section">
-            <p>Dein Fortschritt:</p>
+            <p>Fortschritt (mind. 66% benötigt):</p>
             <div class="progress-bar-bg">
                 <div class="progress-bar-fill" id="progress-fill">0%</div>
             </div>
         </div>
 
-        <div class="meter-block">
+        <div class="meter-body">
+            <div class="lcd-display">
+                <div class="lcd-top-row">L1 L2 L3</div>
+                <div class="lcd-main-value">0.00<span class="lcd-unit">kW</span></div>
+            </div>
+            <div class="meter-branding">
+                <span class="brand-name">LOLarex</span>
+                <span class="model-name">LK13BE</span>
+            </div>
+        </div>
+
+        <div class="meter-terminals-block">
             <div class="terminals-row" id="terminals-container">
                 </div>
         </div>
 
         <div class="toolbox-container">
-            <h3>Deine Kabel (Abgangsseite)</h3>
+            <h3>Kabel wählen (Abgang)</h3>
             <div class="toolbox">
-                <div class="loose-cable cable-brown" id="btn-brown" onclick="selectCable('brown')" title="Phase L1 (Braun)"></div>
-                <div class="loose-cable cable-black" id="btn-black" onclick="selectCable('black')" title="Phase L2 (Schwarz)"></div>
-                <div class="loose-cable cable-grey" id="btn-grey" onclick="selectCable('grey')" title="Phase L3 (Grau)"></div>
+                <div class="loose-cable cable-brown" id="btn-brown" onclick="selectCable('brown')" title="Phase L1"></div>
+                <div class="loose-cable cable-black" id="btn-black" onclick="selectCable('black')" title="Phase L2"></div>
+                <div class="loose-cable cable-grey" id="btn-grey" onclick="selectCable('grey')" title="Phase L3"></div>
             </div>
         </div>
 
         <div class="controls">
-            <button id="finish-btn" onclick="evaluateGame()">So, genug für heute!</button>
+            <button id="finish-btn" onclick="evaluateGame()" disabled>So, genug für heute!</button>
         </div>
 
-        <div id="message-area">
-            </div>
+        <div id="message-area"></div>
 
     </div>
 
@@ -325,29 +376,31 @@
         let selectedColor = null;
         let terminalConnections = Array(12).fill(null); 
         let cablesUsed = { brown: false, black: false, grey: false };
-
-        // --- Konfiguration ---
         const totalCablesToPlace = 3; 
 
         // RICHTIGE LÖSUNG: Klemmen 3, 6, 9 (Indices 2, 5, 8)
         const correctSolution = {
-            2: 'brown', // Klemme 3
-            5: 'black', // Klemme 6
-            8: 'grey'   // Klemme 9
+            2: 'brown', 
+            5: 'black', 
+            8: 'grey'
         };
 
-        // Klemmen, die vor-belegt und gesperrt sind
+        // --- KONFIGURATION DER KLEMMEN ---
+        
+        // 1. Bereits belegte Klemmen (Eingang + N/PE)
         const prefilledTerminals = {
-            0: 'brown',         // Klemme 1 (Eingang L1) - Gesperrt
-            3: 'black',         // Klemme 4 (Eingang L2) - Gesperrt
-            6: 'grey',          // Klemme 7 (Eingang L3) - Gesperrt
-            9: 'green-yellow',  // Klemme 10 (N/PE) - Gesperrt
-            10: 'green-yellow', // Klemme 11 (N/PE) - Gesperrt
-            11: 'green-yellow'  // Klemme 12 (N/PE) - Gesperrt
+            0: 'brown',         // 1 (L1 In)
+            3: 'black',         // 4 (L2 In)
+            6: 'grey',          // 7 (L3 In)
+            9: 'green-yellow',  // 10 (N/PE)
+            11: 'green-yellow'  // 12 (N/PE)
         };
 
-        // Klemmen, die visuell hervorgehoben werden sollen (Ziel)
-        const highlightedIndices = [2, 5, 8]; // 3, 6, 9
+        // 2. Leere aber blockierte Klemmen (Klemme 11 / Index 10)
+        const blockedEmptyIndices = [10];
+
+        // 3. Visuelle Markierung der Zielklemmen (3, 6, 9)
+        const highlightedIndices = [2, 5, 8];
 
 
         // --- Initialisierung ---
@@ -359,30 +412,35 @@
 
                 const label = document.createElement('div');
                 label.className = 'terminal-label';
-                label.innerText = i + 1; // Klemmennummer 1-12
+                label.innerText = i + 1; 
 
                 const slot = document.createElement('div');
                 slot.className = 'terminal-slot';
                 slot.id = `terminal-${i}`;
 
-                // Markierung für die Zielklemmen (3, 6, 9)
+                // Markierung (Ziel)
                 if (highlightedIndices.includes(i)) {
                     slot.classList.add('target-highlight');
                 }
 
-                // Vorbelegte Klemmen verarbeiten
+                // Logik: Was ist in der Klemme?
                 if (prefilledTerminals.hasOwnProperty(i)) {
+                    // Fall A: Vorbelegt mit Kabel
                     slot.classList.add('blocked');
-                    // Kabel einfügen
                     const cableColor = prefilledTerminals[i];
                     const cableDiv = document.createElement('div');
                     cableDiv.className = `connected-cable cable-${cableColor}`;
                     slot.appendChild(cableDiv);
-                    // Zustand speichern als 'locked'
                     terminalConnections[i] = 'locked';
+
+                } else if (blockedEmptyIndices.includes(i)) {
+                    // Fall B: Leer aber blockiert (Klemme 11)
+                    slot.classList.add('blocked');
+                    // Kein Kabel, aber locked
+                    terminalConnections[i] = 'locked-empty';
+
                 } else {
-                    // Nur freie Klemmen (2, 3, 5, 6, 8, 9) bekommen Klick-Handler
-                    // WICHTIG: 2, 5, 8 sind klickbar, aber falsch!
+                    // Fall C: Frei und klickbar (Richtige und falsche Ziele)
                     slot.onclick = () => connectToTerminal(i);
                 }
 
@@ -407,12 +465,8 @@
         }
 
         function connectToTerminal(terminalIndex) {
-            // Prüfen: Kabel gewählt? Klemme frei? Klemme nicht gesperrt?
-            if (!selectedColor || terminalConnections[terminalIndex] !== null) {
-                return;
-            }
+            if (!selectedColor || terminalConnections[terminalIndex] !== null) return;
 
-            // Hier können wir auch Klemme 2, 5, 8 anschließen (Falle!)
             terminalConnections[terminalIndex] = selectedColor;
             cablesUsed[selectedColor] = true;
 
@@ -436,15 +490,23 @@
 
             const percent = Math.floor((placedCount / totalCablesToPlace) * 100);
             const fillElement = document.getElementById('progress-fill');
+            const finishBtn = document.getElementById('finish-btn');
+
             fillElement.style.width = `${percent}%`;
             fillElement.innerText = `${percent}%`;
+
+            // Logik: Button erst ab 66% (2 Kabel) aktiv
+            if (percent >= 66) {
+                fillElement.classList.add('ready'); // Wird grün
+                finishBtn.disabled = false;         // Button aktiv
+            } else {
+                fillElement.classList.remove('ready'); // Bleibt blau
+                finishBtn.disabled = true;             // Button inaktiv
+            }
         }
 
         function evaluateGame() {
             let correctCount = 0;
-            
-            // Wir prüfen nur, ob an den richtigen Positionen (Indices 2, 5, 8) die richtige Farbe ist.
-            // Falsche Anschlüsse an 2, 5, 8 zählen einfach nicht als "korrekt".
             for (const [terminalIdx, expectedColor] of Object.entries(correctSolution)) {
                 if (terminalConnections[terminalIdx] === expectedColor) {
                     correctCount++;
@@ -454,7 +516,6 @@
             document.getElementById('finish-btn').disabled = true;
         }
 
-        // --- Ergebnisanzeige ---
         function showResult(count) {
             const msgArea = document.getElementById('message-area');
             msgArea.style.display = 'block';
@@ -465,19 +526,19 @@
             if (count === 3) {
                 msgArea.classList.add('msg-success');
                 title = "MEISTERHAFT!";
-                body = "Perfekter Anschluss! Die Phasen wurden korrekt auf den Abgangsklemmen 3, 6 und 9 aufgelegt.";
+                body = "Alles korrekt! Die Phasen sitzen perfekt auf 3, 6 und 9.";
                 sub = "(100% Korrekt)";
                 triggerConfetti();
             } else if (count === 2) {
                 msgArea.classList.add('msg-warning');
                 title = "Ganz okay.";
                 body = "Das ist in Ordnung so, aber da musst du morgen oder übermorgen nochmal ran.";
-                sub = "(Nur 2 von 3 Kabeln richtig platziert)";
+                sub = "(Nur 2 von 3 Kabeln richtig)";
             } else {
                 msgArea.classList.add('msg-error');
                 title = "Durchgefallen.";
-                body = "Das reicht leider nicht. Überprüfe die Belegung. Die Hilfsklemmen (2, 5, 8) dürfen nicht für die Hauptlast verwendet werden!";
-                sub = `Dafür müssen mindestens 2 Kabel richtig sein. (Du hast ${count} richtig)`;
+                body = "Das reicht leider nicht. Überprüfe den Anschlussplan!";
+                sub = `(Du hast ${count} richtig)`;
             }
 
             msgArea.innerHTML = `
