@@ -939,6 +939,88 @@
                     </div>
                 </div>
             </article>
+
+            <!-- Episode 4 -->
+            <article class="episode-card fade-in-up delay-2">
+                <div class="cover-flip-container" onclick="this.classList.toggle('flipped')">
+                    <div class="flipper">
+                        <div class="front">
+                            <img src="../images/thumbs/das_villa_kunterbunt_kompendium_audiobook_cover_front_thumb.png"
+                                alt="Front Cover">
+                        </div>
+                        <div class="back">
+                            <img src="../images/thumbs/das_villa_kunterbunt_kompendium_audiobook_cover_back_thumb.png"
+                                alt="Back Cover">
+                        </div>
+                    </div>
+                </div>
+                <div class="episode-content">
+                    <div class="episode-tag">Der Podcast</div>
+                    <h2 class="episode-title">E04: Der Podcast</h2>
+
+                    <div class="info-bar">
+                        <button id="tts-btn-4" class="info-btn" onclick="toggleInfo(4)">TTS</button>
+                        <button class="info-btn source-btn has-source"
+                            onclick="openSource('https://derlemue.github.io/villa-kunterbunt/trustme/')">Quelle</button>
+                    </div>
+
+                    <div id="info-text-4" class="info-text">
+                        Die Audioinhalte wurden mittels <strong>Text-to-Speech-Synthese (TTS)</strong> generiert. Als
+                        Datengrundlage dienen
+                        <strong>strukturierte Markdown-Skripte</strong>, die aus Studien, Berichten und technischer
+                        Dokumentation extrahiert
+                        wurden. Die Skripterstellung erfolgt intern oder durch Dritte, wobei sowohl <strong>rein
+                            manuelle Verfahren</strong> als auch <strong>hybride Prozesse</strong> unter Einsatz von
+                        <strong>Deep-Research-Modellen</strong> zur Anwendung kommen. Sämtliche Quelldateien unterliegen
+                        einer <strong>abschließenden manuellen
+                            Qualitätsprüfung</strong>.
+                    </div>
+
+                    <div class="episode-description">
+                        E.ONs 4,2-Sterne-Score: Exzellenz oder Täuschung? Wir analysieren die Daten, enthüllen den
+                        „Invitation Bias“ und berechnen den wahren Zufriedenheitswert von nur 2,8.
+                    </div>
+                    <div class="player-controls">
+                        <button class="control-btn" onclick="skip(4, -30)" title="-30s">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M11 18V6l-8.5 6 8.5 6zm.5-6l8.5 6V6l-8.5 6z" />
+                            </svg>
+                        </button>
+
+                        <button class="play-btn" onclick="togglePlay(4)" id="play-btn-4" aria-label="Play Episode 4">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 5v14l11-7z" />
+                            </svg>
+                        </button>
+
+                        <button class="control-btn" onclick="skip(4, 30)" title="+30s">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M4 18l8.5-6L4 6v12zm9-12v12l8.5-6L13 6z" />
+                            </svg>
+                        </button>
+
+                        <div class="progress-wrapper">
+                            <div class="progress-bar-bg" id="progress-container-4">
+                                <div class="progress-fill" id="progress-fill-4"></div>
+                            </div>
+                            <div class="time-display">
+                                <span id="current-time-4">0:00</span>
+                                <span id="duration-4">0:00</span>
+                            </div>
+                        </div>
+
+                        <div class="volume-control">
+                            <input type="range" class="volume-slider" min="0" max="1" step="0.1" value="0.8"
+                                oninput="setVolume(4, this.value)">
+                        </div>
+                    </div>
+                    <audio id="audio-player-4" src="../audio/eon_trustpilot_enthuellung_podcast.mp3"
+                        preload="metadata"></audio>
+                    <div style="margin-top: 15px; text-align: right; width: 100%;">
+                        <a href="eon_trustpilot_podcast.html" class="action-link">Zur Folge</a>
+                    </div>
+                </div>
+            </article>
         </div>
 
         <footer>
@@ -1019,8 +1101,15 @@
                 artwork: [
                     { src: new URL("../images/thumbs/das_villa_kunterbunt_kompendium_audiobook_cover_front_thumb.png", window.location.href).href, sizes: '512x512', type: 'image/png' }
                 ]
-            } : {
+            } : (id === 3) ? {
                 title: "E03: Die Analyse",
+                artist: "Villa Kunterbunt",
+                album: "Das Kompendium",
+                artwork: [
+                    { src: new URL("../images/thumbs/das_villa_kunterbunt_kompendium_audiobook_cover_front_thumb.png", window.location.href).href, sizes: '512x512', type: 'image/png' }
+                ]
+            } : {
+                title: "E04: Der Podcast",
                 artist: "Villa Kunterbunt",
                 album: "Das Kompendium",
                 artwork: [
@@ -1167,6 +1256,7 @@
             initPlayer(1);
             initPlayer(2);
             initPlayer(3);
+            initPlayer(4);
 
 
             // Initialize autoplay listeners for all episodes
