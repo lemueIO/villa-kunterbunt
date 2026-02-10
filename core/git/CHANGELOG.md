@@ -28,6 +28,21 @@
 <br>
 
 
+## v.1.2.6 (Hifi Meta & Duration Update)
+### "The Resonance of Precision"
+*11. Februar 2026*
+
+> **Status:** High-Fidelity Metadaten-Einbettung und präzise Dauer-Tagging für alle Audio-Assets abgeschlossen.
+
+#### 🎙️ Audio Veredelung
+*   **Hifi Metadata Embedding:** Erneute Einbettung von hochauflösenden Metadaten (Titel, Interpret, Album, Cover) in alle MP3-Dateien (`main`, `cowork`, `meta`).
+*   **Duration Tagging (TLEN):** Implementierung des `TLEN` ID3-Tags (Dauer in ms) zur Sicherstellung korrekter Zeitangaben in mobilen Playern und Widgets.
+*   **Quality Assurance:** Einführung des `check_duration.py` Scripts zur automatisierten Verifizierung von Bitraten und Metadaten-Integrität.
+*   **Workflow-Optimierung:** Zentralisierung der Audio-Prozexe in `core/scripts/embed_metadata.py` für konsistente Repository-weite Updates.
+
+---
+<br>
+
 ## v.1.2.5 (Podcast & Report Veredelung)
 ### "The Forensic Symphony"
 *10. Februar 2026*
