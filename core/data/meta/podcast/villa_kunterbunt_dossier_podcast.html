@@ -17,7 +17,7 @@
         href="../images/thumbs/das_villa_kunterbunt_kompendium_audiobook_cover_front_thumb.png">
     <meta name="description"
         content="Was passiert, wenn ein Tech-Profi im Dunkeln sitzt und der Energieversorger nicht reagiert? Er schreibt keine wütenden Mails. Er eröffnet ein GitHub-Repository. In dieser Episode erzählen wir die unglaubliche Geschichte von 'der Lume'.">
-    
+
     <!-- Google Fonts for premium typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -197,7 +197,7 @@
             color: var(--text-muted);
             line-height: 1.6;
             max-width: 600px;
-            text-align: left;
+            text-align: center;
         }
 
         /* Player Controls */
@@ -424,18 +424,39 @@
         }
 
         @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-5px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(-5px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .episode-description.collapsed {
@@ -476,10 +497,12 @@
             <div class="cover-flip-container" onclick="this.classList.toggle('flipped')">
                 <div class="flipper">
                     <div class="front">
-                        <img src="../images/thumbs/das_villa_kunterbunt_kompendium_audiobook_cover_front_thumb.png" alt="Front Cover">
+                        <img src="../images/thumbs/das_villa_kunterbunt_kompendium_audiobook_cover_front_thumb.png"
+                            alt="Front Cover">
                     </div>
                     <div class="back">
-                        <img src="../images/thumbs/das_villa_kunterbunt_kompendium_audiobook_cover_back_thumb.png" alt="Back Cover">
+                        <img src="../images/thumbs/das_villa_kunterbunt_kompendium_audiobook_cover_back_thumb.png"
+                            alt="Back Cover">
                     </div>
                 </div>
             </div>
@@ -489,42 +512,62 @@
 
             <div class="info-bar">
                 <button id="tts-btn" class="info-btn" onclick="toggleInfo()">TTS</button>
-                <button class="info-btn" onclick="openSource('https://github.com/derlemue/villa-kunterbunt')">Repo</button>
-                <button class="info-btn" onclick="openSource('https://derlemue.github.io/villa-kunterbunt/core/data/main/documents/villa_kunterbunt_korrespondenz_epos_derlemue.pdf')">Dossier (PDF)</button>
+                <button class="info-btn"
+                    onclick="openSource('https://github.com/derlemue/villa-kunterbunt')">Repo</button>
+                <button class="info-btn"
+                    onclick="openSource('https://derlemue.github.io/villa-kunterbunt/core/data/main/documents/villa_kunterbunt_korrespondenz_epos_derlemue.pdf')">Dossier
+                    (PDF)</button>
             </div>
 
             <div id="info-text" class="info-text">
-                Die Audioinhalte wurden mittels <strong>Text-to-Speech-Synthese (TTS)</strong> generiert. Als Datengrundlage dienen strukturierte Markdown-Skripte, die aus Studien und technischer Dokumentation extrahiert wurden.
+                Die Audioinhalte wurden mittels <strong>Text-to-Speech-Synthese (TTS)</strong> generiert. Als
+                Datengrundlage dienen strukturierte Markdown-Skripte, die aus Studien und technischer Dokumentation
+                extrahiert wurden.
             </div>
 
             <div class="episode-description collapsed" id="desc-text">
-                Was passiert, wenn ein Tech-Profi im Dunkeln sitzt und der Energieversorger nicht reagiert? Er schreibt keine wütenden Mails. Er eröffnet ein GitHub-Repository.
+                Was passiert, wenn ein Tech-Profi im Dunkeln sitzt und der Energieversorger nicht reagiert? Er schreibt
+                keine wütenden Mails. Er eröffnet ein GitHub-Repository.
                 <br><br>
-                In dieser Episode erzählen wir die unglaubliche Geschichte von "der Lume", einem Systemadministrator, dessen Haus ("Villa Kunterbunt") im Januar 2026 plötzlich ohne Strom war. Anstatt in der Hotline-Warteschleife zu verzweifeln, nutzte er seine IT-Skills für einen radikalen Schritt: Er verlagerte seinen privaten Ärger auf die Plattform für Softwareentwicklung, GitHub.
+                In dieser Episode erzählen wir die unglaubliche Geschichte von "der Lume", einem Systemadministrator,
+                dessen Haus ("Villa Kunterbunt") im Januar 2026 plötzlich ohne Strom war. Anstatt in der
+                Hotline-Warteschleife zu verzweifeln, nutzte er seine IT-Skills für einen radikalen Schritt: Er
+                verlagerte seinen privaten Ärger auf die Plattform für Softwareentwicklung, GitHub.
                 <br><br>
                 Wir analysieren seine Strategie des "Intellectual Denial of Service":
                 <br><br>
-                <strong>Der "Bug Report" des Lebens:</strong> Wie er einen simplen Stromausfall als komplexen Systemfehler ("Bug in kritischer Infrastruktur") framte.
+                <strong>Der "Bug Report" des Lebens:</strong> Wie er einen simplen Stromausfall als komplexen
+                Systemfehler ("Bug in kritischer Infrastruktur") framte.
                 <br><br>
-                <strong>Die Waffe der Dokumentation:</strong> Warum ein 25-seitiges technisches Dossier wirkungsvoller ist als jede Beschwerdemail.
+                <strong>Die Waffe der Dokumentation:</strong> Warum ein 25-seitiges technisches Dossier wirkungsvoller
+                ist als jede Beschwerdemail.
                 <br><br>
-                <strong>Der "FI-Beweis":</strong> Wie er mit einem einfachen physikalischen Test ("Schutzschalter-Logik") die Argumentation des Konzerns technisch widerlegte.
+                <strong>Der "FI-Beweis":</strong> Wie er mit einem einfachen physikalischen Test
+                ("Schutzschalter-Logik") die Argumentation des Konzerns technisch widerlegte.
                 <br><br>
-                <strong>Open Source Protest:</strong> Wie er die Tech-Community mobilisierte, um öffentlichen Druck aufzubauen, ohne juristisch angreifbar zu sein.
+                <strong>Open Source Protest:</strong> Wie er die Tech-Community mobilisierte, um öffentlichen Druck
+                aufzubauen, ohne juristisch angreifbar zu sein.
                 <br><br>
-                Eine Geschichte über die neue Machtasymmetrie: Wenn Kunden die Sprache der Systeme besser sprechen als die Betreiber selbst, wird der Support-Fall zum öffentlichen Audit.
+                Eine Geschichte über die neue Machtasymmetrie: Wenn Kunden die Sprache der Systeme besser sprechen als
+                die Betreiber selbst, wird der Support-Fall zum öffentlichen Audit.
             </div>
             <button class="read-more-btn" id="read-more-btn" onclick="toggleDescription()">MEHR ANZEIGEN</button>
 
             <div class="player-controls">
                 <button class="control-btn" onclick="skip(-30)" title="-30s">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M11 18V6l-8.5 6 8.5 6zm.5-6l8.5 6V6l-8.5 6z" /></svg>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M11 18V6l-8.5 6 8.5 6zm.5-6l8.5 6V6l-8.5 6z" />
+                    </svg>
                 </button>
                 <button class="play-btn" id="play-btn" aria-label="Play Episode">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8 5v14l11-7z" />
+                    </svg>
                 </button>
                 <button class="control-btn" onclick="skip(30)" title="+30s">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M4 18l8.5-6L4 6v12zm9-12v12l8.5-6L13 6z" /></svg>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M4 18l8.5-6L4 6v12zm9-12v12l8.5-6L13 6z" />
+                    </svg>
                 </button>
 
                 <div class="progress-wrapper">
@@ -538,21 +581,29 @@
                 </div>
 
                 <div class="volume-control">
-                    <input type="range" class="volume-slider" min="0" max="1" step="0.1" value="0.8" oninput="setVolume(this.value)">
+                    <input type="range" class="volume-slider" min="0" max="1" step="0.1" value="0.8"
+                        oninput="setVolume(this.value)">
                 </div>
             </div>
 
             <audio id="audio-player" src="../audio/villa_kunterbunt_dossier_podcast.mp3" preload="metadata"></audio>
 
-            <div class="nav-links" style="border-top: none; margin-top: 10px; padding-top: 0; display: flex; justify-content: center; flex-direction: column; gap: 10px;">
+            <div class="nav-links"
+                style="border-top: none; margin-top: 10px; padding-top: 0; display: flex; justify-content: center; flex-direction: column; gap: 10px;">
                 <div style="display: flex; justify-content: center; gap: 20px;">
                     <a href="eon_trustpilot_podcast.html" class="nav-link">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M19 12H5M12 19l-7-7 7-7" />
+                        </svg>
                         <span>Vorherige Episode</span>
                     </a>
                     <button class="nav-link" disabled style="opacity: 0.5; cursor: not-allowed;">
                         <span>Nächste Episode</span>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
                     </button>
                 </div>
                 <div style="display: flex; justify-content: center;">
@@ -564,9 +615,11 @@
         </article>
 
         <footer>
-            <a href="https://derlemue.github.io/villa-kunterbunt/" style="display:inline-flex; align-items:center; gap:8px; color:var(--text-muted); text-decoration:none; padding:10px 20px; border:1px solid var(--glass-border); border-radius:30px; transition:all 0.2s ease; background:rgba(255,255,255,0.05);">
+            <a href="https://derlemue.github.io/villa-kunterbunt/"
+                style="display:inline-flex; align-items:center; gap:8px; color:var(--text-muted); text-decoration:none; padding:10px 20px; border:1px solid var(--glass-border); border-radius:30px; transition:all 0.2s ease; background:rgba(255,255,255,0.05);">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    <path
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                 </svg>
                 <span>Zum Projekt auf GitHub</span>
             </a>
@@ -674,4 +727,5 @@
         });
     </script>
 </body>
+
 </html>
