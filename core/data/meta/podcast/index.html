@@ -1021,6 +1021,83 @@
                     </div>
                 </div>
             </article>
+
+            <!-- Episode 5 -->
+            <article class="episode-card fade-in-up delay-1">
+                <div class="cover-flip-container" onclick="this.classList.toggle('flipped')">
+                    <div class="flipper">
+                        <div class="front">
+                            <img src="../images/thumbs/das_villa_kunterbunt_kompendium_audiobook_cover_front_thumb.png"
+                                alt="Front Cover">
+                        </div>
+                        <div class="back">
+                            <img src="../images/thumbs/das_villa_kunterbunt_kompendium_audiobook_cover_back_thumb.png"
+                                alt="Back Cover">
+                        </div>
+                    </div>
+                </div>
+                <div class="episode-content">
+                    <div class="episode-tag">Das Dossier</div>
+                    <h2 class="episode-title">E05: Das Dossier</h2>
+
+                    <div class="info-bar">
+                        <button id="tts-btn-5" class="info-btn" onclick="toggleInfo(5)">TTS</button>
+                        <button class="info-btn source-btn has-source"
+                            onclick="openSource('https://github.com/derlemue/villa-kunterbunt')">Quelle</button>
+                    </div>
+
+                    <div id="info-text-5" class="info-text">
+                        Die Audioinhalte wurden mittels <strong>Text-to-Speech-Synthese (TTS)</strong> generiert. Als
+                        Datengrundlage dienen
+                        <strong>strukturierte Markdown-Skripte</strong>, die aus Studien und technischer
+                        Dokumentation extrahiert wurden.
+                    </div>
+
+                    <div class="episode-description">
+                        Stromausfall? Ein IT-Profi wehrt sich via GitHub. Wir zeigen, wie "derlemue" mit technischer
+                        Dokumentation und Open Source den Energieversorger zum Handeln zwang.
+                    </div>
+                    <div class="player-controls">
+                        <button class="control-btn" onclick="skip(5, -30)" title="-30s">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M11 18V6l-8.5 6 8.5 6zm.5-6l8.5 6V6l-8.5 6z" />
+                            </svg>
+                        </button>
+
+                        <button class="play-btn" onclick="togglePlay(5)" id="play-btn-5" aria-label="Play Episode 5">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 5v14l11-7z" />
+                            </svg>
+                        </button>
+
+                        <button class="control-btn" onclick="skip(5, 30)" title="+30s">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M4 18l8.5-6L4 6v12zm9-12v12l8.5-6L13 6z" />
+                            </svg>
+                        </button>
+
+                        <div class="progress-wrapper">
+                            <div class="progress-bar-bg" id="progress-container-5">
+                                <div class="progress-fill" id="progress-fill-5"></div>
+                            </div>
+                            <div class="time-display">
+                                <span id="current-time-5">0:00</span>
+                                <span id="duration-5">0:00</span>
+                            </div>
+                        </div>
+
+                        <div class="volume-control">
+                            <input type="range" class="volume-slider" min="0" max="1" step="0.1" value="0.8"
+                                oninput="setVolume(5, this.value)">
+                        </div>
+                    </div>
+                    <audio id="audio-player-5" src="../audio/villa_kunterbunt_dossier_podcast.mp3"
+                        preload="metadata"></audio>
+                    <div style="margin-top: 15px; text-align: right; width: 100%;">
+                        <a href="villa_kunterbunt_dossier_podcast.html" class="action-link">Zur Folge</a>
+                    </div>
+                </div>
+            </article>
         </div>
 
         <footer>
@@ -1257,6 +1334,7 @@
             initPlayer(2);
             initPlayer(3);
             initPlayer(4);
+            initPlayer(5);
 
 
             // Initialize autoplay listeners for all episodes

@@ -36,7 +36,8 @@ if __name__ == "__main__":
         "meta/audio/das_villa_kunterbunt_kompendium_die_erweiterte_studienanalyse.mp3",
         "meta/audio/villa_kunterbunt_korrespondenz_epos.mp3",
         "meta/audio/eon_trustpilot_enthuellung_podcast.mp3",
-        "meta/audio/eon_trustpilot_enthuellungsbericht_zur_bewertungsplattform.mp3"
+        "meta/audio/eon_trustpilot_enthuellungsbericht_zur_bewertungsplattform.mp3",
+        "meta/audio/villa_kunterbunt_dossier_podcast.mp3"
     ]
     
     for f in files:

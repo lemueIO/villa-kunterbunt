@@ -28,6 +28,23 @@
 <br>
 
 
+## v.1.2.8 (The Dossier Release)
+### "The Strategy of Protest"
+*11. Februar 2026*
+
+> **Status:** Veröffentlichung von Episode 05 ("Das Dossier") und Erweiterung des Meta-Podcast-Portals abgeschlossen.
+
+#### 🎙️ Podcast & Audio
+*   **Neue Episode (E05):** Veröffentlichung von "Die Strategie des radikalen Protests - Das Dossier".
+    *   **Inhalt:** Analyse der "Intellectual Denial of Service" Strategie und des technischen Widerstands via GitHub.
+    *   **Audio:** Vollständige Hifi-Metadaten-Integration und TLEN-Tagging (6:13).
+    *   **Navigation:** Vernetzung mit E04 und Integration in den Meta-Index.
+*   **UI/UX Refinement:** Überarbeitung der Button-Layouts und Abstände für ein konsistentes Premium-Erlebnis.
+*   **Mobile Widget:** Optimierung der iPhone-Player-Anzeige durch synchronisierte Audiobook-Cover-Metadaten.
+
+---
+<br>
+
 ## v.1.2.7 (Audio Deployment & Metadata Consolidation)
 ### "The Sonic Waveform"
 *11. Februar 2026*
